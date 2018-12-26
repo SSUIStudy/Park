@@ -121,3 +121,15 @@ nav {
 
 /*@extend는 같은 형태에서 약간의 변형이 생겼을 경우에 유용하게 사용할 수 있다.*/
 /*자식 선택자와 인접 선택자는 @extand 되지 않음*/
+/*-----%Placeholder-----*/
+.banner03, .banner04 {
+  width: 100%;
+  margin: auto; }
+
+.banner03 {
+  background-color: #fff;
+  padding: 20px; }
+
+.banner04 {
+  background-color: red;
+  height: 500px; }
