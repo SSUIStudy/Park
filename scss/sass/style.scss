@@ -1,0 +1,167 @@
+
+
+
+/*------Nested Rules (중첩 규칙)----- */
+
+.body{
+    background-color: red;
+    .section{
+        background-color: blue;
+        nav{
+            width: 100%;
+            height: 50px;
+            ul li{
+                float: left;
+            }
+        }        
+    }
+    .main_banner{
+        width: 100%;
+    }
+}
+
+/*------부모 선택자 참조(&)----- */
+
+.video {
+    color: red;
+
+    &:hover {
+        color: orange; // 가상 클래스
+    }
+    &::after {
+        color: yellow; // 가상 요소
+    }
+    &[id="wrap"] {
+        color: green; // 속성 선택자
+    }
+    &.banner1 {
+        color: blue; // 클래스 선택자
+    }
+    &#wrap {
+        color: purple; // 아이디 선택자
+    }
+}
+
+/*------변수(Variables)----- */
+
+/*변수선언*/
+$size: 15px;/*전역변수*/
+$color-basic:#fff;/*전역변수*/
+
+nav{
+    width: $size;
+    background-color: rgba($color-basic,.5);
+    ul{
+        $size:10px;/*지역변수*/
+        width: $size;
+        li{
+            $color-basic:#000;/*지역변수*/
+            background-color: $color-basic;
+
+        }
+    }  
+}
+
+/*------Mixin----- */
+
+@mixin setting {
+    position: relative;
+    width: 100%;
+     &:hover{
+        background-color:#000;
+     }
+     &::after{
+         content: "" ;
+         position: absolute;
+         top: 0;
+         left: 0;
+         right: 0;
+         margin: auto;
+     }
+}
+
+.banner{
+    @include setting();
+    background-size:cover;
+    background-repeat: no-repeat;
+    height: 800px;    
+}
+
+
+/*------Mixin 매개변수----- */
+
+@mixin parameter($width, $height) {
+    position: absolute;
+    top: 0;
+    left: 0;    
+    right: 0;
+    margin: $height/10 auto;
+    width: $width;
+    height: $height;
+}
+
+.text_box{
+    @include parameter(500px, 300px);
+    p{
+        text-align: center;
+        span{
+            display: block;
+        }
+    }
+
+}
+
+/*매개변수 이름과 값을 같이 적을 경우 순서는 상관없음*/
+.text_box2{
+    @include parameter($height:100px, $width:200px);
+    background-color: violet;
+}
+
+
+/*매개변수 값이 1개 이상 일 경우 "..." 붙혀준다.*/
+
+@mixin parameter2 ($margins...) {
+    margin: $margins;
+}
+.give {
+    @include parameter2 (5px);
+}
+.me{
+    @include parameter2 (5px 10px);
+}
+.a {
+    @include parameter2 (5px 10px 15px);
+}
+.latte {
+    @include parameter2 (5px 10px 15px 20px);
+}
+
+
+/*-----@content-----*/
+@mixin content {
+    @media all and (max-width:600px) {
+        @content;
+    }
+}
+/*지시 문이 추가로 스타일을 넣을 수 있게 해 준다*/
+.contet{
+    width: 100%;
+    height: 100%;
+    display: none;
+    @include content{
+        display: block;
+        opacity: 1;
+        transition: all 1s;
+    }    
+}
+.contet{
+    width: 100%;
+    height: 100%;
+    display: none;
+    @include content{
+        display: block;
+        opacity: 1;
+        transition: all 1s;
+    }    
+}
+/*2018-12-26*/
