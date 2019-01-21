@@ -89,3 +89,8 @@ class 형식만<b>@extend</b> 할 수 있는 것이 아니라, 공통된 속성�
 출처 : http://hwangsunsoo.org/lecture/src/sass_article_seminar_2017_2nd_half.html
 
 # 7. Extend 와 Mixin 차이점
+
+Mixin은 속성은 같으나 값이 다를때, 
+Extend는 속성과 값이 완전히 다 같은 코드를 여러군데 쓰고 싶을때 사용합니다.
+<img src="./img/extend_mixin.PNG">
+
