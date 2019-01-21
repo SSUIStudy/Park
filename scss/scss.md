@@ -87,3 +87,5 @@ class 형식만<b>@extend</b> 할 수 있는 것이 아니라, 공통된 속성�
 <img src="./img/placeholder3.PNG">
 
 출처 : http://hwangsunsoo.org/lecture/src/sass_article_seminar_2017_2nd_half.html
+
+# 7. Extend 와 Mixin 차이점
