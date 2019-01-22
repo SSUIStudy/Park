@@ -45,3 +45,27 @@
 @media only screen and (max-width: 767px) {
   .banner05 {
     width: 100%; } }
+
+/*Position 설정*/
+.banner06 {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0; }
+
+/*Width, Height 설정*/
+.banner07 {
+  width: 300px;
+  height: 300px; }
+
+/*Animationt설정 및 Keyframes fade 설정*/
+.banner08 {
+  animation: fade 1s infinite; }
+
+@keyframes fade {
+  0% {
+    opacity: 1; }
+  50% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
