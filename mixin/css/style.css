@@ -14,3 +14,16 @@
     opacity: 0; }
   100% {
     opacity: 1; } }
+
+/*2-1. 가운데 정렬(block)*/
+.banner02-1 {
+  display: block;
+  margin-left: auto;
+  margin-right: auto; }
+
+/*2-2. 가운데 정렬(absolute)*/
+.banner02-2 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); }
