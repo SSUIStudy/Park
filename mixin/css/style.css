@@ -1,0 +1,16 @@
+@charset "UTF-8";
+/*1. keyframes 설정*/
+.banner01 {
+  animation: upDown 1s forwards; }
+
+@-webkit-keyframes upDown {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
+@keyframes upDown {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
