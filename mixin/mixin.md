@@ -87,3 +87,61 @@
   transform: translate(-50%, -50%); }
   
 ```
+
+# 3. Font 설정
+
+### SCSS
+```sh
+@mixin font-face($font-name, $file-name, $weight: normal, $style: normal) {
+    
+      font-family: quote($font-name);
+      src: url($file-name + '.eot');
+      src: url($file-name + '.eot?#iefix')  format('embedded-opentype'),
+           url($file-name + '.woff') format('woff'),
+           url($file-name + '.ttf')  format('truetype'),
+           url($file-name + '.svg##{$font-name}')  format('svg');
+      font-weight: $weight;
+      font-style: $style;
+    }
+  
+.banner03{
+    @include font-face('gulim', '/fonts/gulim');
+}
+```
+### CSS
+
+```sh
+.banner03 {
+  font-family: "gulim";
+  src: url("/fonts/gulim.eot");
+  src: url("/fonts/gulim.eot?#iefix")format("embedded-opentype"),
+        url("/fonts/gulim.woff") format("woff"),
+        url("/fonts/gulim.ttf") format("truetype"), 
+        url("/fonts/gulim.svg#gulim") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+  
+```
+
+# 3. Font-size 설정
+
+### SCSS
+```sh
+$base-font-size: 16px !default;
+@mixin font-size($size) {
+    font-size: $size;
+    font-size: ($size / $base-font-size) * 1rem;
+  }
+
+  .banner04{    
+    @include font-size(10px);
+}
+```
+### CSS
+
+```sh
+.banner04 {
+  font-size: 10px;
+  font-size: 0.625rem; }
+  
+```

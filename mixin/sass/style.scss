@@ -43,3 +43,34 @@
 .banner02-2{
     @include center-both();
 }
+
+/*3. font 설정*/
+$base-font-size: 16px !default;
+
+@mixin font-face($font-name, $file-name, $weight: normal, $style: normal) {
+    
+      font-family: quote($font-name);
+      src: url($file-name + '.eot');
+      src: url($file-name + '.eot?#iefix')  format('embedded-opentype'),
+           url($file-name + '.woff') format('woff'),
+           url($file-name + '.ttf')  format('truetype'),
+           url($file-name + '.svg##{$font-name}')  format('svg');
+      font-weight: $weight;
+      font-style: $style;
+    }
+
+.banner03{
+    @include font-face('gulim', '/fonts/gulim');
+}
+
+/*04. font-size 설정*/
+
+$base-font-size: 16px !default;
+@mixin font-size($size) {
+    font-size: $size;
+    font-size: ($size / $base-font-size) * 1rem;
+  }
+
+  .banner04{    
+    @include font-size(10px);
+}
