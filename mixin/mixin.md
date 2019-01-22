@@ -123,7 +123,7 @@
   
 ```
 
-# 3. Font-size 설정
+# 4. Font-size 설정
 
 ### SCSS
 ```sh
@@ -144,4 +144,35 @@ $base-font-size: 16px !default;
   font-size: 10px;
   font-size: 0.625rem; }
   
+```
+
+# 5. 미디어쿼리 설정
+
+### SCSS
+```sh
+@mixin mquery($width, $ratio: false) {
+    @if $ratio {
+        @media
+            only screen and (max-width: $width) and  (min--moz-device-pixel-ratio: $ratio),
+            only screen and (max-width: $width) and  (-webkit-min-device-pixel-ratio: $ratio),
+            only screen and (max-width: $width) and  (min-device-pixel-ratio: $ratio) {
+            @content;
+        }
+    } @else {
+        @media only screen and (max-width: $width) {
+            @content;
+        }
+    }
+}
+
+.banner05{
+    @include mquery(767px){width: 100%;}
+}
+```
+### CSS
+
+```sh
+@media only screen and (max-width: 767px) {
+  .banner05 {
+    width: 100%; } }
 ```

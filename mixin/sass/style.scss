@@ -45,7 +45,6 @@
 }
 
 /*3. font 설정*/
-$base-font-size: 16px !default;
 
 @mixin font-face($font-name, $file-name, $weight: normal, $style: normal) {
     
@@ -73,4 +72,25 @@ $base-font-size: 16px !default;
 
   .banner04{    
     @include font-size(10px);
+}
+
+/*미디어쿼리 설정*/
+
+@mixin mquery($width, $ratio: false) {
+    @if $ratio {
+        @media
+            only screen and (max-width: $width) and  (min--moz-device-pixel-ratio: $ratio),
+            only screen and (max-width: $width) and  (-webkit-min-device-pixel-ratio: $ratio),
+            only screen and (max-width: $width) and  (min-device-pixel-ratio: $ratio) {
+            @content;
+        }
+    } @else {
+        @media only screen and (max-width: $width) {
+            @content;
+        }
+    }
+}
+
+.banner05{
+    @include mquery(767px){width: 100%;}
 }
