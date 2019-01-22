@@ -1,8 +1,8 @@
 ##1. keyframes 설정
-
+```sh
 SCSS:
 
-@mixin keyframes($name) {
+@mixin keyframes($name) {<br>
     @-webkit-keyframes #{$name} {
         @content;
     }
@@ -21,3 +21,4 @@ Compiled to:
     }
     animation: upDown 1s forwards;
 }
+```
