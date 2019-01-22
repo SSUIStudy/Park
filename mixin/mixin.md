@@ -1,8 +1,7 @@
 # 1. keyframes 설정
+
+### SCSS
 ```sh
-
-SCSS:
-
 @mixin keyframes($name) {
     @-webkit-keyframes #{$name} {
         @content;
@@ -20,9 +19,9 @@ SCSS:
     }
     animation: upDown 1s forwards;
 }
-
-Compiled to:
-
+```
+### CSS
+```sh
 .banner01 {
   animation: upDown 1s forwards; }
 
@@ -41,9 +40,9 @@ Compiled to:
 ```
 
 # 2-1. 가운데 정렬(block)
-```sh
-SCSS:
 
+### SCSS
+```sh
 @mixin center-block {
     display: block;
     margin-left: auto;
@@ -53,9 +52,9 @@ SCSS:
 .banner02-1{
     @include center-block();
 }
-
-Compiled to:
-
+```
+### CSS
+```sh
 .banner02-1 {
   display: block;
   margin-left: auto;
@@ -64,9 +63,9 @@ Compiled to:
 ```
 
 # 2-2. 가운데 정렬(absolute)
-```sh
-SCSS:
 
+### SCSS
+```sh
 @mixin center-both {
     position: absolute;
     top: 50%;
@@ -77,9 +76,10 @@ SCSS:
 .banner02-2{
     @include center-both();
 }
+```
+### CSS
 
-Compiled to:
-
+```sh
 .banner02-2 {
   position: absolute;
   top: 50%;
