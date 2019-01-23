@@ -16,7 +16,7 @@ Block Element Modifier
 
 ```
 
-### BEM사용의 주의할 점
+### BEM사용 시 주의할 점
 ```sh
 
 - 태그 이름이나 id를 사용하지 않습니다.
