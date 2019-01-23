@@ -1,48 +1,9 @@
-# 1. keyframes 설정
+
+# 1. 가운데 정렬(block)
 
 ### SCSS
 ```sh
-@mixin keyframes($name) {
-    @-webkit-keyframes #{$name} {
-        @content;
-    }
 
-    @keyframes #{$name} {
-        @content;
-    }
-}
-
-.banner01{
-    @include keyframes(upDown){
-    0%{opacity: 0;}
-    100%{opacity: 1;}    
-    }
-    animation: upDown 1s forwards;
-}
-```
-### CSS
-```sh
-.banner01 {
-  animation: upDown 1s forwards; }
-
-@-webkit-keyframes upDown {
-  0% {
-    opacity: 0; }
-  100% {
-    opacity: 1; } }
-
-@keyframes upDown {
-  0% {
-    opacity: 0; }
-  100% {
-    opacity: 1; } }
-
-```
-
-# 2-1. 가운데 정렬(block)
-
-### SCSS
-```sh
 @mixin center-block {
     display: block;
     margin-left: auto;
@@ -52,9 +13,11 @@
 .banner02-1{
     @include center-block();
 }
+
 ```
 ### CSS
 ```sh
+
 .banner02-1 {
   display: block;
   margin-left: auto;
@@ -62,10 +25,11 @@
 
 ```
 
-# 2-2. 가운데 정렬(absolute)
+# 2. 가운데 정렬(absolute)
 
 ### SCSS
 ```sh
+
 @mixin center-both {
     position: absolute;
     top: 50%;
@@ -76,10 +40,12 @@
 .banner02-2{
     @include center-both();
 }
+
 ```
 ### CSS
 
 ```sh
+
 .banner02-2 {
   position: absolute;
   top: 50%;
@@ -92,6 +58,7 @@
 
 ### SCSS
 ```sh
+
 @mixin font-face($font-name, $file-name, $weight: normal, $style: normal) {
     
       font-family: quote($font-name);
@@ -107,10 +74,12 @@
 .banner03{
     @include font-face('gulim', '/fonts/gulim');
 }
+
 ```
 ### CSS
 
 ```sh
+
 .banner03 {
   font-family: "gulim";
   src: url("/fonts/gulim.eot");
@@ -127,6 +96,7 @@
 
 ### SCSS
 ```sh
+
 $base-font-size: 16px !default;
 @mixin font-size($size) {
     font-size: $size;
@@ -136,10 +106,12 @@ $base-font-size: 16px !default;
   .banner04{    
     @include font-size(10px);
 }
+
 ```
 ### CSS
 
 ```sh
+
 .banner04 {
   font-size: 10px;
   font-size: 0.625rem; }
@@ -150,6 +122,7 @@ $base-font-size: 16px !default;
 
 ### SCSS
 ```sh
+
 @mixin mquery($width, $ratio: false) {
     @if $ratio {
         @media
@@ -172,6 +145,7 @@ $base-font-size: 16px !default;
 ### CSS
 
 ```sh
+
 @media only screen and (max-width: 767px) {
   .banner05 {
     width: 100%; } }
@@ -181,6 +155,7 @@ $base-font-size: 16px !default;
 
 ### SCSS
 ```sh
+
 @mixin position($type, $top: null, $right: null, $bottom: null, $left: null) {
     position: $type;
     top: $top;
@@ -192,10 +167,12 @@ $base-font-size: 16px !default;
 .banner06{
     @include position(absolute,$top:0, $left:0, $right:0)
 }
+
 ```
 ### CSS
 
 ```sh
+
 .banner06 {
   position: absolute;
   top: 0;
@@ -208,6 +185,7 @@ $base-font-size: 16px !default;
 
 ### SCSS
 ```sh
+
 @mixin size($width, $height: $width) {
     width: $width;
     height: $height;
@@ -216,21 +194,67 @@ $base-font-size: 16px !default;
 .banner07{
     @include size(300px);
 }
+
 ```
 ### CSS
 
 ```sh
+
 .banner07 {
   width: 300px;
   height: 300px; }
 
 
 ```
-
-# 8. Animationt설정 및 Keyframes fade 설정
+# 8. keyframes 설정
 
 ### SCSS
 ```sh
+
+@mixin keyframes($name) {
+    @-webkit-keyframes #{$name} {
+        @content;
+    }
+
+    @keyframes #{$name} {
+        @content;
+    }
+}
+
+.banner01{
+    @include keyframes(upDown){
+    0%{opacity: 0;}
+    100%{opacity: 1;}    
+    }
+    animation: upDown 1s forwards;
+}
+
+```
+### CSS
+```sh
+
+.banner01 {
+  animation: upDown 1s forwards; }
+
+@-webkit-keyframes upDown {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
+@keyframes upDown {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
+```
+
+# 9. Animationt설정 및 Keyframes fade 설정
+
+### SCSS
+```sh
+
 @mixin ani_fade($ani_name, $fade-0, $fade-50, $fade-100, $ani_time, $ani_repetitions) {
 
     @keyframes #{$ani_name}{
@@ -250,10 +274,12 @@ $base-font-size: 16px !default;
 .banner08{    
     @include ani_fade(fade,1, 0, 1,1s,infinite);
 }
+
 ```
 ### CSS
 
 ```sh
+
 .banner08 {
   animation: fade 1s infinite; }
 

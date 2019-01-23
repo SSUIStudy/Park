@@ -1,26 +1,5 @@
 
-/*1. keyframes 설정*/
-
-@mixin keyframes($name) {
-    @-webkit-keyframes #{$name} {
-        @content;
-    }
-
-    @keyframes #{$name} {
-        @content;
-    }
-}
-
-
-.banner01{
-    @include keyframes(upDown){
-    0%{opacity: 0;}
-    100%{opacity: 1;}    
-    }
-    animation: upDown 1s forwards;
-}
-
-/*2-1. 가운데 정렬(block)*/
+/*1. 가운데 정렬(block)*/
 
 @mixin center-block {
     display: block;
@@ -32,7 +11,7 @@
     @include center-block();
 }
 
-/*2-2. 가운데 정렬(absolute)*/
+/*2. 가운데 정렬(absolute)*/
 
 @mixin center-both {
     position: absolute;
@@ -63,7 +42,7 @@
     @include font-face('gulim', '/fonts/gulim');
 }
 
-/*04. font-size 설정*/
+/*4. font-size 설정*/
 
 $base-font-size: 16px !default;
 @mixin font-size($size) {
@@ -75,7 +54,7 @@ $base-font-size: 16px !default;
     @include font-size(10px);
 }
 
-/*미디어쿼리 설정*/
+/*5. 미디어쿼리 설정*/
 
 @mixin mquery($width, $ratio: false) {
     @if $ratio {
@@ -96,7 +75,7 @@ $base-font-size: 16px !default;
     @include mquery(767px){width: 100%;}
 }
 
-/*Position 설정*/
+/*6. Position 설정*/
 
 @mixin position($type, $top: null, $right: null, $bottom: null, $left: null) {
     position: $type;
@@ -110,7 +89,7 @@ $base-font-size: 16px !default;
     @include position(absolute,$top:0, $left:0, $right:0)
 }
 
-/*Width, Height 설정*/
+/*7. Width, Height 설정*/
 
 @mixin size($width, $height: $width) {
     width: $width;
@@ -121,10 +100,28 @@ $base-font-size: 16px !default;
     @include size(300px);
 }
 
+/*8. keyframes 설정*/
+
+@mixin keyframes($name) {
+    @-webkit-keyframes #{$name} {
+        @content;
+    }
+
+    @keyframes #{$name} {
+        @content;
+    }
+}
+
+.banner01{
+    @include keyframes(upDown){
+    0%{opacity: 0;}
+    100%{opacity: 1;}    
+    }
+    animation: upDown 1s forwards;
+}
 
 
-
-/*Animationt설정 및 Keyframes fade 설정*/
+/*9. Animationt설정 및 Keyframes fade 설정*/
 
 
 @mixin ani_fade($ani_name, $fade-0, $fade-50, $fade-100, $ani_time, $ani_repetitions) {
