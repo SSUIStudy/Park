@@ -60,12 +60,12 @@
 
 /*9. Animationt설정 및 Keyframes fade 설정*/
 .banner08 {
-  animation: fade 1s infinite; }
+  animation: fadeIn 1s 1;
+  opacity: 1;
+  animation-delay: 1s !important; }
 
-@keyframes fade {
+@keyframes fadeIn {
   0% {
-    opacity: 1; }
-  50% {
     opacity: 0; }
   100% {
     opacity: 1; } }

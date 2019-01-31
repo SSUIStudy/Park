@@ -124,23 +124,23 @@ $base-font-size: 16px !default;
 /*9. Animationt설정 및 Keyframes fade 설정*/
 
 
-@mixin ani_fade($ani_name, $fade-0, $fade-50, $fade-100, $ani_time, $ani_repetitions) {
+@mixin ani_fadeIn($ani_name, $ani_time, $ani_repetitions,$delay) {
 
     @keyframes #{$ani_name}{
     0% {
-      opacity:$fade-0;
+      opacity: 0;
     }
-    50% {
-       opacity:$fade-50;
-    }
+    
     100% {
-        opacity:$fade-100;
+        opacity: 1;
       }
   }
-  animation: $ani_name $ani_time $ani_repetitions;
+  animation: $ani_name $ani_time+s $ani_repetitions;
+  opacity: 1;
+  animation-delay: $delay+s !important;
 }
 
 .banner08{    
-    @include ani_fade(fade,1, 0, 1,1s,infinite);
+    @include ani_fadeIn(fadeIn,1,1,1);
 }
 
