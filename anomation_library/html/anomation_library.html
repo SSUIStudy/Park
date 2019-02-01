@@ -41,7 +41,9 @@
             <a href="#none">ANIMATION LIBRARY</a>
             <ul>
                 <li>popIn</li>
-                <li>POP</li>
+                <li>popInBottom</li>
+                <li>flipInX</li>
+                
             </ul>
         </div>
     </div>
@@ -51,10 +53,8 @@
             var select_box = $(".select a");
             var ani_list_wrap = $(".select ul");
             var ani_list = $(".select ul li");
-            
 
             ani_list_wrap.slideUp();
-            
 
             select_box.click(function(){
                 ani_list_wrap.stop().slideToggle();                
@@ -64,7 +64,7 @@
                 var num = $(this).index();
                 var cl = $(this).text();
                 var allCl = ani_list.text();   
-                  
+
                     ani_list_wrap.slideUp();
                     sandbox.addClass(cl);   
                     setTimeout(function(){
