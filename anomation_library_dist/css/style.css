@@ -1,0 +1,21 @@
+.sandbox {
+  width: 134px;
+  height: 134px;
+  margin: 18% auto 3%;
+}
+
+.select, .select select {
+  width: 260px;
+  height: 50px;
+  margin: auto;
+}
+
+.select select {
+  text-align: center;
+  padding-left: 20px;
+  font-size: 20px;
+  font-weight: bold;
+  color: #666;
+}
+
+/*# sourceMappingURL=style.css.map */

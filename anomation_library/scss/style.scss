@@ -1,0 +1,22 @@
+
+@mixin WH($width,$height) {
+    width: $width;
+    height: $height;
+}
+
+.sandbox{
+    @include WH(134px,134px );
+    margin: 18% auto 3%;
+}
+.select{
+    @include WH(260px,50px );
+    margin: auto;
+    & select{
+        @extend .select;
+        text-align: center;
+        padding-left: 20px;
+        font-size: 20px;
+        font-weight: bold;
+        color: #666;
+    }
+}
