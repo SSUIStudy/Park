@@ -1,4 +1,13 @@
-
+*{
+    margin: 0;
+    padding: 0;
+}
+a{
+    text-decoration: none;
+}
+ol,ul,li{
+    list-style: none;
+}
 @mixin WH($width,$height) {
     width: $width;
     height: $height;
@@ -9,14 +18,64 @@
     margin: 18% auto 3%;
 }
 .select{
-    @include WH(260px,50px );
+    @include WH(300px,50px );
     margin: auto;
-    & select{
-        @extend .select;
-        text-align: center;
-        padding-left: 20px;
+    text-align: center; 
+    line-height: 50px;          
+    a{  
+        height: 100%;        
         font-size: 20px;
-        font-weight: bold;
         color: #666;
+        display: block;
+        border:1px solid #666;
+        background: rgb(255,255,255) url(http://www.fila.co.kr/images/sub/bg_heritage_select.png) no-repeat 100% 50%;        
     }
+    ul {
+        border:1px solid #666;
+        margin-top: -1px;    
+        li{
+        font-size: 20px;
+        color: #666; 
+        cursor: pointer;
+        }
+    }
+}
+
+
+@mixin popIn($ani_time, $ani_repetitions, $delay: null) {
+
+    @keyframes popIn {
+        0% {
+          -webkit-transform: scale3d(0, 0, 0);
+          transform: scale3d(0, 0, 0);
+          opacity: 0; }
+        20% {
+          opacity: 1; }
+        40% {
+          -webkit-animation-timing-function: cubic-bezier(0.47, 0, 0.745, 0.715);
+          animation-timing-function: cubic-bezier(0.47, 0, 0.745, 0.715);
+          -webkit-transform: scale3d(1.08, 1.08, 1.08);
+          transform: scale3d(1.08, 1.08, 1.08); }
+        60% {
+          -webkit-animation-timing-function: cubic-bezier(0.42, 0, 0.58, 1);
+          animation-timing-function: cubic-bezier(0.42, 0, 0.58, 1);
+          -webkit-transform: scale3d(1, 1, 1);
+          transform: scale3d(1, 1, 1); }
+        80% {
+          -webkit-animation-timing-function: cubic-bezier(0.42, 0, 0.58, 1);
+          animation-timing-function: cubic-bezier(0.42, 0, 0.58, 1);
+          -webkit-transform: scale3d(1.03, 1.03, 1.03);
+          transform: scale3d(1.03, 1.03, 1.03); }
+        100% {
+          -webkit-animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+          animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+          -webkit-transform: scale3d(1, 1, 1);
+          transform: scale3d(1, 1, 1); } }
+  animation: popIn $ani_time $ani_repetitions;
+  opacity: 1;
+  animation-delay: $delay !important;
+}
+
+.popIn{    
+    @include popIn(1s,forwards);
 }

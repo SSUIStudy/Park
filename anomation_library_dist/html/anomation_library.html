@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="/css/style.css" type="text/css"">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <title>anomation_library</title>
 </head>
 <body>  
@@ -37,15 +38,41 @@
             </svg>
         </div>
         <div class="select">
-            <select name="animation" id="ani">
-                <option value="animation">ANIMATION LIBRARY</option>
-                <option value="animation">ANIMATION</option>
-                <option value="animation">ANIMATION LIBRARY</option>
-                <option value="animation">ANIMATION LIBRARY</option>
-                <option value="animation">ANIMATION LIBRARY</option>
-                <option value="animation">ANIMATION LIBRARY</option>
-            </select>
+            <a href="#none">ANIMATION LIBRARY</a>
+            <ul>
+                <li>popIn</li>
+                <li>POP</li>
+            </ul>
         </div>
     </div>
+    <script>
+        $(document).ready(function(){
+            var sandbox = $(".sandbox");
+            var select_box = $(".select a");
+            var ani_list_wrap = $(".select ul");
+            var ani_list = $(".select ul li");
+            
+
+            ani_list_wrap.slideUp();
+            
+
+            select_box.click(function(){
+                ani_list_wrap.stop().slideToggle();                
+            });
+            
+            ani_list.click(function(){
+                var num = $(this).index();
+                var cl = $(this).text();
+                var allCl = ani_list.text();   
+                  
+                    ani_list_wrap.slideUp();
+                    sandbox.addClass(cl);   
+                    setTimeout(function(){
+                        sandbox.removeClass(cl);
+                     },1000);                             
+            });
+           
+        });
+    </script>
 </body>
 </html>
