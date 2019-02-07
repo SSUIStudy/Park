@@ -28,7 +28,7 @@ ol, ul, li {
 .select a {
   height: 100%;
   font-size: 20px;
-  color: #666;
+  color: #333;
   display: block;
   border: 1px solid #666;
   background: white url(http://www.fila.co.kr/images/sub/bg_heritage_select.png) no-repeat 100% 50%;
@@ -36,7 +36,7 @@ ol, ul, li {
 
 .select ul {
   width: 398px;
-  height: 250px;
+  height: 350px;
   overflow: auto;
   border: 1px solid #666;
   margin-top: -1px;
@@ -51,6 +51,13 @@ ol, ul, li {
 .bg {
   color: #fff !important;
   background-color: #999;
+}
+
+#basic,
+#impact,
+#special {
+  font-size: 25px !important;
+  color: #333 !important;
 }
 
 .popIn {

@@ -25,14 +25,14 @@ ol,ul,li{
     a{  
         height: 100%;        
         font-size: 20px;
-        color: #666;
+        color: #333;
         display: block;
         border:1px solid #666;
         background: rgb(255,255,255) url(http://www.fila.co.kr/images/sub/bg_heritage_select.png) no-repeat 100% 50%;        
     }
     ul {
         width: 398px;
-        height: 250px;
+        height: 350px;
         overflow: auto;
         border:1px solid #666;
         margin-top: -1px;    
@@ -46,11 +46,16 @@ ol,ul,li{
 .bg{
     color: #fff !important;
     background-color: #999;
-
+}
+#basic,
+#impact,
+#special{
+  font-size: 25px !important;
+  color: #333 !important;
 }
 
 ///fade in + zoom in + 움직임이 더 많음
-///@group Fade In Stlye
+///@group special Fade In Style
 ///@param {time} $ani_time - 플레이 시간
 ///@param {repeat} $ani_repetitions - 반복횟수
 ///@param {delay} $delay [null] - 딜레이 시간
@@ -95,14 +100,14 @@ ol,ul,li{
 }
 
 ///fade in top + zoom in + 움직임이 더 많음
-///@group Fade In Stlye
+///@group special Fade In Style
 ///@param {time} $ani_time - 플레이 시간
 ///@param {repeat} $ani_repetitions - 반복횟수
 ///@param {value} $value - 이동 거리
 ///@param {delay} $delay [null] - 딜레이 시간
 ///@example scss - popInTop
 ///   .popInTop{
-///       @include popInTop(1s, forwards, 100%, 1s(생략가능);
+///       @include popInTop(1s, forwards, 100%, 1s(생략가능));
 ///   }
 @mixin popInTop($ani_time, $ani_repetitions, $value, $delay: null) {
 
@@ -140,14 +145,14 @@ ol,ul,li{
 }
 
 ///fade in Bottom + zoom in + 움직임이 더 많음
-///@group Fade In Stlye
+///@group special Fade In Style
 ///@param {time} $ani_time - 플레이 시간
 ///@param {repeat} $ani_repetitions - 반복횟수
 ///@param {value} $value - 이동 거리
 ///@param {delay} $delay [null] - 딜레이 시간
 ///@example scss - popInBottom
 ///   .popInBottom{
-///       @include popInBottom(1s, forwards, 100%, 1s(생략가능);
+///       @include popInBottom(1s, forwards, 100%, 1s(생략가능));
 ///   }
 @mixin popInBottom($ani_time, $ani_repetitions, $value, $delay: null) {
 
@@ -185,13 +190,13 @@ ol,ul,li{
 }
 
 ///가로로 회전 하면서 fade in
-///@group Fade In Stlye
+///@group special Fade In Style
 ///@param {time} $ani_time - 플레이 시간
 ///@param {repeat} $ani_repetitions - 반복횟수
 ///@param {delay} $delay [null] - 딜레이 시간
 ///@example scss - flipInX
 ///   .flipInX{
-///       @include flipInX(1s, forwards, 1s(생략가능);
+///       @include flipInX(1s, forwards, 1s(생략가능));
 ///   }
 @mixin flipInX($ani_time, $ani_repetitions, $delay: null) {
 
@@ -218,13 +223,13 @@ ol,ul,li{
 
 
 ///세로로 회전 하면서 fade in
-///@group Fade In Stlye
+///@group special Fade In Style
 ///@param {time} $ani_time - 플레이 시간
 ///@param {repeat} $ani_repetitions - 반복횟수
 ///@param {delay} $delay [null] - 딜레이 시간
 ///@example scss - flipInY
 ///   .flipInY{
-///       @include flipInY(1s, forwards, 1s(생략가능);
+///       @include flipInY(1s, forwards, 1s(생략가능));
 ///   }
 @mixin flipInY($ani_time, $ani_repetitions, $delay: null) {
 
@@ -251,13 +256,13 @@ ol,ul,li{
 }
 
 ///가로로 회전 하면서 fade in + 움직임 추가
-///@group Fade In Stlye
+///@group special Fade In Style
 ///@param {time} $ani_time - 플레이 시간
 ///@param {repeat} $ani_repetitions - 반복횟수
 ///@param {delay} $delay [null] - 딜레이 시간
 ///@example scss - flipInX2
 ///   .flipInX2{
-///       @include flipInX2(1s, forwards, 1s(생략가능);
+///       @include flipInX2(1s, forwards, 1s(생략가능));
 ///   }
 @mixin flipInX2($ani_time, $ani_repetitions, $delay: null) {
 
@@ -301,13 +306,13 @@ animation-delay: $delay !important;
 }
 
 ///세로로 회전 하면서 fade in + 움직임 추가
-///@group Fade In Stlye
+///@group special Fade In Style
 ///@param {time} $ani_time - 플레이 시간
 ///@param {repeat} $ani_repetitions - 반복횟수
 ///@param {delay} $delay [null] - 딜레이 시간
 ///@example scss - flipInY2
 ///   .flipIn2Y{
-///       @include flipInY2(1s, forwards, 1s(생략가능);
+///       @include flipInY2(1s, forwards, 1s(생략가능));
 ///   }
 @mixin flipInY2($ani_time, $ani_repetitions, $delay: null) {
 
@@ -352,13 +357,13 @@ animation-delay: $delay !important;
 }
 
 ///fade in
-///@group basic Fade In Stlye
+///@group basic Fade In Style
 ///@param {time} $ani_time - 플레이 시간
 ///@param {repeat} $ani_repetitions - 반복횟수
 ///@param {delay} $delay [null] - 딜레이 시간
 ///@example scss - fadeIn
 ///   .fadeIn{
-///       @include fadeIn(1s, forwards, 1s(생략가능);
+///       @include fadeIn(1s, forwards, 1s(생략가능));
 ///   }
 @mixin fadeIn($ani_time, $ani_repetitions, $delay: null) {
 
@@ -376,14 +381,14 @@ animation-delay: $delay !important;
 }
 
 ///fade In Right
-///@group basic Fade In Stlye
+///@group basic Fade In Style
 ///@param {time} $ani_time - 플레이 시간
 ///@param {repeat} $ani_repetitions - 반복횟수
 ///@param {value} $value - 이동 거리
 ///@param {delay} $delay [null] - 딜레이 시간
 ///@example scss - fadeInRight
 ///   .fadeInRight{
-///       @include fadeInRight(1s, forwards, 100%, 1s(생략가능);
+///       @include fadeInRight(1s, forwards, 100%, 1s(생략가능));
 ///   }
 @mixin fadeInRight($ani_time, $ani_repetitions, $value, $delay: null) {
 
@@ -405,14 +410,14 @@ animation-delay: $delay !important;
 }
 
 ///fade In Left
-///@group basic Fade In Stlye
+///@group basic Fade In Style
 ///@param {time} $ani_time - 플레이 시간
 ///@param {repeat} $ani_repetitions - 반복횟수
 ///@param {value} $value - 이동 거리
 ///@param {delay} $delay [null] - 딜레이 시간
 ///@example scss - fadeInLeft
 ///   .fadeInLeft{
-///       @include fadeInLeft(1s, forwards, 100%, 1s(생략가능);
+///       @include fadeInLeft(1s, forwards, 100%, 1s(생략가능));
 ///   }
 @mixin fadeInLeft($ani_time, $ani_repetitions, $value, $delay: null) {
 
@@ -434,14 +439,14 @@ animation-delay: $delay !important;
 }
 
 ///fade In Top
-///@group basic Fade In Stlye
+///@group basic Fade In Style
 ///@param {time} $ani_time - 플레이 시간
 ///@param {repeat} $ani_repetitions - 반복횟수
 ///@param {value} $value - 이동 거리
 ///@param {delay} $delay [null] - 딜레이 시간
 ///@example scss - fadeInTop
 ///   .fadeInTop{
-///       @include fadeInTop(1s, forwards, 100%, 1s(생략가능);
+///       @include fadeInTop(1s, forwards, 100%, 1s(생략가능));
 ///   }
 @mixin fadeInTop($ani_time, $ani_repetitions, $value, $delay: null) {
 
@@ -461,7 +466,17 @@ animation-delay: $delay !important;
 .fadeInTop{
     @include fadeInTop(1s, forwards, 50%);
 }
-///Fade bottom
+
+///fade In Bottom
+///@group basic Fade In Style
+///@param {time} $ani_time - 플레이 시간
+///@param {repeat} $ani_repetitions - 반복횟수
+///@param {value} $value - 이동 거리
+///@param {delay} $delay [null] - 딜레이 시간
+///@example scss - fadeInBottom
+///   .fadeInBottom{
+///       @include fadeInBottom(1s, forwards, 100%, 1s(생략가능));
+///   }
 @mixin fadeInBottom($ani_time, $ani_repetitions, $value, $delay: null) {
 
     @keyframes fadeInBottom {
@@ -480,7 +495,16 @@ animation-delay: $delay !important;
 .fadeInBottom{
     @include fadeInBottom(1s, forwards, 50%);
 }
-///Spin
+
+///spin
+///@group impact Style
+///@param {time} $ani_time - 플레이 시간
+///@param {repeat} $ani_repetitions - 반복횟수
+///@param {delay} $delay [null] - 딜레이 시간
+///@example scss - spin
+///   .spin{
+///       @include spin(1s, forwards, 1s(생략가능));
+///   }
 @mixin spin($ani_time, $ani_repetitions, $delay: null) {
 
     @keyframes spin {
@@ -520,7 +544,15 @@ animation-delay: $delay !important;
     @include spin(1s, forwards);
 }
 
-///Spin In
+///spin + fade in
+///@group special fade in Style
+///@param {time} $ani_time - 플레이 시간
+///@param {repeat} $ani_repetitions - 반복횟수
+///@param {delay} $delay [null] - 딜레이 시간
+///@example scss - spinIn
+///   .spinIn{
+///       @include spinIn(1s, forwards, 1s(생략가능));
+///   }
 @mixin spinIn($ani_time, $ani_repetitions, $delay: null) {
 
     @keyframes spinIn {
@@ -551,7 +583,16 @@ animation-delay: $delay !important;
 .spinIn{
     @include spinIn(1s, forwards);
 }
-///Pull up
+
+///세우면서 fade in
+///@group special fade in Style
+///@param {time} $ani_time - 플레이 시간
+///@param {repeat} $ani_repetitions - 반복횟수
+///@param {delay} $delay [null] - 딜레이 시간
+///@example scss - pullUp
+///   .pullUp{
+///       @include pullUp(1s, forwards, 1s(생략가능));
+///   }
 @mixin pullUp($ani_time, $ani_repetitions, $delay: null) {
 
     @keyframes pullUp {
@@ -577,7 +618,15 @@ animation-delay: $delay !important;
 .pullUp{
     @include pullUp(1s, forwards);
 }
-///Unfold
+///펼치면서 fade in
+///@group special fade in Style
+///@param {time} $ani_time - 플레이 시간
+///@param {repeat} $ani_repetitions - 반복횟수
+///@param {delay} $delay [null] - 딜레이 시간
+///@example scss - unfold
+///   .unfold{
+///       @include unfold(1s, forwards, 1s(생략가능));
+///   }
 @mixin unfold($ani_time, $ani_repetitions, $delay: null) {
 
     @keyframes unfold {
@@ -610,7 +659,17 @@ animation-delay: $delay !important;
 .unfold{
     @include unfold(.5s, forwards);
 }
-///Bounce
+
+///bounce
+///@group impact Style
+///@param {time} $ani_time - 플레이 시간
+///@param {repeat} $ani_repetitions - 반복횟수
+///@param {value} $value - 이동 거리
+///@param {delay} $delay [null] - 딜레이 시간
+///@example scss - bounce
+///   .bounce{ 
+///      @include bounce(.5s, forwards, 50%, 1s(생략가능));
+///   }
 @mixin bounce($ani_time, $ani_repetitions, $value, $delay: null) {
 
     @keyframes bounce {
@@ -649,8 +708,16 @@ animation-delay: $delay !important;
     @include bounce(.5s, forwards, 50%);
 }
 
-///flash
-@mixin flash($ani_time, $ani_repetitions,$delay: null) {
+///반짝반짝(flash)
+///@group impact Style
+///@param {time} $ani_time - 플레이 시간
+///@param {repeat} $ani_repetitions - 반복횟수
+///@param {delay} $delay [null] - 딜레이 시간
+///@example scss - flash
+///   .flash{ 
+///      @include flash(1s, forwards, 1s(생략가능));
+///   }
+@mixin flash($ani_time, $ani_repetitions, $delay: null) {
 
   @keyframes flash {
     from,
@@ -671,8 +738,16 @@ animation-delay: $delay !important;
   @include flash(1s, forwards);
 }
 
-///rubberBand
-@mixin rubberBand($ani_time, $ani_repetitions,$delay: null) {
+///고무줄 같은 느낌(rubberBand)
+///@group impact Style
+///@param {time} $ani_time - 플레이 시간
+///@param {repeat} $ani_repetitions - 반복횟수
+///@param {delay} $delay [null] - 딜레이 시간
+///@example scss - rubberBand
+///   .rubberBand{ 
+///      @include rubberBand(1s, forwards, 1s(생략가능));
+///   }
+@mixin rubberBand($ani_time, $ani_repetitions, $delay: null) {
 
   @keyframes rubberBand {
     from {
@@ -717,7 +792,16 @@ animation-delay: $delay !important;
   @include rubberBand(1s, forwards);
 }
 
-///bounceInDown
+///bounce + fade in down 
+///@group special fade in Style
+///@param {time} $ani_time - 플레이 시간
+///@param {repeat} $ani_repetitions - 반복횟수
+///@param {value} $value - 이동 거리
+///@param {delay} $delay [null] - 딜레이 시간
+///@example scss - bounceInDown
+///   .bounceInDown{ 
+///      @include bounceInDown(1s, forwards, 1s(생략가능));
+///   }
 @mixin bounceInDown($ani_time, $ani_repetitions, $value, $delay: null) {
 
   @keyframes bounceInDown {
@@ -764,7 +848,15 @@ animation-delay: $delay !important;
   @include bounceInDown(.5s, forwards, 100%);
 }
 
-///zoomIn
+///zoom in 
+///@group special fade in Style
+///@param {time} $ani_time - 플레이 시간
+///@param {repeat} $ani_repetitions - 반복횟수
+///@param {delay} $delay [null] - 딜레이 시간
+///@example scss - zoomIn
+///   .zoomIn{ 
+///      @include zoomIn(1s, forwards, 1s(생략가능));
+///   }
 @mixin zoomIn($ani_time, $ani_repetitions, $delay: null) {
 
   @keyframes zoomIn {
@@ -785,7 +877,16 @@ animation-delay: $delay !important;
   @include zoomIn(.5s, forwards);
 }
 
-///zoomInDown
+///zoom In Down
+///@group special fade in Style
+///@param {time} $ani_time - 플레이 시간
+///@param {repeat} $ani_repetitions - 반복횟수
+///@param {value} $value - 이동 거리
+///@param {delay} $delay [null] - 딜레이 시간
+///@example scss - zoomInDown
+///   .zoomInDown{ 
+///      @include zoomInDown(1s, forwards, 1s(생략가능));
+///   }
 @mixin zoomInDown($ani_time, $ani_repetitions, $value, $delay: null) {
 
   @keyframes zoomInDown {

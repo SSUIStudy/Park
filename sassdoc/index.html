@@ -1,0 +1,587 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><title>Test - v1.0.0</title><link rel="stylesheet" href="assets/css/main.css"><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,500,700" rel="stylesheet" type="text/css"><meta name="viewport" content="width=device-width"><meta content="IE=edge, chrome=1" http-equiv="X-UA-Compatible"><!-- Open Graph tags --><meta property="og:title" content="Test - SassDoc"><meta property="og:type" content="website"><meta property="og:description" content="Release the docs!"><!-- Thanks to Sass-lang.com for the icons --><link href="assets/images/favicon.png" rel="shortcut icon"></head><body><aside class="sidebar" role="nav"><div class="sidebar__header"><h1 class="sidebar__title">Test - 1.0.0</h1></div><div class="sidebar__body"><button type="button" class="btn-toggle js-btn-toggle" data-alt="Open all">Close all</button><p class="sidebar__item sidebar__item--heading" data-slug="basic fade in style"><a href="#basic fade in style">basic fade in style</a></p><div><p class="sidebar__item sidebar__item--sub-heading" data-slug="basic fade in style-mixin"><a href="#basic fade in style-mixin">mixins</a></p><ul class="list-unstyled"><li class="sidebar__item sassdoc__item" data-group="basic fade in style" data-name="fadeIn" data-type="mixin"><a href="#basic fade in style-mixin-fadeIn">fadeIn</a></li><li class="sidebar__item sassdoc__item" data-group="basic fade in style" data-name="fadeInRight" data-type="mixin"><a href="#basic fade in style-mixin-fadeInRight">fadeInRight</a></li><li class="sidebar__item sassdoc__item" data-group="basic fade in style" data-name="fadeInLeft" data-type="mixin"><a href="#basic fade in style-mixin-fadeInLeft">fadeInLeft</a></li><li class="sidebar__item sassdoc__item" data-group="basic fade in style" data-name="fadeInTop" data-type="mixin"><a href="#basic fade in style-mixin-fadeInTop">fadeInTop</a></li><li class="sidebar__item sassdoc__item" data-group="basic fade in style" data-name="fadeInBottom" data-type="mixin"><a href="#basic fade in style-mixin-fadeInBottom">fadeInBottom</a></li></ul></div><p class="sidebar__item sidebar__item--heading" data-slug="impact style"><a href="#impact style">impact style</a></p><div><p class="sidebar__item sidebar__item--sub-heading" data-slug="impact style-mixin"><a href="#impact style-mixin">mixins</a></p><ul class="list-unstyled"><li class="sidebar__item sassdoc__item" data-group="impact style" data-name="spin" data-type="mixin"><a href="#impact style-mixin-spin">spin</a></li><li class="sidebar__item sassdoc__item" data-group="impact style" data-name="bounce" data-type="mixin"><a href="#impact style-mixin-bounce">bounce</a></li><li class="sidebar__item sassdoc__item" data-group="impact style" data-name="flash" data-type="mixin"><a href="#impact style-mixin-flash">flash</a></li><li class="sidebar__item sassdoc__item" data-group="impact style" data-name="rubberBand" data-type="mixin"><a href="#impact style-mixin-rubberBand">rubberBand</a></li></ul></div><p class="sidebar__item sidebar__item--heading" data-slug="special fade in style"><a href="#special fade in style">special fade in style</a></p><div><p class="sidebar__item sidebar__item--sub-heading" data-slug="special fade in style-mixin"><a href="#special fade in style-mixin">mixins</a></p><ul class="list-unstyled"><li class="sidebar__item sassdoc__item" data-group="special fade in style" data-name="popIn" data-type="mixin"><a href="#special fade in style-mixin-popIn">popIn</a></li><li class="sidebar__item sassdoc__item" data-group="special fade in style" data-name="popInTop" data-type="mixin"><a href="#special fade in style-mixin-popInTop">popInTop</a></li><li class="sidebar__item sassdoc__item" data-group="special fade in style" data-name="popInBottom" data-type="mixin"><a href="#special fade in style-mixin-popInBottom">popInBottom</a></li><li class="sidebar__item sassdoc__item" data-group="special fade in style" data-name="flipInX" data-type="mixin"><a href="#special fade in style-mixin-flipInX">flipInX</a></li><li class="sidebar__item sassdoc__item" data-group="special fade in style" data-name="flipInY" data-type="mixin"><a href="#special fade in style-mixin-flipInY">flipInY</a></li><li class="sidebar__item sassdoc__item" data-group="special fade in style" data-name="flipInX2" data-type="mixin"><a href="#special fade in style-mixin-flipInX2">flipInX2</a></li><li class="sidebar__item sassdoc__item" data-group="special fade in style" data-name="flipInY2" data-type="mixin"><a href="#special fade in style-mixin-flipInY2">flipInY2</a></li><li class="sidebar__item sassdoc__item" data-group="special fade in style" data-name="spinIn" data-type="mixin"><a href="#special fade in style-mixin-spinIn">spinIn</a></li><li class="sidebar__item sassdoc__item" data-group="special fade in style" data-name="pullUp" data-type="mixin"><a href="#special fade in style-mixin-pullUp">pullUp</a></li><li class="sidebar__item sassdoc__item" data-group="special fade in style" data-name="unfold" data-type="mixin"><a href="#special fade in style-mixin-unfold">unfold</a></li><li class="sidebar__item sassdoc__item" data-group="special fade in style" data-name="bounceInDown" data-type="mixin"><a href="#special fade in style-mixin-bounceInDown">bounceInDown</a></li><li class="sidebar__item sassdoc__item" data-group="special fade in style" data-name="zoomIn" data-type="mixin"><a href="#special fade in style-mixin-zoomIn">zoomIn</a></li><li class="sidebar__item sassdoc__item" data-group="special fade in style" data-name="zoomInDown" data-type="mixin"><a href="#special fade in style-mixin-zoomInDown">zoomInDown</a></li></ul></div></div></aside><article class="main" role="main"><header class="header" role="banner"><div class="container"><div class="sassdoc__searchbar searchbar"><label for="js-search-input" class="visually-hidden">Search</label><div class="searchbar__form" id="js-search"><input name="search" type="search" class="searchbar__field" autocomplete="off" autofocus id="js-search-input" placeholder="Search"><ul class="searchbar__suggestions" id="js-search-suggestions"></ul></div></div></div></header><section class="main__section"><h1 class="main__heading" id="basic fade in style"><div class="container">basic fade in style</div></h1><section class="main__sub-section" id="basic fade in style-mixin"><h2 class="main__heading--secondary"><div class="container">mixins</div></h2><section class="main__item container item" id="basic fade in style-mixin-fadeIn"><h3 class="item__heading"><a class="item__name" href="#mixin-fadeIn">fadeIn</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin fadeIn($ani_time, $ani_repetitions, $delay: null) { 
+
+    @keyframes fadeIn {
+        0% {
+          opacity: 0; }
+        100% {
+          opacity: 1; } }      
+      
+  animation: fadeIn $ani_time $ani_repetitions;
+  animation-delay: $delay !important;
+ }" data-collapsed="@mixin fadeIn($ani_time, $ani_repetitions, $delay: null) { ... }"><code>@mixin fadeIn($ani_time, $ani_repetitions, $delay: null) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>fade in</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter </span>Name</th><th scope="col"><span class="visually-hidden">parameter </span>Description</th><th scope="col"><span class="visually-hidden">parameter </span>Type</th><th scope="col"><span class="visually-hidden">parameter </span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$ani_time</code></th><td data-label="desc"><p>플레이 시간</p></td><td data-label="type"><code>Time</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$ani_repetitions</code></th><td data-label="desc"><p>반복횟수</p></td><td data-label="type"><code>Repeat</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$delay</code></th><td data-label="desc"><p>딜레이 시간</p></td><td data-label="type"><code>Delay</code></td><td data-label="default"><code>null</code></td></tr></tbody></table><h3 class="item__sub-heading">Example</h3><div class="item__example example"><div class="example__description"><p>fadeIn</p></div><pre class="example__code language-scss"><code>.fadeIn{
+    @include fadeIn(1s, forwards, 1s(생략가능));
+}</code></pre></div></section><section class="main__item container item" id="basic fade in style-mixin-fadeInRight"><h3 class="item__heading"><a class="item__name" href="#mixin-fadeInRight">fadeInRight</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin fadeInRight($ani_time, $ani_repetitions, $value, $delay: null) { 
+
+    @keyframes fadeInRight {
+        0% {
+          -webkit-transform: translate3d($value, 0, 0);
+          transform: translate3d($value, 0, 0);
+          opacity: 0; }
+        100% {
+          -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
+          opacity: 1; } }    
+      
+  animation: fadeInRight $ani_time $ani_repetitions;
+  animation-delay: $delay !important;
+ }" data-collapsed="@mixin fadeInRight($ani_time, $ani_repetitions, $value, $delay: null) { ... }"><code>@mixin fadeInRight($ani_time, $ani_repetitions, $value, $delay: null) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>fade In Right</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter </span>Name</th><th scope="col"><span class="visually-hidden">parameter </span>Description</th><th scope="col"><span class="visually-hidden">parameter </span>Type</th><th scope="col"><span class="visually-hidden">parameter </span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$ani_time</code></th><td data-label="desc"><p>플레이 시간</p></td><td data-label="type"><code>Time</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$ani_repetitions</code></th><td data-label="desc"><p>반복횟수</p></td><td data-label="type"><code>Repeat</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$value</code></th><td data-label="desc"><p>이동 거리</p></td><td data-label="type"><code>Value</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$delay</code></th><td data-label="desc"><p>딜레이 시간</p></td><td data-label="type"><code>Delay</code></td><td data-label="default"><code>null</code></td></tr></tbody></table><h3 class="item__sub-heading">Example</h3><div class="item__example example"><div class="example__description"><p>fadeInRight</p></div><pre class="example__code language-scss"><code>.fadeInRight{
+    @include fadeInRight(1s, forwards, 100%, 1s(생략가능));
+}</code></pre></div></section><section class="main__item container item" id="basic fade in style-mixin-fadeInLeft"><h3 class="item__heading"><a class="item__name" href="#mixin-fadeInLeft">fadeInLeft</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin fadeInLeft($ani_time, $ani_repetitions, $value, $delay: null) { 
+
+    @keyframes fadeInLeft {
+        0% {
+          -webkit-transform: translate3d(-$value, 0, 0);
+          transform: translate3d(-$value, 0, 0);
+          opacity: 0; }
+        100% {
+          -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
+          opacity: 1; } }    
+      
+  animation: fadeInLeft $ani_time $ani_repetitions;
+  animation-delay: $delay !important;
+ }" data-collapsed="@mixin fadeInLeft($ani_time, $ani_repetitions, $value, $delay: null) { ... }"><code>@mixin fadeInLeft($ani_time, $ani_repetitions, $value, $delay: null) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>fade In Left</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter </span>Name</th><th scope="col"><span class="visually-hidden">parameter </span>Description</th><th scope="col"><span class="visually-hidden">parameter </span>Type</th><th scope="col"><span class="visually-hidden">parameter </span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$ani_time</code></th><td data-label="desc"><p>플레이 시간</p></td><td data-label="type"><code>Time</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$ani_repetitions</code></th><td data-label="desc"><p>반복횟수</p></td><td data-label="type"><code>Repeat</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$value</code></th><td data-label="desc"><p>이동 거리</p></td><td data-label="type"><code>Value</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$delay</code></th><td data-label="desc"><p>딜레이 시간</p></td><td data-label="type"><code>Delay</code></td><td data-label="default"><code>null</code></td></tr></tbody></table><h3 class="item__sub-heading">Example</h3><div class="item__example example"><div class="example__description"><p>fadeInLeft</p></div><pre class="example__code language-scss"><code>.fadeInLeft{
+    @include fadeInLeft(1s, forwards, 100%, 1s(생략가능));
+}</code></pre></div></section><section class="main__item container item" id="basic fade in style-mixin-fadeInTop"><h3 class="item__heading"><a class="item__name" href="#mixin-fadeInTop">fadeInTop</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin fadeInTop($ani_time, $ani_repetitions, $value, $delay: null) { 
+
+    @keyframes fadeInTop {
+        0% {
+          -webkit-transform: translate3d(0, -$value,0);
+          transform: translate3d(0, -$value, 0);
+          opacity: 0; }
+        100% {
+          -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
+          opacity: 1; } }    
+      
+  animation: fadeInTop $ani_time $ani_repetitions;
+  animation-delay: $delay !important;
+ }" data-collapsed="@mixin fadeInTop($ani_time, $ani_repetitions, $value, $delay: null) { ... }"><code>@mixin fadeInTop($ani_time, $ani_repetitions, $value, $delay: null) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>fade In Top</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter </span>Name</th><th scope="col"><span class="visually-hidden">parameter </span>Description</th><th scope="col"><span class="visually-hidden">parameter </span>Type</th><th scope="col"><span class="visually-hidden">parameter </span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$ani_time</code></th><td data-label="desc"><p>플레이 시간</p></td><td data-label="type"><code>Time</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$ani_repetitions</code></th><td data-label="desc"><p>반복횟수</p></td><td data-label="type"><code>Repeat</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$value</code></th><td data-label="desc"><p>이동 거리</p></td><td data-label="type"><code>Value</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$delay</code></th><td data-label="desc"><p>딜레이 시간</p></td><td data-label="type"><code>Delay</code></td><td data-label="default"><code>null</code></td></tr></tbody></table><h3 class="item__sub-heading">Example</h3><div class="item__example example"><div class="example__description"><p>fadeInTop</p></div><pre class="example__code language-scss"><code>.fadeInTop{
+    @include fadeInTop(1s, forwards, 100%, 1s(생략가능));
+}</code></pre></div></section><section class="main__item container item" id="basic fade in style-mixin-fadeInBottom"><h3 class="item__heading"><a class="item__name" href="#mixin-fadeInBottom">fadeInBottom</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin fadeInBottom($ani_time, $ani_repetitions, $value, $delay: null) { 
+
+    @keyframes fadeInBottom {
+        0% {
+          -webkit-transform: translate3d(0, $value,0);
+          transform: translate3d(0, $value, 0);
+          opacity: 0; }
+        100% {
+          -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
+          opacity: 1; } }    
+      
+  animation: fadeInBottom $ani_time $ani_repetitions;
+  animation-delay: $delay !important;
+ }" data-collapsed="@mixin fadeInBottom($ani_time, $ani_repetitions, $value, $delay: null) { ... }"><code>@mixin fadeInBottom($ani_time, $ani_repetitions, $value, $delay: null) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>fade In Bottom</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter </span>Name</th><th scope="col"><span class="visually-hidden">parameter </span>Description</th><th scope="col"><span class="visually-hidden">parameter </span>Type</th><th scope="col"><span class="visually-hidden">parameter </span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$ani_time</code></th><td data-label="desc"><p>플레이 시간</p></td><td data-label="type"><code>Time</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$ani_repetitions</code></th><td data-label="desc"><p>반복횟수</p></td><td data-label="type"><code>Repeat</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$value</code></th><td data-label="desc"><p>이동 거리</p></td><td data-label="type"><code>Value</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$delay</code></th><td data-label="desc"><p>딜레이 시간</p></td><td data-label="type"><code>Delay</code></td><td data-label="default"><code>null</code></td></tr></tbody></table><h3 class="item__sub-heading">Example</h3><div class="item__example example"><div class="example__description"><p>fadeInBottom</p></div><pre class="example__code language-scss"><code>.fadeInBottom{
+    @include fadeInBottom(1s, forwards, 100%, 1s(생략가능));
+}</code></pre></div></section></section></section><section class="main__section"><h1 class="main__heading" id="impact style"><div class="container">impact style</div></h1><section class="main__sub-section" id="impact style-mixin"><h2 class="main__heading--secondary"><div class="container">mixins</div></h2><section class="main__item container item" id="impact style-mixin-spin"><h3 class="item__heading"><a class="item__name" href="#mixin-spin">spin</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin spin($ani_time, $ani_repetitions, $delay: null) { 
+
+    @keyframes spin {
+        0% {
+          -webkit-animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+          animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+          -webkit-transform: rotateZ(0deg);
+          transform: rotateZ(0deg);
+          -webkit-transform-origin: center center;
+          transform-origin: center center; }
+        20% {
+          -webkit-animation-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
+          animation-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
+          -webkit-transform: rotateZ(-20deg);
+          transform: rotateZ(-20deg);
+          -webkit-transform-origin: center center;
+          transform-origin: center center; }
+        70% {
+          -webkit-animation-timing-function: cubic-bezier(0.42, 0, 0.58, 1);
+          animation-timing-function: cubic-bezier(0.42, 0, 0.58, 1);
+          -webkit-transform: rotateZ(380deg);
+          transform: rotateZ(380deg);
+          -webkit-transform-origin: center center;
+          transform-origin: center center; }
+        100% {
+          -webkit-animation-timing-function: cubic-bezier(0.47, 0, 0.745, 0.715);
+          animation-timing-function: cubic-bezier(0.47, 0, 0.745, 0.715);
+          -webkit-transform: rotateZ(360deg);
+          transform: rotateZ(360deg);
+          -webkit-transform-origin: center center;
+          transform-origin: center center; } }   
+      
+  animation: spin $ani_time $ani_repetitions;
+  animation-delay: $delay !important;
+ }" data-collapsed="@mixin spin($ani_time, $ani_repetitions, $delay: null) { ... }"><code>@mixin spin($ani_time, $ani_repetitions, $delay: null) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>spin</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter </span>Name</th><th scope="col"><span class="visually-hidden">parameter </span>Description</th><th scope="col"><span class="visually-hidden">parameter </span>Type</th><th scope="col"><span class="visually-hidden">parameter </span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$ani_time</code></th><td data-label="desc"><p>플레이 시간</p></td><td data-label="type"><code>Time</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$ani_repetitions</code></th><td data-label="desc"><p>반복횟수</p></td><td data-label="type"><code>Repeat</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$delay</code></th><td data-label="desc"><p>딜레이 시간</p></td><td data-label="type"><code>Delay</code></td><td data-label="default"><code>null</code></td></tr></tbody></table><h3 class="item__sub-heading">Example</h3><div class="item__example example"><div class="example__description"><p>spin</p></div><pre class="example__code language-scss"><code>.spin{
+    @include spin(1s, forwards, 1s(생략가능));
+}</code></pre></div></section><section class="main__item container item" id="impact style-mixin-bounce"><h3 class="item__heading"><a class="item__name" href="#mixin-bounce">bounce</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin bounce($ani_time, $ani_repetitions, $value, $delay: null) { 
+
+    @keyframes bounce {
+        from,
+        20%,
+        53%,
+        80%,
+        to {
+          -webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+          animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+          -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
+        }      
+        40%,
+        43% {
+          -webkit-animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+          animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+          -webkit-transform: translate3d(0, -$value, 0);
+          transform: translate3d(0, -$value, 0);
+        }      
+        70% {
+          -webkit-animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+          animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+          -webkit-transform: translate3d(0, -$value/2, 0);
+          transform: translate3d(0, -$value/2, 0);
+        }      
+        90% {
+          -webkit-transform: translate3d(0, -$value/7.5, 0);
+          transform: translate3d(0,- $value/7.5, 0);
+        }
+      }           
+  animation: bounce $ani_time $ani_repetitions;
+  animation-delay: $delay !important;
+ }" data-collapsed="@mixin bounce($ani_time, $ani_repetitions, $value, $delay: null) { ... }"><code>@mixin bounce($ani_time, $ani_repetitions, $value, $delay: null) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>bounce</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter </span>Name</th><th scope="col"><span class="visually-hidden">parameter </span>Description</th><th scope="col"><span class="visually-hidden">parameter </span>Type</th><th scope="col"><span class="visually-hidden">parameter </span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$ani_time</code></th><td data-label="desc"><p>플레이 시간</p></td><td data-label="type"><code>Time</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$ani_repetitions</code></th><td data-label="desc"><p>반복횟수</p></td><td data-label="type"><code>Repeat</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$value</code></th><td data-label="desc"><p>이동 거리</p></td><td data-label="type"><code>Value</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$delay</code></th><td data-label="desc"><p>딜레이 시간</p></td><td data-label="type"><code>Delay</code></td><td data-label="default"><code>null</code></td></tr></tbody></table><h3 class="item__sub-heading">Example</h3><div class="item__example example"><div class="example__description"><p>bounce</p></div><pre class="example__code language-scss"><code>.bounce{ 
+   @include bounce(.5s, forwards, 50%, 1s(생략가능));
+}</code></pre></div></section><section class="main__item container item" id="impact style-mixin-flash"><h3 class="item__heading"><a class="item__name" href="#mixin-flash">flash</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin flash($ani_time, $ani_repetitions, $delay: null) { 
+
+  @keyframes flash {
+    from,
+    50%,
+    to {
+      opacity: 1;
+    }
+  
+    25%,
+    75% {
+      opacity: 0;
+    }
+  }
+animation: flash $ani_time $ani_repetitions;
+animation-delay: $delay !important;
+ }" data-collapsed="@mixin flash($ani_time, $ani_repetitions, $delay: null) { ... }"><code>@mixin flash($ani_time, $ani_repetitions, $delay: null) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>반짝반짝(flash)</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter </span>Name</th><th scope="col"><span class="visually-hidden">parameter </span>Description</th><th scope="col"><span class="visually-hidden">parameter </span>Type</th><th scope="col"><span class="visually-hidden">parameter </span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$ani_time</code></th><td data-label="desc"><p>플레이 시간</p></td><td data-label="type"><code>Time</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$ani_repetitions</code></th><td data-label="desc"><p>반복횟수</p></td><td data-label="type"><code>Repeat</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$delay</code></th><td data-label="desc"><p>딜레이 시간</p></td><td data-label="type"><code>Delay</code></td><td data-label="default"><code>null</code></td></tr></tbody></table><h3 class="item__sub-heading">Example</h3><div class="item__example example"><div class="example__description"><p>flash</p></div><pre class="example__code language-scss"><code>.flash{ 
+   @include flash(1s, forwards, 1s(생략가능));
+}</code></pre></div></section><section class="main__item container item" id="impact style-mixin-rubberBand"><h3 class="item__heading"><a class="item__name" href="#mixin-rubberBand">rubberBand</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin rubberBand($ani_time, $ani_repetitions, $delay: null) { 
+
+  @keyframes rubberBand {
+    from {
+      -webkit-transform: scale3d(1, 1, 1);
+      transform: scale3d(1, 1, 1);
+    }
+  
+    30% {
+      -webkit-transform: scale3d(1.25, 0.75, 1);
+      transform: scale3d(1.25, 0.75, 1);
+    }
+  
+    40% {
+      -webkit-transform: scale3d(0.75, 1.25, 1);
+      transform: scale3d(0.75, 1.25, 1);
+    }
+  
+    50% {
+      -webkit-transform: scale3d(1.15, 0.85, 1);
+      transform: scale3d(1.15, 0.85, 1);
+    }
+  
+    65% {
+      -webkit-transform: scale3d(0.95, 1.05, 1);
+      transform: scale3d(0.95, 1.05, 1);
+    }
+  
+    75% {
+      -webkit-transform: scale3d(1.05, 0.95, 1);
+      transform: scale3d(1.05, 0.95, 1);
+    }
+  
+    to {
+      -webkit-transform: scale3d(1, 1, 1);
+      transform: scale3d(1, 1, 1);
+    }
+  }
+animation: rubberBand $ani_time $ani_repetitions;
+animation-delay: $delay !important;
+ }" data-collapsed="@mixin rubberBand($ani_time, $ani_repetitions, $delay: null) { ... }"><code>@mixin rubberBand($ani_time, $ani_repetitions, $delay: null) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>고무줄 같은 느낌(rubberBand)</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter </span>Name</th><th scope="col"><span class="visually-hidden">parameter </span>Description</th><th scope="col"><span class="visually-hidden">parameter </span>Type</th><th scope="col"><span class="visually-hidden">parameter </span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$ani_time</code></th><td data-label="desc"><p>플레이 시간</p></td><td data-label="type"><code>Time</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$ani_repetitions</code></th><td data-label="desc"><p>반복횟수</p></td><td data-label="type"><code>Repeat</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$delay</code></th><td data-label="desc"><p>딜레이 시간</p></td><td data-label="type"><code>Delay</code></td><td data-label="default"><code>null</code></td></tr></tbody></table><h3 class="item__sub-heading">Example</h3><div class="item__example example"><div class="example__description"><p>rubberBand</p></div><pre class="example__code language-scss"><code>.rubberBand{ 
+   @include rubberBand(1s, forwards, 1s(생략가능));
+}</code></pre></div></section></section></section><section class="main__section"><h1 class="main__heading" id="special fade in style"><div class="container">special fade in style</div></h1><section class="main__sub-section" id="special fade in style-mixin"><h2 class="main__heading--secondary"><div class="container">mixins</div></h2><section class="main__item container item" id="special fade in style-mixin-popIn"><h3 class="item__heading"><a class="item__name" href="#mixin-popIn">popIn</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin popIn($ani_time, $ani_repetitions, $delay: null) { 
+
+    @keyframes popIn {
+        0% {
+          -webkit-transform: scale3d(0, 0, 0);
+          transform: scale3d(0, 0, 0);
+          opacity: 0; }
+        20% {
+          opacity: 1; }
+        40% {
+          -webkit-animation-timing-function: cubic-bezier(0.47, 0, 0.745, 0.715);
+          animation-timing-function: cubic-bezier(0.47, 0, 0.745, 0.715);
+          -webkit-transform: scale3d(1.08, 1.08, 1.08);
+          transform: scale3d(1.08, 1.08, 1.08); }
+        60% {
+          -webkit-animation-timing-function: cubic-bezier(0.42, 0, 0.58, 1);
+          animation-timing-function: cubic-bezier(0.42, 0, 0.58, 1);
+          -webkit-transform: scale3d(1, 1, 1);
+          transform: scale3d(1, 1, 1); }
+        80% {
+          -webkit-animation-timing-function: cubic-bezier(0.42, 0, 0.58, 1);
+          animation-timing-function: cubic-bezier(0.42, 0, 0.58, 1);
+          -webkit-transform: scale3d(1.03, 1.03, 1.03);
+          transform: scale3d(1.03, 1.03, 1.03); }
+        100% {
+          -webkit-animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+          animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+          -webkit-transform: scale3d(1, 1, 1);
+          transform: scale3d(1, 1, 1); } }
+  animation: popIn $ani_time $ani_repetitions;
+  animation-delay: $delay !important;
+ }" data-collapsed="@mixin popIn($ani_time, $ani_repetitions, $delay: null) { ... }"><code>@mixin popIn($ani_time, $ani_repetitions, $delay: null) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>fade in + zoom in + 움직임이 더 많음</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter </span>Name</th><th scope="col"><span class="visually-hidden">parameter </span>Description</th><th scope="col"><span class="visually-hidden">parameter </span>Type</th><th scope="col"><span class="visually-hidden">parameter </span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$ani_time</code></th><td data-label="desc"><p>플레이 시간</p></td><td data-label="type"><code>Time</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$ani_repetitions</code></th><td data-label="desc"><p>반복횟수</p></td><td data-label="type"><code>Repeat</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$delay</code></th><td data-label="desc"><p>딜레이 시간</p></td><td data-label="type"><code>Delay</code></td><td data-label="default"><code>null</code></td></tr></tbody></table><h3 class="item__sub-heading">Example</h3><div class="item__example example"><div class="example__description"><p>popIn</p></div><pre class="example__code language-scss"><code>.popIn{
+    @include popIn(1s,forwards, 1s(생략가능));
+}</code></pre></div></section><section class="main__item container item" id="special fade in style-mixin-popInTop"><h3 class="item__heading"><a class="item__name" href="#mixin-popInTop">popInTop</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin popInTop($ani_time, $ani_repetitions, $value, $delay: null) { 
+
+    @keyframes popInTop {
+        0% {
+          -webkit-transform: translate3d(0, -$value, 0) scale3d(0.1, 0.1, 0.1);
+          transform: translate3d(0, -$value, 0) scale3d(0.1, 0.1, 0.1);
+          opacity: 0; }
+        40% {
+          opacity: 1;
+          -webkit-animation-timing-function: cubic-bezier(0.47, 0, 0.745, 0.715);
+          animation-timing-function: cubic-bezier(0.47, 0, 0.745, 0.715);
+          -webkit-transform: translate3d(0, 0, 0) scale3d(1.08, 1.08, 1.08);
+          transform: translate3d(0, 0, 0) scale3d(1.08, 1.08, 1.08); }
+        60% {
+          -webkit-animation-timing-function: cubic-bezier(0.42, 0, 0.58, 1);
+          animation-timing-function: cubic-bezier(0.42, 0, 0.58, 1);
+          -webkit-transform: translate3d(0, 0, 0) scale3d(1, 1, 1);
+          transform: translate3d(0, 0, 0) scale3d(1, 1, 1); }
+        80% {
+          -webkit-animation-timing-function: cubic-bezier(0.42, 0, 0.58, 1);
+          animation-timing-function: cubic-bezier(0.42, 0, 0.58, 1);
+          -webkit-transform: translate3d(0, 0, 0) scale3d(1.03, 1.03, 1.03);
+          transform: translate3d(0, 0, 0) scale3d(1.03, 1.03, 1.03); }
+        100% {
+          -webkit-animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+          animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+          -webkit-transform: translate3d(0, 0, 0) scale3d(1, 1, 1);
+          transform: translate3d(0, 0, 0) scale3d(1, 1, 1); } }
+  animation: popInTop $ani_time $ani_repetitions;
+  animation-delay: $delay !important;
+ }" data-collapsed="@mixin popInTop($ani_time, $ani_repetitions, $value, $delay: null) { ... }"><code>@mixin popInTop($ani_time, $ani_repetitions, $value, $delay: null) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>fade in top + zoom in + 움직임이 더 많음</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter </span>Name</th><th scope="col"><span class="visually-hidden">parameter </span>Description</th><th scope="col"><span class="visually-hidden">parameter </span>Type</th><th scope="col"><span class="visually-hidden">parameter </span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$ani_time</code></th><td data-label="desc"><p>플레이 시간</p></td><td data-label="type"><code>Time</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$ani_repetitions</code></th><td data-label="desc"><p>반복횟수</p></td><td data-label="type"><code>Repeat</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$value</code></th><td data-label="desc"><p>이동 거리</p></td><td data-label="type"><code>Value</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$delay</code></th><td data-label="desc"><p>딜레이 시간</p></td><td data-label="type"><code>Delay</code></td><td data-label="default"><code>null</code></td></tr></tbody></table><h3 class="item__sub-heading">Example</h3><div class="item__example example"><div class="example__description"><p>popInTop</p></div><pre class="example__code language-scss"><code>.popInTop{
+    @include popInTop(1s, forwards, 100%, 1s(생략가능));
+}</code></pre></div></section><section class="main__item container item" id="special fade in style-mixin-popInBottom"><h3 class="item__heading"><a class="item__name" href="#mixin-popInBottom">popInBottom</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin popInBottom($ani_time, $ani_repetitions, $value, $delay: null) { 
+
+    @keyframes popInBottom {
+        0% {
+          -webkit-transform: translate3d(0, $value, 0) scale3d(0.1, 0.1, 0.1);
+          transform: translate3d(0, $value, 0) scale3d(0.1, 0.1, 0.1);
+          opacity: 0; }
+        40% {
+          opacity: 1;
+          -webkit-animation-timing-function: cubic-bezier(0.47, 0, 0.745, 0.715);
+          animation-timing-function: cubic-bezier(0.47, 0, 0.745, 0.715);
+          -webkit-transform: translate3d(0, 0, 0) scale3d(1.08, 1.08, 1.08);
+          transform: translate3d(0, 0, 0) scale3d(1.08, 1.08, 1.08); }
+        60% {
+          -webkit-animation-timing-function: cubic-bezier(0.42, 0, 0.58, 1);
+          animation-timing-function: cubic-bezier(0.42, 0, 0.58, 1);
+          -webkit-transform: translate3d(0, 0, 0) scale3d(1, 1, 1);
+          transform: translate3d(0, 0, 0) scale3d(1, 1, 1); }
+        80% {
+          -webkit-animation-timing-function: cubic-bezier(0.42, 0, 0.58, 1);
+          animation-timing-function: cubic-bezier(0.42, 0, 0.58, 1);
+          -webkit-transform: translate3d(0, 0, 0) scale3d(1.03, 1.03, 1.03);
+          transform: translate3d(0, 0, 0) scale3d(1.03, 1.03, 1.03); }
+        100% {
+          -webkit-animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+          animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+          -webkit-transform: translate3d(0, 0, 0) scale3d(1, 1, 1);
+          transform: translate3d(0, 0, 0) scale3d(1, 1, 1); } }
+  animation: popInBottom $ani_time $ani_repetitions;
+  animation-delay: $delay !important;
+ }" data-collapsed="@mixin popInBottom($ani_time, $ani_repetitions, $value, $delay: null) { ... }"><code>@mixin popInBottom($ani_time, $ani_repetitions, $value, $delay: null) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>fade in Bottom + zoom in + 움직임이 더 많음</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter </span>Name</th><th scope="col"><span class="visually-hidden">parameter </span>Description</th><th scope="col"><span class="visually-hidden">parameter </span>Type</th><th scope="col"><span class="visually-hidden">parameter </span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$ani_time</code></th><td data-label="desc"><p>플레이 시간</p></td><td data-label="type"><code>Time</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$ani_repetitions</code></th><td data-label="desc"><p>반복횟수</p></td><td data-label="type"><code>Repeat</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$value</code></th><td data-label="desc"><p>이동 거리</p></td><td data-label="type"><code>Value</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$delay</code></th><td data-label="desc"><p>딜레이 시간</p></td><td data-label="type"><code>Delay</code></td><td data-label="default"><code>null</code></td></tr></tbody></table><h3 class="item__sub-heading">Example</h3><div class="item__example example"><div class="example__description"><p>popInBottom</p></div><pre class="example__code language-scss"><code>.popInBottom{
+    @include popInBottom(1s, forwards, 100%, 1s(생략가능));
+}</code></pre></div></section><section class="main__item container item" id="special fade in style-mixin-flipInX"><h3 class="item__heading"><a class="item__name" href="#mixin-flipInX">flipInX</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin flipInX($ani_time, $ani_repetitions, $delay: null) { 
+
+    @keyframes flipInX {
+        from {
+          opacity: 0;
+          -webkit-transform: perspective(400px) rotateX(90deg) scale3d(1.2, 1.2, 1.2);
+          transform: perspective(400px) rotateX(90deg) scale3d(1.2, 1.2, 1.2); }
+        50% {
+          opacity: 1;
+          -webkit-animation-timing-function: cubic-bezier(0.455, 0.03, 0.515, 0.955);
+          animation-timing-function: cubic-bezier(0.455, 0.03, 0.515, 0.955);
+          -webkit-transform: perspective(400px) rotateX(-20deg) scale3d(1, 1, 1);
+          transform: perspective(400px) rotateX(-20deg) scale3d(1, 1, 1); }
+        to {
+          -webkit-transform: perspective(400px) rotateX(0deg) scale3d(1, 1, 1);
+          transform: perspective(400px) rotateX(0deg) scale3d(1, 1, 1); } }
+  animation: flipInX $ani_time $ani_repetitions;
+  animation-delay: $delay !important;
+ }" data-collapsed="@mixin flipInX($ani_time, $ani_repetitions, $delay: null) { ... }"><code>@mixin flipInX($ani_time, $ani_repetitions, $delay: null) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>가로로 회전 하면서 fade in</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter </span>Name</th><th scope="col"><span class="visually-hidden">parameter </span>Description</th><th scope="col"><span class="visually-hidden">parameter </span>Type</th><th scope="col"><span class="visually-hidden">parameter </span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$ani_time</code></th><td data-label="desc"><p>플레이 시간</p></td><td data-label="type"><code>Time</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$ani_repetitions</code></th><td data-label="desc"><p>반복횟수</p></td><td data-label="type"><code>Repeat</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$delay</code></th><td data-label="desc"><p>딜레이 시간</p></td><td data-label="type"><code>Delay</code></td><td data-label="default"><code>null</code></td></tr></tbody></table><h3 class="item__sub-heading">Example</h3><div class="item__example example"><div class="example__description"><p>flipInX</p></div><pre class="example__code language-scss"><code>.flipInX{
+    @include flipInX(1s, forwards, 1s(생략가능));
+}</code></pre></div></section><section class="main__item container item" id="special fade in style-mixin-flipInY"><h3 class="item__heading"><a class="item__name" href="#mixin-flipInY">flipInY</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin flipInY($ani_time, $ani_repetitions, $delay: null) { 
+
+    @keyframes flipInY {
+        from {
+          opacity: 0;
+          -webkit-transform: perspective(400px) rotateY(90deg) scale3d(1.2, 1.2, 1.2);
+          transform: perspective(400px) rotateY(90deg) scale3d(1.2, 1.2, 1.2); }
+        50% {
+          opacity: 1;
+          -webkit-animation-timing-function: cubic-bezier(0.455, 0.03, 0.515, 0.955);
+          animation-timing-function: cubic-bezier(0.455, 0.03, 0.515, 0.955);
+          -webkit-transform: perspective(400px) rotateY(-20deg) scale3d(1, 1, 1);
+          transform: perspective(400px) rotateY(-20deg) scale3d(1, 1, 1); }
+        to {
+          -webkit-transform: perspective(400px) rotateY(0deg) scale3d(1, 1, 1);
+          transform: perspective(400px) rotateY(0deg) scale3d(1, 1, 1); } }
+      
+  animation: flipInY $ani_time $ani_repetitions;
+  animation-delay: $delay !important;
+ }" data-collapsed="@mixin flipInY($ani_time, $ani_repetitions, $delay: null) { ... }"><code>@mixin flipInY($ani_time, $ani_repetitions, $delay: null) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>세로로 회전 하면서 fade in</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter </span>Name</th><th scope="col"><span class="visually-hidden">parameter </span>Description</th><th scope="col"><span class="visually-hidden">parameter </span>Type</th><th scope="col"><span class="visually-hidden">parameter </span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$ani_time</code></th><td data-label="desc"><p>플레이 시간</p></td><td data-label="type"><code>Time</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$ani_repetitions</code></th><td data-label="desc"><p>반복횟수</p></td><td data-label="type"><code>Repeat</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$delay</code></th><td data-label="desc"><p>딜레이 시간</p></td><td data-label="type"><code>Delay</code></td><td data-label="default"><code>null</code></td></tr></tbody></table><h3 class="item__sub-heading">Example</h3><div class="item__example example"><div class="example__description"><p>flipInY</p></div><pre class="example__code language-scss"><code>.flipInY{
+    @include flipInY(1s, forwards, 1s(생략가능));
+}</code></pre></div></section><section class="main__item container item" id="special fade in style-mixin-flipInX2"><h3 class="item__heading"><a class="item__name" href="#mixin-flipInX2">flipInX2</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin flipInX2($ani_time, $ani_repetitions, $delay: null) { 
+
+  @keyframes flipInX2 {
+    from {
+      -webkit-transform: perspective(400px) rotate3d(1, 0, 0, 90deg);
+      transform: perspective(400px) rotate3d(1, 0, 0, 90deg);
+      -webkit-animation-timing-function: ease-in;
+      animation-timing-function: ease-in;
+      opacity: 0;
+    }
+  
+    40% {
+      -webkit-transform: perspective(400px) rotate3d(1, 0, 0, -20deg);
+      transform: perspective(400px) rotate3d(1, 0, 0, -20deg);
+      -webkit-animation-timing-function: ease-in;
+      animation-timing-function: ease-in;
+    }
+  
+    60% {
+      -webkit-transform: perspective(400px) rotate3d(1, 0, 0, 10deg);
+      transform: perspective(400px) rotate3d(1, 0, 0, 10deg);
+      opacity: 1;
+    }
+  
+    80% {
+      -webkit-transform: perspective(400px) rotate3d(1, 0, 0, -5deg);
+      transform: perspective(400px) rotate3d(1, 0, 0, -5deg);
+    }
+  
+    to {
+      -webkit-transform: perspective(400px);
+      transform: perspective(400px);
+    }
+  }
+animation: flipInX2 $ani_time $ani_repetitions;
+animation-delay: $delay !important;
+ }" data-collapsed="@mixin flipInX2($ani_time, $ani_repetitions, $delay: null) { ... }"><code>@mixin flipInX2($ani_time, $ani_repetitions, $delay: null) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>가로로 회전 하면서 fade in + 움직임 추가</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter </span>Name</th><th scope="col"><span class="visually-hidden">parameter </span>Description</th><th scope="col"><span class="visually-hidden">parameter </span>Type</th><th scope="col"><span class="visually-hidden">parameter </span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$ani_time</code></th><td data-label="desc"><p>플레이 시간</p></td><td data-label="type"><code>Time</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$ani_repetitions</code></th><td data-label="desc"><p>반복횟수</p></td><td data-label="type"><code>Repeat</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$delay</code></th><td data-label="desc"><p>딜레이 시간</p></td><td data-label="type"><code>Delay</code></td><td data-label="default"><code>null</code></td></tr></tbody></table><h3 class="item__sub-heading">Example</h3><div class="item__example example"><div class="example__description"><p>flipInX2</p></div><pre class="example__code language-scss"><code>.flipInX2{
+    @include flipInX2(1s, forwards, 1s(생략가능));
+}</code></pre></div></section><section class="main__item container item" id="special fade in style-mixin-flipInY2"><h3 class="item__heading"><a class="item__name" href="#mixin-flipInY2">flipInY2</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin flipInY2($ani_time, $ani_repetitions, $delay: null) { 
+
+  @keyframes flipInY2 {
+    from {
+      -webkit-transform: perspective(400px) rotate3d(0, 1, 0, 90deg);
+      transform: perspective(400px) rotate3d(0, 1, 0, 90deg);
+      -webkit-animation-timing-function: ease-in;
+      animation-timing-function: ease-in;
+      opacity: 0;
+    }
+  
+    40% {
+      -webkit-transform: perspective(400px) rotate3d(0, 1, 0, -20deg);
+      transform: perspective(400px) rotate3d(0, 1, 0, -20deg);
+      -webkit-animation-timing-function: ease-in;
+      animation-timing-function: ease-in;
+    }
+  
+    60% {
+      -webkit-transform: perspective(400px) rotate3d(0, 1, 0, 10deg);
+      transform: perspective(400px) rotate3d(0, 1, 0, 10deg);
+      opacity: 1;
+    }
+  
+    80% {
+      -webkit-transform: perspective(400px) rotate3d(0, 1, 0, -5deg);
+      transform: perspective(400px) rotate3d(0, 1, 0, -5deg);
+    }
+  
+    to {
+      -webkit-transform: perspective(400px);
+      transform: perspective(400px);
+    }
+  }
+    
+animation: flipInY2 $ani_time $ani_repetitions;
+animation-delay: $delay !important;
+ }" data-collapsed="@mixin flipInY2($ani_time, $ani_repetitions, $delay: null) { ... }"><code>@mixin flipInY2($ani_time, $ani_repetitions, $delay: null) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>세로로 회전 하면서 fade in + 움직임 추가</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter </span>Name</th><th scope="col"><span class="visually-hidden">parameter </span>Description</th><th scope="col"><span class="visually-hidden">parameter </span>Type</th><th scope="col"><span class="visually-hidden">parameter </span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$ani_time</code></th><td data-label="desc"><p>플레이 시간</p></td><td data-label="type"><code>Time</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$ani_repetitions</code></th><td data-label="desc"><p>반복횟수</p></td><td data-label="type"><code>Repeat</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$delay</code></th><td data-label="desc"><p>딜레이 시간</p></td><td data-label="type"><code>Delay</code></td><td data-label="default"><code>null</code></td></tr></tbody></table><h3 class="item__sub-heading">Example</h3><div class="item__example example"><div class="example__description"><p>flipInY2</p></div><pre class="example__code language-scss"><code>.flipIn2Y{
+    @include flipInY2(1s, forwards, 1s(생략가능));
+}</code></pre></div></section><section class="main__item container item" id="special fade in style-mixin-spinIn"><h3 class="item__heading"><a class="item__name" href="#mixin-spinIn">spinIn</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin spinIn($ani_time, $ani_repetitions, $delay: null) { 
+
+    @keyframes spinIn {
+        0% {
+          opacity: 0;
+          -webkit-animation-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
+          animation-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
+          -webkit-transform: rotateZ(0deg) scale3d(0, 0, 0);
+          transform: rotateZ(0deg) scale3d(0, 0, 0);
+          -webkit-transform-origin: center center;
+          transform-origin: center center; }
+        50% {
+          opacity: 1; }
+        70% {
+          -webkit-transform: rotateZ(380deg) scale3d(1, 1, 1);
+          transform: rotateZ(380deg) scale3d(1, 1, 1);
+          -webkit-transform-origin: center center;
+          transform-origin: center center; }
+        100% {
+          -webkit-transform: rotateZ(360deg) scale3d(1, 1, 1);
+          transform: rotateZ(360deg) scale3d(1, 1, 1);
+          -webkit-transform-origin: center center;
+          transform-origin: center center; } }
+      
+  animation: spinIn $ani_time $ani_repetitions;
+  animation-delay: $delay !important;
+ }" data-collapsed="@mixin spinIn($ani_time, $ani_repetitions, $delay: null) { ... }"><code>@mixin spinIn($ani_time, $ani_repetitions, $delay: null) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>spin + fade in</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter </span>Name</th><th scope="col"><span class="visually-hidden">parameter </span>Description</th><th scope="col"><span class="visually-hidden">parameter </span>Type</th><th scope="col"><span class="visually-hidden">parameter </span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$ani_time</code></th><td data-label="desc"><p>플레이 시간</p></td><td data-label="type"><code>Time</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$ani_repetitions</code></th><td data-label="desc"><p>반복횟수</p></td><td data-label="type"><code>Repeat</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$delay</code></th><td data-label="desc"><p>딜레이 시간</p></td><td data-label="type"><code>Delay</code></td><td data-label="default"><code>null</code></td></tr></tbody></table><h3 class="item__sub-heading">Example</h3><div class="item__example example"><div class="example__description"><p>spinIn</p></div><pre class="example__code language-scss"><code>.spinIn{
+    @include spinIn(1s, forwards, 1s(생략가능));
+}</code></pre></div></section><section class="main__item container item" id="special fade in style-mixin-pullUp"><h3 class="item__heading"><a class="item__name" href="#mixin-pullUp">pullUp</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin pullUp($ani_time, $ani_repetitions, $delay: null) { 
+
+    @keyframes pullUp {
+        0% {
+          -webkit-transform: scale3d(0, 0, 0);
+          transform: scale3d(0, 0, 0); }
+        30% {
+          -webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+          animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+          -webkit-transform: scale3d(1, 0, 1);
+          transform: scale3d(1, 0, 1);
+          -webkit-transform-origin: center bottom;
+          transform-origin: center bottom; }
+        100% {
+          -webkit-animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+          animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+          -webkit-transform: scale3d(1, 1, 1);
+          transform: scale3d(1, 1, 1); } }
+      
+  animation: pullUp $ani_time $ani_repetitions;
+  animation-delay: $delay !important;
+ }" data-collapsed="@mixin pullUp($ani_time, $ani_repetitions, $delay: null) { ... }"><code>@mixin pullUp($ani_time, $ani_repetitions, $delay: null) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>세우면서 fade in</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter </span>Name</th><th scope="col"><span class="visually-hidden">parameter </span>Description</th><th scope="col"><span class="visually-hidden">parameter </span>Type</th><th scope="col"><span class="visually-hidden">parameter </span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$ani_time</code></th><td data-label="desc"><p>플레이 시간</p></td><td data-label="type"><code>Time</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$ani_repetitions</code></th><td data-label="desc"><p>반복횟수</p></td><td data-label="type"><code>Repeat</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$delay</code></th><td data-label="desc"><p>딜레이 시간</p></td><td data-label="type"><code>Delay</code></td><td data-label="default"><code>null</code></td></tr></tbody></table><h3 class="item__sub-heading">Example</h3><div class="item__example example"><div class="example__description"><p>pullUp</p></div><pre class="example__code language-scss"><code>.pullUp{
+    @include pullUp(1s, forwards, 1s(생략가능));
+}</code></pre></div></section><section class="main__item container item" id="special fade in style-mixin-unfold"><h3 class="item__heading"><a class="item__name" href="#mixin-unfold">unfold</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin unfold($ani_time, $ani_repetitions, $delay: null) { 
+
+    @keyframes unfold {
+        0% {
+          opacity: 0;
+          -webkit-animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+          animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+          -webkit-transform: scale3d(0, 0, 0);
+          transform: scale3d(0, 0, 0); }
+        30% {
+          opacity: 1;
+          -webkit-animation-timing-function: cubic-bezier(0.455, 0.03, 0.515, 0.955);
+          animation-timing-function: cubic-bezier(0.455, 0.03, 0.515, 0.955);
+          -webkit-transform: scale3d(0.4, 0.4, 1);
+          transform: scale3d(0.4, 0.4, 1); }
+        60% {
+          -webkit-animation-timing-function: cubic-bezier(0.455, 0.03, 0.515, 0.955);
+          animation-timing-function: cubic-bezier(0.455, 0.03, 0.515, 0.955);
+          -webkit-transform: scale3d(0.4, 1, 1);
+          transform: scale3d(0.4, 1, 1); }
+        100% {
+          -webkit-animation-timing-function: cubic-bezier(0.55, 0.085, 0.68, 0.53);
+          animation-timing-function: cubic-bezier(0.55, 0.085, 0.68, 0.53);
+          -webkit-transform: scale3d(1, 1, 1);
+          transform: scale3d(1, 1, 1); } }
+      
+  animation: unfold $ani_time $ani_repetitions;
+  animation-delay: $delay !important;
+ }" data-collapsed="@mixin unfold($ani_time, $ani_repetitions, $delay: null) { ... }"><code>@mixin unfold($ani_time, $ani_repetitions, $delay: null) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>펼치면서 fade in</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter </span>Name</th><th scope="col"><span class="visually-hidden">parameter </span>Description</th><th scope="col"><span class="visually-hidden">parameter </span>Type</th><th scope="col"><span class="visually-hidden">parameter </span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$ani_time</code></th><td data-label="desc"><p>플레이 시간</p></td><td data-label="type"><code>Time</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$ani_repetitions</code></th><td data-label="desc"><p>반복횟수</p></td><td data-label="type"><code>Repeat</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$delay</code></th><td data-label="desc"><p>딜레이 시간</p></td><td data-label="type"><code>Delay</code></td><td data-label="default"><code>null</code></td></tr></tbody></table><h3 class="item__sub-heading">Example</h3><div class="item__example example"><div class="example__description"><p>unfold</p></div><pre class="example__code language-scss"><code>.unfold{
+    @include unfold(1s, forwards, 1s(생략가능));
+}</code></pre></div></section><section class="main__item container item" id="special fade in style-mixin-bounceInDown"><h3 class="item__heading"><a class="item__name" href="#mixin-bounceInDown">bounceInDown</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin bounceInDown($ani_time, $ani_repetitions, $value, $delay: null) { 
+
+  @keyframes bounceInDown {
+    from,
+    60%,
+    75%,
+    90%,
+    to {
+      -webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+      animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    }
+  
+    0% {
+      opacity: 0;
+      -webkit-transform: translate3d(0, -$value, 0);
+      transform: translate3d(0, -$value, 0);
+    }
+  
+    60% {
+      opacity: 1;
+      -webkit-transform: translate3d(0, 25px, 0);
+      transform: translate3d(0, 25px, 0);
+    }
+  
+    75% {
+      -webkit-transform: translate3d(0, -10px, 0);
+      transform: translate3d(0, -10px, 0);
+    }
+  
+    90% {
+      -webkit-transform: translate3d(0, 5px, 0);
+      transform: translate3d(0, 5px, 0);
+    }
+  
+    to {
+      -webkit-transform: translate3d(0, 0, 0);
+      transform: translate3d(0, 0, 0);
+    }
+  }
+animation: bounceInDown $ani_time $ani_repetitions;
+animation-delay: $delay !important;
+ }" data-collapsed="@mixin bounceInDown($ani_time, $ani_repetitions, $value, $delay: null) { ... }"><code>@mixin bounceInDown($ani_time, $ani_repetitions, $value, $delay: null) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>bounce + fade in down</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter </span>Name</th><th scope="col"><span class="visually-hidden">parameter </span>Description</th><th scope="col"><span class="visually-hidden">parameter </span>Type</th><th scope="col"><span class="visually-hidden">parameter </span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$ani_time</code></th><td data-label="desc"><p>플레이 시간</p></td><td data-label="type"><code>Time</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$ani_repetitions</code></th><td data-label="desc"><p>반복횟수</p></td><td data-label="type"><code>Repeat</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$value</code></th><td data-label="desc"><p>이동 거리</p></td><td data-label="type"><code>Value</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$delay</code></th><td data-label="desc"><p>딜레이 시간</p></td><td data-label="type"><code>Delay</code></td><td data-label="default"><code>null</code></td></tr></tbody></table><h3 class="item__sub-heading">Example</h3><div class="item__example example"><div class="example__description"><p>bounceInDown</p></div><pre class="example__code language-scss"><code>.bounceInDown{ 
+   @include bounceInDown(1s, forwards, 1s(생략가능));
+}</code></pre></div></section><section class="main__item container item" id="special fade in style-mixin-zoomIn"><h3 class="item__heading"><a class="item__name" href="#mixin-zoomIn">zoomIn</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin zoomIn($ani_time, $ani_repetitions, $delay: null) { 
+
+  @keyframes zoomIn {
+    from {
+      opacity: 0;
+      -webkit-transform: scale3d(0.3, 0.3, 0.3);
+      transform: scale3d(0.3, 0.3, 0.3);
+    }
+  
+    50% {
+      opacity: 1;
+    }
+  }
+animation: zoomIn $ani_time $ani_repetitions;
+animation-delay: $delay !important;
+ }" data-collapsed="@mixin zoomIn($ani_time, $ani_repetitions, $delay: null) { ... }"><code>@mixin zoomIn($ani_time, $ani_repetitions, $delay: null) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>zoom in</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter </span>Name</th><th scope="col"><span class="visually-hidden">parameter </span>Description</th><th scope="col"><span class="visually-hidden">parameter </span>Type</th><th scope="col"><span class="visually-hidden">parameter </span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$ani_time</code></th><td data-label="desc"><p>플레이 시간</p></td><td data-label="type"><code>Time</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$ani_repetitions</code></th><td data-label="desc"><p>반복횟수</p></td><td data-label="type"><code>Repeat</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$delay</code></th><td data-label="desc"><p>딜레이 시간</p></td><td data-label="type"><code>Delay</code></td><td data-label="default"><code>null</code></td></tr></tbody></table><h3 class="item__sub-heading">Example</h3><div class="item__example example"><div class="example__description"><p>zoomIn</p></div><pre class="example__code language-scss"><code>.zoomIn{ 
+   @include zoomIn(1s, forwards, 1s(생략가능));
+}</code></pre></div></section><section class="main__item container item" id="special fade in style-mixin-zoomInDown"><h3 class="item__heading"><a class="item__name" href="#mixin-zoomInDown">zoomInDown</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin zoomInDown($ani_time, $ani_repetitions, $value, $delay: null) { 
+
+  @keyframes zoomInDown {
+    from {
+      opacity: 0;
+      -webkit-transform: scale3d(0.1, 0.1, 0.1) translate3d(0, -$value, 0);
+      transform: scale3d(0.1, 0.1, 0.1) translate3d(0, -$value, 0);
+      -webkit-animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+      animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+    }
+  
+    60% {
+      opacity: 1;
+      -webkit-transform: scale3d(0.475, 0.475, 0.475) translate3d(0, $value/16.66, 0);
+      transform: scale3d(0.475, 0.475, 0.475) translate3d(0, $value/16.66, 0);
+      -webkit-animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1);
+      animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1);
+    }
+  }
+animation: zoomInDown $ani_time $ani_repetitions;
+animation-delay: $delay !important;
+ }" data-collapsed="@mixin zoomInDown($ani_time, $ani_repetitions, $value, $delay: null) { ... }"><code>@mixin zoomInDown($ani_time, $ani_repetitions, $value, $delay: null) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>zoom In Down</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter </span>Name</th><th scope="col"><span class="visually-hidden">parameter </span>Description</th><th scope="col"><span class="visually-hidden">parameter </span>Type</th><th scope="col"><span class="visually-hidden">parameter </span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$ani_time</code></th><td data-label="desc"><p>플레이 시간</p></td><td data-label="type"><code>Time</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$ani_repetitions</code></th><td data-label="desc"><p>반복횟수</p></td><td data-label="type"><code>Repeat</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$value</code></th><td data-label="desc"><p>이동 거리</p></td><td data-label="type"><code>Value</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$delay</code></th><td data-label="desc"><p>딜레이 시간</p></td><td data-label="type"><code>Delay</code></td><td data-label="default"><code>null</code></td></tr></tbody></table><h3 class="item__sub-heading">Example</h3><div class="item__example example"><div class="example__description"><p>zoomInDown</p></div><pre class="example__code language-scss"><code>.zoomInDown{ 
+   @include zoomInDown(1s, forwards, 1s(생략가능));
+}</code></pre></div></section></section></section><footer class="footer" role="contentinfo"><div class="container"><div class="footer__project-info project-info"><!-- Name and URL --> <span class="project-info__name">Test</span><!-- Version --> <span class="project-info__version">- v1.0.0</span><!-- License --> <span class="project-info__license">, under ISC</span></div><a class="footer__watermark" href="http://sassdoc.com"><img src="assets/images/logo_light_inline.svg" alt="SassDoc Logo"></a></div></footer></article><script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script><script>window.jQuery || document.write('<script src="assets/js/vendor/jquery.min.js"><\/script>')</script><script src="assets/js/main.min.js"></script></body></html>
