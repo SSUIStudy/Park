@@ -26,8 +26,9 @@ var browserSync  = require( 'browser-sync' ).create();
 
 // Project related variables
 //var styleSRC     = './src/scss/*.scss';
-var styleSRC     = './study/anomation_library/scss/*.scss';
-var styleURL     = './dist/css/';
+//var styleURL     = './dist/css/';
+var styleSRC     = './study/animation_library/scss/*.scss';
+var styleURL     = './study/animation_library_dist/css/';
 var mapURL       = './';
 
 var jsSRC        = './src/js/';
@@ -36,24 +37,31 @@ var jsFiles      = [jsFront];
 var jsURL        = './dist/js/';
 
 var imgSRC       = './src/images/**/*';
+var imgURL       = './dist/images/';
+
+
 var fontsSRC     = './src/fonts/**/*';
 var fontsURL     = './dist/fonts/';
 
 //var htmlSRC     = './src/**/*.html';
-var htmlSRC     = './study/anomation_library/*.html';
-var htmlURL     = './dist/';
+//var htmlURL     = './dist/';
+var htmlSRC     = './study/animation_library/**/*.html';
+var htmlURL     = './study/animation_library_dist/';
 
-var styleWatch   = './src/scss/**/*.scss';
+
+//var styleWatch   = './src/scss/**/*.scss';
+var styleWatch   = './study/animation_library/scss/*.scss';
 var jsWatch      = './src/js/**/*.js';
 var imgWatch     = './src/images/**/*.*';
 var fontsWatch   = './src/fonts/**/*.*';
-var htmlWatch    = './src/**/*.html';
+//var htmlWatch    = './src/**/*.html';
+var htmlWatch    = './study/animation_library/**/*.html';
 
 // Tasks
 function browser_sync() {
 	browserSync.init({
 		server: {
-            baseDir: './dist/',
+            baseDir: './study/animation_library_dist/',
             directory : true
         },
         port : 8080
