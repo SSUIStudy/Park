@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="/css/style.css" type="text/css"">
+    <link rel="stylesheet" href="../css/style.css" type="text/css"">
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <title>anomation_library</title>
 </head>
@@ -28,7 +28,6 @@
                             <feMergeNode in="SourceGraphic"></feMergeNode>
                         </feMerge>
                     </filter>
-
                 </defs>
                 <path fill-rule="evenodd" fill="rgb(82, 33, 82)" d="M34.997,4.997 L99.003,4.997 C115.572,4.997 129.003,18.428 129.003,34.997 L129.003,99.003 C129.003,115.572 115.572,129.003 99.003,129.003 L34.997,129.003 C18.428,129.003 4.997,115.572 4.997,99.003 L4.997,34.997 C4.997,18.428 18.428,4.997 34.997,4.997 Z"></path>
                 <path stroke-width="2px" stroke="rgb(255, 255, 255)" fill="url(#PSgrad_0)" d="M34.997,4.997 L99.003,4.997 C115.572,4.997 129.003,18.428 129.003,34.997 L129.003,99.003 C129.003,115.572 115.572,129.003 99.003,129.003 L34.997,129.003 C18.428,129.003 4.997,115.572 4.997,99.003 L4.997,34.997 C4.997,18.428 18.428,4.997 34.997,4.997 Z"></path>
@@ -41,8 +40,27 @@
             <a href="#none">ANIMATION LIBRARY</a>
             <ul>
                 <li>popIn</li>
+                <li>popInTop</li>
                 <li>popInBottom</li>
                 <li>flipInX</li>
+                <li>flipInY</li>
+                <li>flipInX2</li>
+                <li>flipInY2</li>
+                <li>fadeIn</li>
+                <li>fadeInLeft</li>
+                <li>fadeInRight</li>
+                <li>fadeInTop</li>
+                <li>fadeInBottom</li>
+                <li>spin</li>
+                <li>spinIn</li>
+                <li>pullUp</li>
+                <li>unfold</li>
+                <li>bounce</li>
+                <li>flash</li>
+                <li>rubberBand</li>
+                <li>bounceInDown</li>
+                <li>zoomIn</li>
+                <li>zoomInDown</li>
                 
             </ul>
         </div>
@@ -54,10 +72,11 @@
             var ani_list_wrap = $(".select ul");
             var ani_list = $(".select ul li");
 
-            ani_list_wrap.slideUp();
+            ani_list_wrap.slideUp();//슬라이드 업 상태
 
             select_box.click(function(){
-                ani_list_wrap.stop().slideToggle();                
+                ani_list_wrap.stop().slideToggle();
+                //클릭 했을때 슬라이드 업다운                
             });
             
             ani_list.click(function(){
@@ -65,11 +84,13 @@
                 var cl = $(this).text();
                 var allCl = ani_list.text();   
 
-                    ani_list_wrap.slideUp();
-                    sandbox.addClass(cl);   
-                    setTimeout(function(){
-                        sandbox.removeClass(cl);
-                     },1000);                             
+                //ani_list_wrap.slideUp();
+                ani_list.removeClass();
+                $(this).addClass('bg');//클릭 했을때 배경색처리
+                sandbox.addClass(cl);   
+                setTimeout(function(){
+                    sandbox.removeClass(cl);
+                },1000);                             
             });
            
         });

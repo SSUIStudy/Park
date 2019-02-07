@@ -18,7 +18,7 @@ ol,ul,li{
     margin: 18% auto 3%;
 }
 .select{
-    @include WH(300px,50px );
+    @include WH(400px,50px );
     margin: auto;
     text-align: center; 
     line-height: 50px;          
@@ -31,8 +31,8 @@ ol,ul,li{
         background: rgb(255,255,255) url(http://www.fila.co.kr/images/sub/bg_heritage_select.png) no-repeat 100% 50%;        
     }
     ul {
-        width: 298px;
-        height: 150px;
+        width: 398px;
+        height: 250px;
         overflow: auto;
         border:1px solid #666;
         margin-top: -1px;    
@@ -43,8 +43,21 @@ ol,ul,li{
         }
     }
 }
+.bg{
+    color: #fff !important;
+    background-color: #999;
 
-///애니매이션 
+}
+
+///fade in + zoom in + 움직임이 더 많음
+///@group Fade In Stlye
+///@param {time} $ani_time - 플레이 시간
+///@param {repeat} $ani_repetitions - 반복횟수
+///@param {delay} $delay [null] - 딜레이 시간
+///@example scss - popIn
+///   .popIn{
+///       @include popIn(1s,forwards, 1s(생략가능));
+///   }
 @mixin popIn($ani_time, $ani_repetitions, $delay: null) {
 
     @keyframes popIn {
@@ -75,19 +88,73 @@ ol,ul,li{
           -webkit-transform: scale3d(1, 1, 1);
           transform: scale3d(1, 1, 1); } }
   animation: popIn $ani_time $ani_repetitions;
-  opacity: 1;
   animation-delay: $delay !important;
 }
 .popIn{    
     @include popIn(1s,forwards);
 }
 
-@mixin popInBottom($ani_time, $ani_repetitions, $delay: null) {
+///fade in top + zoom in + 움직임이 더 많음
+///@group Fade In Stlye
+///@param {time} $ani_time - 플레이 시간
+///@param {repeat} $ani_repetitions - 반복횟수
+///@param {value} $value - 이동 거리
+///@param {delay} $delay [null] - 딜레이 시간
+///@example scss - popInTop
+///   .popInTop{
+///       @include popInTop(1s, forwards, 100%, 1s(생략가능);
+///   }
+@mixin popInTop($ani_time, $ani_repetitions, $value, $delay: null) {
+
+    @keyframes popInTop {
+        0% {
+          -webkit-transform: translate3d(0, -$value, 0) scale3d(0.1, 0.1, 0.1);
+          transform: translate3d(0, -$value, 0) scale3d(0.1, 0.1, 0.1);
+          opacity: 0; }
+        40% {
+          opacity: 1;
+          -webkit-animation-timing-function: cubic-bezier(0.47, 0, 0.745, 0.715);
+          animation-timing-function: cubic-bezier(0.47, 0, 0.745, 0.715);
+          -webkit-transform: translate3d(0, 0, 0) scale3d(1.08, 1.08, 1.08);
+          transform: translate3d(0, 0, 0) scale3d(1.08, 1.08, 1.08); }
+        60% {
+          -webkit-animation-timing-function: cubic-bezier(0.42, 0, 0.58, 1);
+          animation-timing-function: cubic-bezier(0.42, 0, 0.58, 1);
+          -webkit-transform: translate3d(0, 0, 0) scale3d(1, 1, 1);
+          transform: translate3d(0, 0, 0) scale3d(1, 1, 1); }
+        80% {
+          -webkit-animation-timing-function: cubic-bezier(0.42, 0, 0.58, 1);
+          animation-timing-function: cubic-bezier(0.42, 0, 0.58, 1);
+          -webkit-transform: translate3d(0, 0, 0) scale3d(1.03, 1.03, 1.03);
+          transform: translate3d(0, 0, 0) scale3d(1.03, 1.03, 1.03); }
+        100% {
+          -webkit-animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+          animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+          -webkit-transform: translate3d(0, 0, 0) scale3d(1, 1, 1);
+          transform: translate3d(0, 0, 0) scale3d(1, 1, 1); } }
+  animation: popInTop $ani_time $ani_repetitions;
+  animation-delay: $delay !important;
+}
+.popInTop{
+    @include popInTop(1s, forwards, 100%);
+}
+
+///fade in Bottom + zoom in + 움직임이 더 많음
+///@group Fade In Stlye
+///@param {time} $ani_time - 플레이 시간
+///@param {repeat} $ani_repetitions - 반복횟수
+///@param {value} $value - 이동 거리
+///@param {delay} $delay [null] - 딜레이 시간
+///@example scss - popInBottom
+///   .popInBottom{
+///       @include popInBottom(1s, forwards, 100%, 1s(생략가능);
+///   }
+@mixin popInBottom($ani_time, $ani_repetitions, $value, $delay: null) {
 
     @keyframes popInBottom {
         0% {
-          -webkit-transform: translate3d(0, 200px, 0) scale3d(0.1, 0.1, 0.1);
-          transform: translate3d(0, 200px, 0) scale3d(0.1, 0.1, 0.1);
+          -webkit-transform: translate3d(0, $value, 0) scale3d(0.1, 0.1, 0.1);
+          transform: translate3d(0, $value, 0) scale3d(0.1, 0.1, 0.1);
           opacity: 0; }
         40% {
           opacity: 1;
@@ -111,12 +178,21 @@ ol,ul,li{
           -webkit-transform: translate3d(0, 0, 0) scale3d(1, 1, 1);
           transform: translate3d(0, 0, 0) scale3d(1, 1, 1); } }
   animation: popInBottom $ani_time $ani_repetitions;
-  opacity: 1;
   animation-delay: $delay !important;
 }
 .popInBottom{
-    @include popInBottom(1s, forwards);
+    @include popInBottom(1s, forwards, 100%);
 }
+
+///가로로 회전 하면서 fade in
+///@group Fade In Stlye
+///@param {time} $ani_time - 플레이 시간
+///@param {repeat} $ani_repetitions - 반복횟수
+///@param {delay} $delay [null] - 딜레이 시간
+///@example scss - flipInX
+///   .flipInX{
+///       @include flipInX(1s, forwards, 1s(생략가능);
+///   }
 @mixin flipInX($ani_time, $ani_repetitions, $delay: null) {
 
     @keyframes flipInX {
@@ -134,9 +210,604 @@ ol,ul,li{
           -webkit-transform: perspective(400px) rotateX(0deg) scale3d(1, 1, 1);
           transform: perspective(400px) rotateX(0deg) scale3d(1, 1, 1); } }
   animation: flipInX $ani_time $ani_repetitions;
-  opacity: 1;
   animation-delay: $delay !important;
 }
 .flipInX{
     @include flipInX(1s, forwards);
+}
+
+
+///세로로 회전 하면서 fade in
+///@group Fade In Stlye
+///@param {time} $ani_time - 플레이 시간
+///@param {repeat} $ani_repetitions - 반복횟수
+///@param {delay} $delay [null] - 딜레이 시간
+///@example scss - flipInY
+///   .flipInY{
+///       @include flipInY(1s, forwards, 1s(생략가능);
+///   }
+@mixin flipInY($ani_time, $ani_repetitions, $delay: null) {
+
+    @keyframes flipInY {
+        from {
+          opacity: 0;
+          -webkit-transform: perspective(400px) rotateY(90deg) scale3d(1.2, 1.2, 1.2);
+          transform: perspective(400px) rotateY(90deg) scale3d(1.2, 1.2, 1.2); }
+        50% {
+          opacity: 1;
+          -webkit-animation-timing-function: cubic-bezier(0.455, 0.03, 0.515, 0.955);
+          animation-timing-function: cubic-bezier(0.455, 0.03, 0.515, 0.955);
+          -webkit-transform: perspective(400px) rotateY(-20deg) scale3d(1, 1, 1);
+          transform: perspective(400px) rotateY(-20deg) scale3d(1, 1, 1); }
+        to {
+          -webkit-transform: perspective(400px) rotateY(0deg) scale3d(1, 1, 1);
+          transform: perspective(400px) rotateY(0deg) scale3d(1, 1, 1); } }
+      
+  animation: flipInY $ani_time $ani_repetitions;
+  animation-delay: $delay !important;
+}
+.flipInY{
+    @include flipInY(1s, forwards);
+}
+
+///가로로 회전 하면서 fade in + 움직임 추가
+///@group Fade In Stlye
+///@param {time} $ani_time - 플레이 시간
+///@param {repeat} $ani_repetitions - 반복횟수
+///@param {delay} $delay [null] - 딜레이 시간
+///@example scss - flipInX2
+///   .flipInX2{
+///       @include flipInX2(1s, forwards, 1s(생략가능);
+///   }
+@mixin flipInX2($ani_time, $ani_repetitions, $delay: null) {
+
+  @keyframes flipInX2 {
+    from {
+      -webkit-transform: perspective(400px) rotate3d(1, 0, 0, 90deg);
+      transform: perspective(400px) rotate3d(1, 0, 0, 90deg);
+      -webkit-animation-timing-function: ease-in;
+      animation-timing-function: ease-in;
+      opacity: 0;
+    }
+  
+    40% {
+      -webkit-transform: perspective(400px) rotate3d(1, 0, 0, -20deg);
+      transform: perspective(400px) rotate3d(1, 0, 0, -20deg);
+      -webkit-animation-timing-function: ease-in;
+      animation-timing-function: ease-in;
+    }
+  
+    60% {
+      -webkit-transform: perspective(400px) rotate3d(1, 0, 0, 10deg);
+      transform: perspective(400px) rotate3d(1, 0, 0, 10deg);
+      opacity: 1;
+    }
+  
+    80% {
+      -webkit-transform: perspective(400px) rotate3d(1, 0, 0, -5deg);
+      transform: perspective(400px) rotate3d(1, 0, 0, -5deg);
+    }
+  
+    to {
+      -webkit-transform: perspective(400px);
+      transform: perspective(400px);
+    }
+  }
+animation: flipInX2 $ani_time $ani_repetitions;
+animation-delay: $delay !important;
+}
+.flipInX2{
+  @include flipInX2(1s, forwards);
+}
+
+///세로로 회전 하면서 fade in + 움직임 추가
+///@group Fade In Stlye
+///@param {time} $ani_time - 플레이 시간
+///@param {repeat} $ani_repetitions - 반복횟수
+///@param {delay} $delay [null] - 딜레이 시간
+///@example scss - flipInY2
+///   .flipIn2Y{
+///       @include flipInY2(1s, forwards, 1s(생략가능);
+///   }
+@mixin flipInY2($ani_time, $ani_repetitions, $delay: null) {
+
+  @keyframes flipInY2 {
+    from {
+      -webkit-transform: perspective(400px) rotate3d(0, 1, 0, 90deg);
+      transform: perspective(400px) rotate3d(0, 1, 0, 90deg);
+      -webkit-animation-timing-function: ease-in;
+      animation-timing-function: ease-in;
+      opacity: 0;
+    }
+  
+    40% {
+      -webkit-transform: perspective(400px) rotate3d(0, 1, 0, -20deg);
+      transform: perspective(400px) rotate3d(0, 1, 0, -20deg);
+      -webkit-animation-timing-function: ease-in;
+      animation-timing-function: ease-in;
+    }
+  
+    60% {
+      -webkit-transform: perspective(400px) rotate3d(0, 1, 0, 10deg);
+      transform: perspective(400px) rotate3d(0, 1, 0, 10deg);
+      opacity: 1;
+    }
+  
+    80% {
+      -webkit-transform: perspective(400px) rotate3d(0, 1, 0, -5deg);
+      transform: perspective(400px) rotate3d(0, 1, 0, -5deg);
+    }
+  
+    to {
+      -webkit-transform: perspective(400px);
+      transform: perspective(400px);
+    }
+  }
+    
+animation: flipInY2 $ani_time $ani_repetitions;
+animation-delay: $delay !important;
+}
+.flipInY2{
+  @include flipInY2(1s, forwards);
+}
+
+///fade in
+///@group basic Fade In Stlye
+///@param {time} $ani_time - 플레이 시간
+///@param {repeat} $ani_repetitions - 반복횟수
+///@param {delay} $delay [null] - 딜레이 시간
+///@example scss - fadeIn
+///   .fadeIn{
+///       @include fadeIn(1s, forwards, 1s(생략가능);
+///   }
+@mixin fadeIn($ani_time, $ani_repetitions, $delay: null) {
+
+    @keyframes fadeIn {
+        0% {
+          opacity: 0; }
+        100% {
+          opacity: 1; } }      
+      
+  animation: fadeIn $ani_time $ani_repetitions;
+  animation-delay: $delay !important;
+}
+.fadeIn{
+    @include fadeIn(2s, forwards);
+}
+
+///fade In Right
+///@group basic Fade In Stlye
+///@param {time} $ani_time - 플레이 시간
+///@param {repeat} $ani_repetitions - 반복횟수
+///@param {value} $value - 이동 거리
+///@param {delay} $delay [null] - 딜레이 시간
+///@example scss - fadeInRight
+///   .fadeInRight{
+///       @include fadeInRight(1s, forwards, 100%, 1s(생략가능);
+///   }
+@mixin fadeInRight($ani_time, $ani_repetitions, $value, $delay: null) {
+
+    @keyframes fadeInRight {
+        0% {
+          -webkit-transform: translate3d($value, 0, 0);
+          transform: translate3d($value, 0, 0);
+          opacity: 0; }
+        100% {
+          -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
+          opacity: 1; } }    
+      
+  animation: fadeInRight $ani_time $ani_repetitions;
+  animation-delay: $delay !important;
+}
+.fadeInRight{
+    @include fadeInRight(1s, forwards, 100%);
+}
+
+///fade In Left
+///@group basic Fade In Stlye
+///@param {time} $ani_time - 플레이 시간
+///@param {repeat} $ani_repetitions - 반복횟수
+///@param {value} $value - 이동 거리
+///@param {delay} $delay [null] - 딜레이 시간
+///@example scss - fadeInLeft
+///   .fadeInLeft{
+///       @include fadeInLeft(1s, forwards, 100%, 1s(생략가능);
+///   }
+@mixin fadeInLeft($ani_time, $ani_repetitions, $value, $delay: null) {
+
+    @keyframes fadeInLeft {
+        0% {
+          -webkit-transform: translate3d(-$value, 0, 0);
+          transform: translate3d(-$value, 0, 0);
+          opacity: 0; }
+        100% {
+          -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
+          opacity: 1; } }    
+      
+  animation: fadeInLeft $ani_time $ani_repetitions;
+  animation-delay: $delay !important;
+}
+.fadeInLeft{
+    @include fadeInLeft(1s, forwards, 100%);
+}
+
+///fade In Top
+///@group basic Fade In Stlye
+///@param {time} $ani_time - 플레이 시간
+///@param {repeat} $ani_repetitions - 반복횟수
+///@param {value} $value - 이동 거리
+///@param {delay} $delay [null] - 딜레이 시간
+///@example scss - fadeInTop
+///   .fadeInTop{
+///       @include fadeInTop(1s, forwards, 100%, 1s(생략가능);
+///   }
+@mixin fadeInTop($ani_time, $ani_repetitions, $value, $delay: null) {
+
+    @keyframes fadeInTop {
+        0% {
+          -webkit-transform: translate3d(0, -$value,0);
+          transform: translate3d(0, -$value, 0);
+          opacity: 0; }
+        100% {
+          -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
+          opacity: 1; } }    
+      
+  animation: fadeInTop $ani_time $ani_repetitions;
+  animation-delay: $delay !important;
+}
+.fadeInTop{
+    @include fadeInTop(1s, forwards, 50%);
+}
+///Fade bottom
+@mixin fadeInBottom($ani_time, $ani_repetitions, $value, $delay: null) {
+
+    @keyframes fadeInBottom {
+        0% {
+          -webkit-transform: translate3d(0, $value,0);
+          transform: translate3d(0, $value, 0);
+          opacity: 0; }
+        100% {
+          -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
+          opacity: 1; } }    
+      
+  animation: fadeInBottom $ani_time $ani_repetitions;
+  animation-delay: $delay !important;
+}
+.fadeInBottom{
+    @include fadeInBottom(1s, forwards, 50%);
+}
+///Spin
+@mixin spin($ani_time, $ani_repetitions, $delay: null) {
+
+    @keyframes spin {
+        0% {
+          -webkit-animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+          animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+          -webkit-transform: rotateZ(0deg);
+          transform: rotateZ(0deg);
+          -webkit-transform-origin: center center;
+          transform-origin: center center; }
+        20% {
+          -webkit-animation-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
+          animation-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
+          -webkit-transform: rotateZ(-20deg);
+          transform: rotateZ(-20deg);
+          -webkit-transform-origin: center center;
+          transform-origin: center center; }
+        70% {
+          -webkit-animation-timing-function: cubic-bezier(0.42, 0, 0.58, 1);
+          animation-timing-function: cubic-bezier(0.42, 0, 0.58, 1);
+          -webkit-transform: rotateZ(380deg);
+          transform: rotateZ(380deg);
+          -webkit-transform-origin: center center;
+          transform-origin: center center; }
+        100% {
+          -webkit-animation-timing-function: cubic-bezier(0.47, 0, 0.745, 0.715);
+          animation-timing-function: cubic-bezier(0.47, 0, 0.745, 0.715);
+          -webkit-transform: rotateZ(360deg);
+          transform: rotateZ(360deg);
+          -webkit-transform-origin: center center;
+          transform-origin: center center; } }   
+      
+  animation: spin $ani_time $ani_repetitions;
+  animation-delay: $delay !important;
+}
+.spin{
+    @include spin(1s, forwards);
+}
+
+///Spin In
+@mixin spinIn($ani_time, $ani_repetitions, $delay: null) {
+
+    @keyframes spinIn {
+        0% {
+          opacity: 0;
+          -webkit-animation-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
+          animation-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
+          -webkit-transform: rotateZ(0deg) scale3d(0, 0, 0);
+          transform: rotateZ(0deg) scale3d(0, 0, 0);
+          -webkit-transform-origin: center center;
+          transform-origin: center center; }
+        50% {
+          opacity: 1; }
+        70% {
+          -webkit-transform: rotateZ(380deg) scale3d(1, 1, 1);
+          transform: rotateZ(380deg) scale3d(1, 1, 1);
+          -webkit-transform-origin: center center;
+          transform-origin: center center; }
+        100% {
+          -webkit-transform: rotateZ(360deg) scale3d(1, 1, 1);
+          transform: rotateZ(360deg) scale3d(1, 1, 1);
+          -webkit-transform-origin: center center;
+          transform-origin: center center; } }
+      
+  animation: spinIn $ani_time $ani_repetitions;
+  animation-delay: $delay !important;
+}
+.spinIn{
+    @include spinIn(1s, forwards);
+}
+///Pull up
+@mixin pullUp($ani_time, $ani_repetitions, $delay: null) {
+
+    @keyframes pullUp {
+        0% {
+          -webkit-transform: scale3d(0, 0, 0);
+          transform: scale3d(0, 0, 0); }
+        30% {
+          -webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+          animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+          -webkit-transform: scale3d(1, 0, 1);
+          transform: scale3d(1, 0, 1);
+          -webkit-transform-origin: center bottom;
+          transform-origin: center bottom; }
+        100% {
+          -webkit-animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+          animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+          -webkit-transform: scale3d(1, 1, 1);
+          transform: scale3d(1, 1, 1); } }
+      
+  animation: pullUp $ani_time $ani_repetitions;
+  animation-delay: $delay !important;
+}
+.pullUp{
+    @include pullUp(1s, forwards);
+}
+///Unfold
+@mixin unfold($ani_time, $ani_repetitions, $delay: null) {
+
+    @keyframes unfold {
+        0% {
+          opacity: 0;
+          -webkit-animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+          animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+          -webkit-transform: scale3d(0, 0, 0);
+          transform: scale3d(0, 0, 0); }
+        30% {
+          opacity: 1;
+          -webkit-animation-timing-function: cubic-bezier(0.455, 0.03, 0.515, 0.955);
+          animation-timing-function: cubic-bezier(0.455, 0.03, 0.515, 0.955);
+          -webkit-transform: scale3d(0.4, 0.4, 1);
+          transform: scale3d(0.4, 0.4, 1); }
+        60% {
+          -webkit-animation-timing-function: cubic-bezier(0.455, 0.03, 0.515, 0.955);
+          animation-timing-function: cubic-bezier(0.455, 0.03, 0.515, 0.955);
+          -webkit-transform: scale3d(0.4, 1, 1);
+          transform: scale3d(0.4, 1, 1); }
+        100% {
+          -webkit-animation-timing-function: cubic-bezier(0.55, 0.085, 0.68, 0.53);
+          animation-timing-function: cubic-bezier(0.55, 0.085, 0.68, 0.53);
+          -webkit-transform: scale3d(1, 1, 1);
+          transform: scale3d(1, 1, 1); } }
+      
+  animation: unfold $ani_time $ani_repetitions;
+  animation-delay: $delay !important;
+}
+.unfold{
+    @include unfold(.5s, forwards);
+}
+///Bounce
+@mixin bounce($ani_time, $ani_repetitions, $value, $delay: null) {
+
+    @keyframes bounce {
+        from,
+        20%,
+        53%,
+        80%,
+        to {
+          -webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+          animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+          -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
+        }      
+        40%,
+        43% {
+          -webkit-animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+          animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+          -webkit-transform: translate3d(0, -$value, 0);
+          transform: translate3d(0, -$value, 0);
+        }      
+        70% {
+          -webkit-animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+          animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+          -webkit-transform: translate3d(0, -$value/2, 0);
+          transform: translate3d(0, -$value/2, 0);
+        }      
+        90% {
+          -webkit-transform: translate3d(0, -$value/7.5, 0);
+          transform: translate3d(0,- $value/7.5, 0);
+        }
+      }           
+  animation: bounce $ani_time $ani_repetitions;
+  animation-delay: $delay !important;
+}
+.bounce{
+    @include bounce(.5s, forwards, 50%);
+}
+
+///flash
+@mixin flash($ani_time, $ani_repetitions,$delay: null) {
+
+  @keyframes flash {
+    from,
+    50%,
+    to {
+      opacity: 1;
+    }
+  
+    25%,
+    75% {
+      opacity: 0;
+    }
+  }
+animation: flash $ani_time $ani_repetitions;
+animation-delay: $delay !important;
+}
+.flash{
+  @include flash(1s, forwards);
+}
+
+///rubberBand
+@mixin rubberBand($ani_time, $ani_repetitions,$delay: null) {
+
+  @keyframes rubberBand {
+    from {
+      -webkit-transform: scale3d(1, 1, 1);
+      transform: scale3d(1, 1, 1);
+    }
+  
+    30% {
+      -webkit-transform: scale3d(1.25, 0.75, 1);
+      transform: scale3d(1.25, 0.75, 1);
+    }
+  
+    40% {
+      -webkit-transform: scale3d(0.75, 1.25, 1);
+      transform: scale3d(0.75, 1.25, 1);
+    }
+  
+    50% {
+      -webkit-transform: scale3d(1.15, 0.85, 1);
+      transform: scale3d(1.15, 0.85, 1);
+    }
+  
+    65% {
+      -webkit-transform: scale3d(0.95, 1.05, 1);
+      transform: scale3d(0.95, 1.05, 1);
+    }
+  
+    75% {
+      -webkit-transform: scale3d(1.05, 0.95, 1);
+      transform: scale3d(1.05, 0.95, 1);
+    }
+  
+    to {
+      -webkit-transform: scale3d(1, 1, 1);
+      transform: scale3d(1, 1, 1);
+    }
+  }
+animation: rubberBand $ani_time $ani_repetitions;
+animation-delay: $delay !important;
+}
+.rubberBand{
+  @include rubberBand(1s, forwards);
+}
+
+///bounceInDown
+@mixin bounceInDown($ani_time, $ani_repetitions, $value, $delay: null) {
+
+  @keyframes bounceInDown {
+    from,
+    60%,
+    75%,
+    90%,
+    to {
+      -webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+      animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    }
+  
+    0% {
+      opacity: 0;
+      -webkit-transform: translate3d(0, -$value, 0);
+      transform: translate3d(0, -$value, 0);
+    }
+  
+    60% {
+      opacity: 1;
+      -webkit-transform: translate3d(0, 25px, 0);
+      transform: translate3d(0, 25px, 0);
+    }
+  
+    75% {
+      -webkit-transform: translate3d(0, -10px, 0);
+      transform: translate3d(0, -10px, 0);
+    }
+  
+    90% {
+      -webkit-transform: translate3d(0, 5px, 0);
+      transform: translate3d(0, 5px, 0);
+    }
+  
+    to {
+      -webkit-transform: translate3d(0, 0, 0);
+      transform: translate3d(0, 0, 0);
+    }
+  }
+animation: bounceInDown $ani_time $ani_repetitions;
+animation-delay: $delay !important;
+}
+.bounceInDown{
+  @include bounceInDown(.5s, forwards, 100%);
+}
+
+///zoomIn
+@mixin zoomIn($ani_time, $ani_repetitions, $delay: null) {
+
+  @keyframes zoomIn {
+    from {
+      opacity: 0;
+      -webkit-transform: scale3d(0.3, 0.3, 0.3);
+      transform: scale3d(0.3, 0.3, 0.3);
+    }
+  
+    50% {
+      opacity: 1;
+    }
+  }
+animation: zoomIn $ani_time $ani_repetitions;
+animation-delay: $delay !important;
+}
+.zoomIn{
+  @include zoomIn(.5s, forwards);
+}
+
+///zoomInDown
+@mixin zoomInDown($ani_time, $ani_repetitions, $value, $delay: null) {
+
+  @keyframes zoomInDown {
+    from {
+      opacity: 0;
+      -webkit-transform: scale3d(0.1, 0.1, 0.1) translate3d(0, -$value, 0);
+      transform: scale3d(0.1, 0.1, 0.1) translate3d(0, -$value, 0);
+      -webkit-animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+      animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+    }
+  
+    60% {
+      opacity: 1;
+      -webkit-transform: scale3d(0.475, 0.475, 0.475) translate3d(0, $value/16.66, 0);
+      transform: scale3d(0.475, 0.475, 0.475) translate3d(0, $value/16.66, 0);
+      -webkit-animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1);
+      animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1);
+    }
+  }
+animation: zoomInDown $ani_time $ani_repetitions;
+animation-delay: $delay !important;
+}
+.zoomInDown{
+  @include zoomInDown(1s, forwards, 500px);
 }
