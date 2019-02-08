@@ -1,0 +1,251 @@
+@import "animation_library";
+
+
+
+.banner01{
+    position: relative;
+    .banner01__tit{
+        position: absolute;
+        top: 35%;
+        left: 0;
+        right: 0;
+        text-align: center;
+        @include fadeIn(1.5s,forwards,.5s);
+    }
+}
+
+.banner02{
+    position: relative;
+    .banner02__item{
+        position: absolute;
+        top: 50px;
+        ul{
+            overflow: hidden;
+        }
+        ul li{
+            float: left;
+            margin-right: 9px;
+        }
+    }
+}
+.banner02__item ul li:last-child{
+    margin-right: 0;
+}
+.banner02 .banner02__item .banner02__item__second{
+    margin: 10px 0;
+    li:last-child{
+        float: right;
+    }
+}
+#img02-01{
+    @include fadeInTop(1s, forwards, 15%, 1s);    
+}
+#img02-02{
+    @include fadeInTop(1s, forwards, 15%, 1.2s);
+}
+#img02-03{
+    @include fadeInTop(1s, forwards, 15%, 1.4s);
+}
+#img02-04{
+    @include fadeInTop(1s, forwards, 15%, 1.6s);
+}
+#img02-05{
+    @include fadeInLeft(1s, forwards, 15%, 2.8s);
+}
+#img02-06{
+    @include fadeInRight(1s, forwards, 15%, 1.8s);
+}
+#img02-07{
+    @include fadeInBottom(1s, forwards, 15%, 2.6s);
+}
+#img02-08{
+    @include fadeInBottom(1s, forwards, 15%, 2.4s);
+}
+#img02-09{
+    @include fadeInBottom(1s, forwards, 15%, 2.2s);
+}
+#img02-10{
+    @include fadeInBottom(1s, forwards, 15%, 2s);
+}
+
+.banner03{
+    overflow: hidden;
+    ul li{
+        float: left;
+        img{
+            opacity: 0;
+        }
+    }
+}
+#img07-02.fadeIn{
+    @include fadeInLeft(1s, forwards, 35%);
+}
+#img07-03.fadeIn{
+    @include fadeInTop(1s, forwards, 35%);
+}
+#img07-04.fadeIn{
+    @include fadeInBottom(1s, forwards, 35%);
+}
+#img07-05.fadeIn{
+    @include fadeInRight(1s, forwards, 35%);
+}
+
+.banner04{
+    margin: 100px 0;
+    overflow: hidden;
+    img{
+        float: left;
+        opacity: 0;
+    }
+}
+#img04-01.fadeIn{
+    @include fadeInRight(1s, forwards, 100%);
+}
+#img04-02.fadeIn{
+    @include fadeInLeft(1s, forwards, 100%);
+}
+
+.banner05{
+    margin-bottom: 100px;
+    img{
+        margin-right: 33px;
+        opacity: 0;
+    }
+}
+
+.banner05 img:last-child{
+    margin-right: 0;
+}
+#img05-01.fadeIn{
+    @include fadeInLeft(1s, forwards, 100%);
+}
+#img05-02.fadeIn{
+    @include popIn(1s, forwards, .5s);
+}
+#img05-03.fadeIn{
+    @include fadeInRight(1s, forwards, 100%);
+}
+
+.banner06{
+    overflow: hidden;
+    margin-bottom: 100px;
+    img{
+        float: left;
+        opacity: 0;
+    }
+}
+
+#img06-01.fadeIn{
+    @include bounceInDown(1s, forwards, 100%);
+}
+#img06-02.fadeIn{
+    @include zoomIn(2s, forwards);
+}
+#img06-03.fadeIn{
+    @include pullUp(2s, forwards);
+}
+
+.banner07{
+    overflow: hidden;
+    ul{
+        float: left;
+    }
+}
+.banner07 ul:first-child{
+    padding-top: 36px;
+    margin: 0 41px;
+    opacity: 0;
+    li{
+        margin-top: 20px;        
+    }
+}
+.banner07 ul:last-child li img{
+    opacity: 0;
+}
+#img08.fadeIn{
+    @include unfold(1s, forwards, .5s);
+}
+#img08-03.fadeIn{
+    @include zoomInDown(1s, forwards, 100%,.5s);
+}
+
+.banner08{
+    margin-top: 100px;
+    overflow: hidden;
+    ul li{
+        float: left;
+        img{
+            opacity: 0;
+        }
+    }
+}
+
+#img09-01.fadeIn{
+    @include flipInX(1s, forwards, .5s);
+}
+#img09-03.fadeIn{
+    @include flipInX2(1s, forwards,.9s);
+}
+#img09-04.fadeIn{
+    @include flipInY2(1s, forwards,1.1s);
+}
+#img09-06.fadeIn{
+    @include flipInY(1s, forwards,.7s);
+}
+#img09-02.fadeIn{
+    @include spinIn(1s, forwards,1.3s);
+}
+#img09-05.fadeIn{
+    @include popInBottom(1s, forwards,100%,1.5s);
+}
+
+.banner09{
+    position: relative;
+    margin-top: 100px;
+    ul{
+        position: absolute;
+        top: 10px;
+        left: 50px;
+        li{
+            margin-top: 40px;
+            img{
+                opacity: 0;
+            }
+        }
+    }
+}
+#img03-01.fadeIn{
+    @include flipInX(1s, forwards,.5s);
+}
+#img03-02.fadeIn{
+    @include flipInX(1s, forwards,.8s);
+}
+#img03-03.fadeIn{
+    @include flipInX(1s, forwards,1.1s);
+}
+
+.banner10{
+    margin: 200px 0;    
+    text-align: center;
+    h1{
+        margin: 50px 0;
+        @include rubberBand(1.2s, infinite);
+    }
+    ul li{
+        display: inline-block;
+        width: 24.5%;
+        cursor: pointer;
+    }
+}
+#img11-01:hover{
+    @include spin(1s, forwards);
+}
+#img11-02:hover{
+    @include bounce(1s, forwards,100%);
+}
+#img11-03:hover{
+    @include flash(1s, forwards);
+}
+#img11-04:hover{
+    @include rubberBand(1s, forwards);
+}
