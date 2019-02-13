@@ -1,0 +1,84 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><title>Ssuitest_project - v1.0.0</title><link rel="stylesheet" href="assets/css/main.css"><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,500,700" rel="stylesheet" type="text/css"><meta name="viewport" content="width=device-width"><meta content="IE=edge, chrome=1" http-equiv="X-UA-Compatible"><!-- Open Graph tags --><meta property="og:title" content="Ssuitest_project - SassDoc"><meta property="og:type" content="website"><meta property="og:description" content="Release the docs!"><!-- Thanks to Sass-lang.com for the icons --><link href="assets/images/favicon.png" rel="shortcut icon"></head><body><aside class="sidebar" role="nav"><div class="sidebar__header"><h1 class="sidebar__title"><a href="https://github.com/SSUIStudy/Test#readme">Ssuitest_project - v1.0.0</a></h1></div><div class="sidebar__body"><button type="button" class="btn-toggle js-btn-toggle" data-alt="Open all">Close all</button><p class="sidebar__item sidebar__item--heading" data-slug="clear"><a href="#clear">clear</a></p><div><p class="sidebar__item sidebar__item--sub-heading" data-slug="clear-mixin"><a href="#clear-mixin">mixins</a></p><ul class="list-unstyled"><li class="sidebar__item sassdoc__item" data-group="clear" data-name="clearfix" data-type="mixin"><a href="#clear-mixin-clearfix">clearfix</a></li></ul></div><p class="sidebar__item sidebar__item--heading" data-slug="images"><a href="#images">images</a></p><div><p class="sidebar__item sidebar__item--sub-heading" data-slug="images-mixin"><a href="#images-mixin">mixins</a></p><ul class="list-unstyled"><li class="sidebar__item sassdoc__item" data-group="images" data-name="cropImg" data-type="mixin"><a href="#images-mixin-cropImg">cropImg</a></li></ul></div><p class="sidebar__item sidebar__item--heading" data-slug="list"><a href="#list">list</a></p><div><p class="sidebar__item sidebar__item--sub-heading" data-slug="list-mixin"><a href="#list-mixin">mixins</a></p><ul class="list-unstyled"><li class="sidebar__item sassdoc__item" data-group="list" data-name="listThumb" data-type="mixin"><a href="#list-mixin-listThumb">listThumb</a></li></ul></div><p class="sidebar__item sidebar__item--heading" data-slug="media query"><a href="#media query">media query</a></p><div><p class="sidebar__item sidebar__item--sub-heading" data-slug="media query-mixin"><a href="#media query-mixin">mixins</a></p><ul class="list-unstyled"><li class="sidebar__item sassdoc__item" data-group="media query" data-name="breakpoint" data-type="mixin"><a href="#media query-mixin-breakpoint">breakpoint</a></li></ul></div></div></aside><article class="main" role="main"><header class="header" role="banner"><div class="container"><div class="sassdoc__searchbar searchbar"><label for="js-search-input" class="visually-hidden">Search</label><div class="searchbar__form" id="js-search"><input name="search" type="search" class="searchbar__field" autocomplete="off" autofocus id="js-search-input" placeholder="Search"><ul class="searchbar__suggestions" id="js-search-suggestions"></ul></div></div></div></header><section class="main__section"><h1 class="main__heading" id="clear"><div class="container">clear</div></h1><section class="main__sub-section" id="clear-mixin"><h2 class="main__heading--secondary"><div class="container">mixins</div></h2><section class="main__item container item" id="clear-mixin-clearfix"><h3 class="item__heading"><a class="item__name" href="#mixin-clearfix">clearfix</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin clearfix() { 
+	&amp;:after {
+        content: &#39;&#39;;
+        clear: both;
+        display: block;
+    }
+ }" data-collapsed="@mixin clearfix() { ... }"><code>@mixin clearfix() { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>clear fix</p></div><h3 class="item__sub-heading">Parameters</h3><p>None.</p><h3 class="item__sub-heading">Example</h3><div class="item__example example"><pre class="example__code language-scss"><code>.cf {
+ @include clearfix;
+}</code></pre></div><h3 class="item__sub-heading">Author</h3><ul class="list-unstyled"><li><p>SONG KJ</p></li></ul></section></section></section><section class="main__section"><h1 class="main__heading" id="images"><div class="container">images</div></h1><section class="main__sub-section" id="images-mixin"><h2 class="main__heading--secondary"><div class="container">mixins</div></h2><section class="main__item container item" id="images-mixin-cropImg"><h3 class="item__heading"><a class="item__name" href="#mixin-cropImg">cropImg</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin cropImg($crop, $wt, $ht) { 
+	width: $wt;
+	height: $ht;
+	position: relative;
+	overflow: hidden;
+
+	&amp; &gt; img {
+		@if $crop == &#39;ht&#39; {
+			width: auto;
+			height: 100%;
+		}
+		
+		@else if $crop == &#39;vt&#39; {
+			width: 100%;
+			height: auto;
+		}
+
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		-webkit-transform: translate(-50%, -50%);
+		-ms-transform: translate(-50%, -50%);
+		transform: translate(-50%, -50%);
+	}
+ }" data-collapsed="@mixin cropImg($crop, $wt, $ht) { ... }"><code>@mixin cropImg($crop, $wt, $ht) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>이미지 크롭</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter </span>Name</th><th scope="col"><span class="visually-hidden">parameter </span>Description</th><th scope="col"><span class="visually-hidden">parameter </span>Type</th><th scope="col"><span class="visually-hidden">parameter </span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$crop</code></th><td data-label="desc"><p>ht, vt (가로,세로 선택)</p></td><td data-label="type"><code>String</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$wt</code></th><td data-label="desc"><p>width size</p></td><td data-label="type"><code>Number</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$ht</code></th><td data-label="desc"><p>height size</p></td><td data-label="type"><code>Number</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr></tbody></table><h3 class="item__sub-heading">Example</h3><div class="item__example example"><pre class="example__code language-scss"><code>div.cropbox {
+  @include cropImg(ht, 100px, 100px);
+}
+div.cropbox2 {
+  @include cropImg(vt, 200px, 300px);
+}</code></pre></div><h3 class="item__sub-heading">Author</h3><ul class="list-unstyled"><li><p>SONG KJ</p></li></ul></section></section></section><section class="main__section"><h1 class="main__heading" id="list"><div class="container">list</div></h1><section class="main__sub-section" id="list-mixin"><h2 class="main__heading--secondary"><div class="container">mixins</div></h2><section class="main__item container item" id="list-mixin-listThumb"><h3 class="item__heading"><a class="item__name" href="#mixin-listThumb">listThumb</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin listThumb($thumb-num, $wWt, $imgWt, $thumb-mgr, $thumb-mgb) { 
+	font-size: 0;
+
+	&amp; &gt; li {
+		width: $imgWt / $wWt * 100%;
+		margin: 0 $thumb-mgr / $wWt * 100% $thumb-mgb / $wWt * 100% 0; 
+		display: inline-block;
+		vertical-align: top;
+	}
+
+	&amp; &gt; li:nth-child(#{$thumb-num}n) {
+		margin-right: 0;
+	}
+ }" data-collapsed="@mixin listThumb($thumb-num, $wWt, $imgWt, $thumb-mgr, $thumb-mgb) { ... }"><code>@mixin listThumb($thumb-num, $wWt, $imgWt, $thumb-mgr, $thumb-mgb) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>썸네일 갯수</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter </span>Name</th><th scope="col"><span class="visually-hidden">parameter </span>Description</th><th scope="col"><span class="visually-hidden">parameter </span>Type</th><th scope="col"><span class="visually-hidden">parameter </span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$thumb-num</code></th><td data-label="desc"><p>썸네일 갯 수</p></td><td data-label="type"><code>Number</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$wWt</code></th><td data-label="desc"><p>전체 넓이</p></td><td data-label="type"><code>Number</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$imgWt</code></th><td data-label="desc"><p>썸네일 넓이</p></td><td data-label="type"><code>Number</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$thumb-mgr</code></th><td data-label="desc"><p>가로 여백</p></td><td data-label="type"><code>Number</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$thumb-mgb</code></th><td data-label="desc"><p>세로 여백</p></td><td data-label="type"><code>Number</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr></tbody></table><h3 class="item__sub-heading">Example</h3><div class="item__example example"><pre class="example__code language-scss"><code>.thumb__list {
+ @include breakpoint(desktop) {
+ 	@include listThumb(4, 1000px, 235px, 20px, 20px);
+ }
+
+ @include breakpoint(tablet) {
+ 	@include listThumb(3, 1000px, 320px, 20px, 20px);
+ }
+
+ @include breakpoint(mobile) {
+ 	@include listThumb(2, 1000px, 480px, 20px, 20px);
+ }
+}</code></pre></div><h3 class="item__sub-heading">Author</h3><ul class="list-unstyled"><li><p>SONG KJ</p></li></ul></section></section></section><section class="main__section"><h1 class="main__heading" id="media query"><div class="container">media query</div></h1><section class="main__sub-section" id="media query-mixin"><h2 class="main__heading--secondary"><div class="container">mixins</div></h2><section class="main__item container item" id="media query-mixin-breakpoint"><h3 class="item__heading"><a class="item__name" href="#mixin-breakpoint">breakpoint</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin breakpoint($point) { 
+  @if $point == &quot;desktop&quot; {
+    @media screen and (min-width:1200px) {
+            @content;
+    }
+  }
+  @else if $point == &quot;tablet&quot; {
+    @media screen and (max-width: 1199px) and (min-width: 768px) {
+            @content;
+    }
+  }
+  @else if $point == &quot;mobile&quot; {
+    @media screen and (max-width: 767px) {
+            @content; 
+    }
+  }
+ }" data-collapsed="@mixin breakpoint($point) { ... }"><code>@mixin breakpoint($point) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>BREAK POINT</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter </span>Name</th><th scope="col"><span class="visually-hidden">parameter </span>Description</th><th scope="col"><span class="visually-hidden">parameter </span>Type</th><th scope="col"><span class="visually-hidden">parameter </span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$point</code></th><td data-label="desc"><p>desktop, tablet, mobile (가로사이즈)</p></td><td data-label="type"><code>String</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr></tbody></table><h3 class="item__sub-heading">Content</h3><p>This mixin allows extra content to be passed (through the <code>@content</code> directive).</p><h3 class="item__sub-heading">Example</h3><div class="item__example example"><pre class="example__code language-scss"><code>div.mq {
+  color: rgb(111,111,111);
+  @include breakpoint(tablet) {
+    color: rgb(222,222,222);
+  }
+}</code></pre></div><h3 class="item__sub-heading">Author</h3><ul class="list-unstyled"><li><p>SONG KJ</p></li></ul></section></section></section><footer class="footer" role="contentinfo"><div class="container"><div class="footer__project-info project-info"><!-- Name and URL --> <a class="project-info__name" href="https://github.com/SSUIStudy/Test#readme">Ssuitest_project</a><!-- Version --> <span class="project-info__version">- v1.0.0</span><!-- License --> <span class="project-info__license">, under ISC</span></div><a class="footer__watermark" href="http://sassdoc.com"><img src="assets/images/logo_light_inline.svg" alt="SassDoc Logo"></a></div></footer></article><script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script><script>window.jQuery || document.write('<script src="assets/js/vendor/jquery.min.js"><\/script>')</script><script src="assets/js/main.min.js"></script></body></html>
