@@ -1,0 +1,241 @@
+@import "animation_library";
+
+*{
+    margin: 0;
+    padding: 0;
+}
+ol,ul,li{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+    color: #666;
+}
+.on{
+    display: block !important;
+}
+
+.bg{
+    color: red;
+}
+
+.select{
+    position: fixed;
+    top: 0;
+    left: 0;
+    border-right: 1px solid #666;
+    width: 285px;
+    height: 100%;
+    padding-left:40px;
+    z-index: 100;
+    div{
+        margin-top: 5%;
+        color: #666;
+        font-size: 24px;
+    }
+    ul{
+        margin-top: 7%;
+        li{
+            margin-top: 7%;
+            padding-left: 5%;
+            font-size: 18px;
+            cursor: pointer;
+        }
+    }
+}
+.select__tit{
+    font-size: 30px !important;
+}
+.sample-box{
+    padding-left: 325px;
+}
+.main-tit{
+    padding-top: 21%;
+    text-align: center;
+    font-size: 80px;
+    color: #333333;
+    @include flash(1.5s,infinite,10%);
+    font-weight: 800;
+    display: none;
+}
+.fadeIn{
+    position: relative;
+    text-align: center;
+    padding-top: 10%;
+    display: none;
+    img{
+        @include fadeIn(1.5s,forwards,.5s);
+    }
+    .fadeIn__tit{
+        position: absolute;
+        top: 50%;
+        left: 0;
+        right: 0;
+        margin: auto;
+        img{
+            @include fadeIn(1.5s,forwards,1s);
+        }
+    }
+}
+
+.fadeIn4,
+.fadeIn2{
+    padding-top: 5%;
+    display: none;
+    ul{        
+        width: 490px;
+        margin: auto;
+        li{
+            width: 242px;
+            display: inline-block;
+            img{
+                width: 100%;
+            }            
+        }
+    }
+}
+#img07-02{
+    @include fadeInLeft(1s,forwards,100%);
+}
+#img07-03{
+    @include fadeInTop(1s,forwards,100%);
+}
+#img07-04{
+    @include fadeInBottom(1s,forwards,100%);
+}
+#img07-05{
+    @include fadeInRight(1s,forwards,100%);
+}
+#img07-06{
+    @include fadeInLeft(1s,forwards,100%);
+}
+#img07-07{
+    @include fadeInRight(1s,forwards,100%);
+}
+#img07-08{
+    @include fadeInRight(1s,forwards,100%,.5s);
+}
+#img07-09{
+    @include fadeInLeft(1s,forwards,100%,.5s);
+}
+
+.effect_hover{
+    text-align: center;
+    margin-top: 20%;
+    display: none;
+    h1{
+        width: 200px;
+        
+        margin:0 auto 80px;
+        @include rubberBand(1s,infinite);
+    }
+    ul li{
+        display: inline-block;
+        margin: 0 4%;
+        cursor: pointer;
+    }
+}
+
+#hover1:hover{
+    @include spin(1s,forwards);
+}
+#hover2:hover{
+    @include flash(1s,forwards);
+}
+#hover3:hover{
+    @include bounce(1s,forwards,100%);
+}
+#hover4:hover{
+    @include rubberBand(1s,forwards);
+}
+
+.popIn{
+    width: 980px;
+    padding-top: 100px;
+    margin: auto;   
+    display: none; 
+    ul:first-child{
+        margin-top: 50px;
+        margin-right: 20px;
+    }
+    ul{
+        float: left;
+        margin: auto;
+    }
+}
+
+#pop1{
+    @include popInTop(1s,forwards,100%);
+}
+#pop2{
+    @include popInBottom(1s,forwards,100%);
+}
+#pop3{
+    @include popIn(1s,forwards);
+}
+
+.flip-txt{
+    position: relative;
+    text-align: center;
+    padding-top: 30px;
+    display: none;
+    img{
+        @include fadeIn(1s,forwards);
+    }
+    ul{
+        position: absolute;
+        top: 80px;
+        left: 350px;
+        li{
+            margin-bottom: 40px;
+        }
+    }
+}
+
+#flip1{
+    @include flipInX(1s,forwards,.3s);
+}
+#flip2{
+    @include flipInX(1s,forwards,.6s);
+}
+#flip3{
+    @include flipInX(1s,forwards,.9s);
+}
+
+.flip-img{
+    position: relative;
+    width: 950px;
+    margin: auto;
+    display: none;
+    div{
+        position: absolute;
+        top: 40px;
+        left: 0;        
+    }
+        ul:nth-child(2) li+li{
+            float: right;
+        }
+        li{
+            display: inline-block;
+        }
+}
+ .spinIn{
+     @include spinIn(1s,forwards);
+}
+
+.flipInX{
+    @include flipInX(1s,forwards,.2s);
+}
+.flipInX2{
+    @include flipInX2(1s,forwards,.4s);
+}
+.flipInY{
+    @include flipInY(1s,forwards,.6s);
+}
+.flipInY2{
+    @include flipInY2(1s,forwards,.8s);
+}
+.pullUp{
+    @include pullUp(1s,forwards,1s);
+}
+
