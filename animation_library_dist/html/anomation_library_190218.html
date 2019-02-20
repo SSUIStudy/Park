@@ -13,27 +13,28 @@
         <div class="select">
             <div class="select__tit"><strong>Animation Library</strong></div>
             <div class="basic"><strong>Basic fade in style</strong></div> 
-            <ul>
+            <ul class="basic_li">
                 <li class="fadeIn_li">fadeIn</li>
                 <li class="fadeIn_li_2">fadeIn 2방향(L,R)</li>
                 <li class="fadeIn_li_4">fadeIn 4방향(L,T,B,R)</li>
             </ul>
             <div class="special"><strong>Special fade in style</strong></div>
-            <ul>
+            <ul class="special_li">
                 <li class="popIn_li">popIn</li>                
                 <li class="flip-txt_li">flipIn(text)</li>
                 <li class="flip-img_li">flipIn(img)</li>
-                <li>unfold</li>  
-                <li>bounceInDown</li>
-                <li>zoomIn</li>
-                <li>zoomInDown</li>                
+                <li class="unfold_bounce_li">unfold_bounce</li>
+                <li class="zoom_li">zoomIn</li>              
             </ul>            
             <div class="effect"><strong>Effect style</strong></div>
-            <ul>
-                <li class="effect_hover_li">Effect style</li>
+            <ul class="effect_li">
+                <li class="effect_hover_li">Effect Hover</li>
+                <li class="effect_infinite_li">Effect Infinite</li>
             </ul>
+        <!--
             <div class="detail"><strong><a href="anomation_library.html" target="_blank">Animation Library</br>모아보기</a></strong></div>
             <div class="sample"><strong><a href="sample.html" target="_blank">Sample Page</br>바로가기</a></strong></div>            
+        -->
         </div>
         <div class="sample-box">
             <div class="main-tit">Animation Library</br>메뉴를 선택해 주세요!</div>
@@ -72,6 +73,15 @@
                     <li><img src="../images/styling_d_detail.jpg" alt="" id="hover4"></li>
                 </ul>
             </div>
+            <div class="effect_infinite">
+                <h1>Effect Infinite</h1>
+                <ul>
+                    <li><img src="../images/styling_d_detail.jpg" alt="" id="infinite1"></li>
+                    <li><img src="../images/styling_d_detail.jpg" alt="" id="infinite2"></li>
+                    <li><img src="../images/styling_d_detail.jpg" alt="" id="infinite3"></li>
+                    <li><img src="../images/styling_d_detail.jpg" alt="" id="infinite4"></li>
+                </ul>
+            </div>
             <div class="popIn">
                 <ul>
                     <li><img src="../images/outfitunderwear3_08-01.jpg" alt="" id="pop1"></li>
@@ -90,8 +100,8 @@
                 </ul>
             </div>
             <div class="flip-img">
-                    <img src="../images/outfitunderwear3_02.jpg" alt="" class="spinIn">
-                    <div>
+                <img src="../images/outfitunderwear3_02.jpg" alt="" class="spinIn">
+                <div>
                     <ul>
                         <li><img src="../images/outfitunderwear3_02-01.jpg" alt="" class="flipInX"></li>
                         <li><img src="../images/outfitunderwear3_02-02.jpg" alt="" class="flipInY2"></li>
@@ -109,16 +119,41 @@
                         <li><img src="../images/outfitunderwear3_02-10.jpg" alt="" class="pullUp"></li>
                     </ul>
                 </div>
-                </div>    
+            </div> 
+            <div class="unfold_bounce">
+                <ul>
+                    <li><img src="../images/outfitunderwear3_07-02.jpg" alt="" id="unfold" class="img"></li>
+                    <li><img src="../images/outfitunderwear3_07-03.jpg" alt="" id="bounce" class="img"></li>
+                </ul>
+            </div>   
+            <div class="zoom">
+                <img src="../images/outfitunderwear3_01.jpg" alt="">
+                    <div class="zoom__tit">
+                        <img src="../images/outfitunderwear3_logo.png" alt="">
+                    </div>
+            </div> 
         </div>
     </div>
     <script>
         $(document).ready(function(){
             var sample_box = $(".sample-box"); 
             var main_tit = $(".main-tit");
-            var ani_list = $(".select ul li");   
-
-            main_tit.addClass('on')    
+            var ani_list = $(".select ul li"); 
+            var basic = $('.basic');
+            var special = $('.special');
+            var effect = $('.effect');
+            $('.select ul').slideUp();
+            basic.click(function(){
+                $('.basic_li').stop().slideToggle();                
+            });
+            special.click(function(){
+                $('.special_li').stop().slideToggle();                
+            });
+            effect.click(function(){
+                $('.effect_li').stop().slideToggle();                
+            });
+            
+            //main_tit.addClass('on')    
             ani_list.click(function(){
                 var fadeIn_li = $(this).hasClass('fadeIn_li');
                 var fadeIn = $(".fadeIn");
@@ -128,17 +163,23 @@
                 var fadeIn2 =  $('.fadeIn2');
                 var effect_hover_li =  $(this).hasClass('effect_hover_li');
                 var effect_hover =  $('.effect_hover');
+                var effect_infinite_li =  $(this).hasClass('effect_infinite_li');
+                var effect_infinite =  $('.effect_infinite');
                 var popIn_li =  $(this).hasClass('popIn_li');
                 var popIn =  $('.popIn');
                 var flip_txt_li =  $(this).hasClass('flip-txt_li');
                 var flip_txt =  $('.flip-txt');
                 var flip_img_li =  $(this).hasClass('flip-img_li');
                 var flip_img =  $('.flip-img');
+                var unfold_bounce_li =  $(this).hasClass('unfold_bounce_li');
+                var unfold_bounce =  $('.unfold_bounce');
+                var zoom_li =  $(this).hasClass('zoom_li');
+                var zoom =  $('.zoom');
 
                 function fade(a){
                     sample_box.children("div").removeClass('on');
                     a.addClass("on")
-                };                           
+                };  
 
                 ani_list.removeClass('bg');
                 $(this).addClass('bg');
@@ -150,13 +191,18 @@
                     fade(fadeIn2);
                 }else if(effect_hover_li){
                     fade(effect_hover);
+                }else if(effect_infinite_li){
+                    fade(effect_infinite);
                 }else if(popIn_li){
                     fade(popIn);
                 }else if(flip_txt_li){
                     fade(flip_txt);
-                }
-                else if(flip_img_li){
+                }else if(flip_img_li){
                     fade(flip_img);
+                }else if(unfold_bounce_li){
+                    fade(unfold_bounce);
+                }else if(zoom_li){
+                    fade(zoom);
                 }
                                            
             });
