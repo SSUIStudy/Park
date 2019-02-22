@@ -66,7 +66,7 @@ a{
     padding-top: 10%;
     display: none;
     img{
-        @include fadeIn(1.5s,forwards,.5s);
+        @include fadeIn(fadein,0,0,1.5s,forwards,.5s);
     }
     .fadeIn__tit{
         position: absolute;
@@ -75,7 +75,7 @@ a{
         right: 0;
         margin: auto;
         img{
-            @include fadeIn(1.5s,forwards,1s);
+            @include fadeIn(fadein,0,0,1.5s,forwards,1s);
         }
     }
 }
@@ -97,28 +97,28 @@ a{
     }
 }
 #img07-02{
-    @include fadeInLeft(1s,forwards,100%);
+    @include fadeIn(fadeinL,-100%,0,1s,forwards);
 }
 #img07-03{
-    @include fadeInTop(1s,forwards,100%);
+    @include fadeIn(fadeinT, 0,-100%,1s,forwards);
 }
 #img07-04{
-    @include fadeInBottom(1s,forwards,100%);
+    @include fadeIn(fadeinB, 0,100%,1s,forwards);
 }
 #img07-05{
-    @include fadeInRight(1s,forwards,100%);
+    @include fadeIn(fadeinR, 100%,0,1s,forwards);
 }
 #img07-06{
-    @include fadeInLeft(1s,forwards,100%);
+    @include fadeIn(fadeinL,-100%,0,1s,forwards);
 }
 #img07-07{
-    @include fadeInRight(1s,forwards,100%);
+    @include fadeIn(fadeinR,100%,0,1s,forwards);
 }
 #img07-08{
-    @include fadeInRight(1s,forwards,100%,.5s);
+    @include fadeIn(fadeinR,100%,0,1s,forwards,.5s);
 }
 #img07-09{
-    @include fadeInLeft(1s,forwards,100%,.5s);
+    @include fadeIn(fadeinL,-100%,0,1s,forwards,.5s);
 }
 
 .effect_hover{
@@ -192,13 +192,13 @@ a{
 }
 
 #pop1{
-    @include popInTop(1s,forwards,100%);
+    @include popIn(popLT,-100%,-100%,1s,forwards);
 }
 #pop2{
-    @include popInBottom(1s,forwards,100%);
+    @include popIn(popRB,100%,100%,1s,forwards);
 }
 #pop3{
-    @include popIn(1s,forwards);
+    @include popIn(pop,0,0,1s,forwards);
 }
 
 .flip-txt{
@@ -207,7 +207,7 @@ a{
     padding-top: 30px;
     display: none;
     img{
-        @include fadeIn(1s,forwards);
+        @include fadeIn(fadein, 0,0,1s,forwards);
     }
     ul{
         position: absolute;
@@ -283,7 +283,7 @@ a{
     @include unfold(1s,forwards);
 }
 #bounce{
-    @include bounceInDown(1s,forwards,100%);
+    @include bounceIn(bouncebounceIn,0,-1000px,1s,forwards);
 }
 
 
@@ -293,7 +293,7 @@ a{
     padding-top: 10%;
     display: none;
     img{
-        @include zoomIn(1s,forwards);
+        @include zoomIn(zoom1,0,0,1s,forwards);
     }
     .zoom__tit{
         position: absolute;
@@ -302,7 +302,7 @@ a{
         right: 0;
         margin: auto;
         img{
-            @include zoomInDown(1s,forwards,100%,.5s);
+            @include zoomIn(zoom2,0,-1000px,1s,forwards,.5s);
         }
     }
 }

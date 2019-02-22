@@ -1,138 +1,53 @@
 
 
-///fade in + zoom in + 움직임이 더 많음
+///pop In
 ///@group special Fade In Style
+///@param {name} $name - keyframes 이름
+///@param {x_axis} $x_axis - x축
+///@param {y_axis} $y_axis - y축
 ///@param {time} $ani_time - 플레이 시간
 ///@param {repeat} $ani_repetitions - 반복횟수
 ///@param {delay} $delay [null] - 딜레이 시간
 ///@example scss - popIn
-///   .popIn{
-///       @include popIn(1s,forwards, 1s(생략가능));
-///   }
-@mixin popIn($ani_time, $ani_repetitions, $delay: null) {
+///#pop1{
+///    @include popIn(popLT,-100%,-100%,1s,forwards);
+///}
+@mixin popIn($name, $x_axis, $y_axis, $ani_time, $ani_repetitions, $delay: null) {
 
-    @keyframes popIn {
-        0% {
-          -webkit-transform: scale3d(0, 0, 0);
-          transform: scale3d(0, 0, 0);
-          opacity: 0; }
-        20% {
-          opacity: 1; }
-        40% {
-          -webkit-animation-timing-function: cubic-bezier(0.47, 0, 0.745, 0.715);
-          animation-timing-function: cubic-bezier(0.47, 0, 0.745, 0.715);
-          -webkit-transform: scale3d(1.08, 1.08, 1.08);
-          transform: scale3d(1.08, 1.08, 1.08); }
-        60% {
-          -webkit-animation-timing-function: cubic-bezier(0.42, 0, 0.58, 1);
-          animation-timing-function: cubic-bezier(0.42, 0, 0.58, 1);
-          -webkit-transform: scale3d(1, 1, 1);
-          transform: scale3d(1, 1, 1); }
-        80% {
-          -webkit-animation-timing-function: cubic-bezier(0.42, 0, 0.58, 1);
-          animation-timing-function: cubic-bezier(0.42, 0, 0.58, 1);
-          -webkit-transform: scale3d(1.03, 1.03, 1.03);
-          transform: scale3d(1.03, 1.03, 1.03); }
-        100% {
-          -webkit-animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
-          animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
-          -webkit-transform: scale3d(1, 1, 1);
-          transform: scale3d(1, 1, 1);
-          opacity: 1; } }
-  animation: popIn $ani_time $ani_repetitions;
+    @keyframes #{$name} {
+      0% {
+        -webkit-transform: translate3d($x_axis, $y_axis, 0) scale3d(0.1, 0.1, 0.1);
+        transform: translate3d($x_axis, $y_axis, 0) scale3d(0.1, 0.1, 0.1);
+        opacity: 0; }
+      40% {
+        opacity: 1;
+        -webkit-animation-timing-function: cubic-bezier(0.47, 0, 0.745, 0.715);
+        animation-timing-function: cubic-bezier(0.47, 0, 0.745, 0.715);
+        -webkit-transform: translate3d(0, 0, 0) scale3d(1.08, 1.08, 1.08);
+        transform: translate3d(0, 0, 0) scale3d(1.08, 1.08, 1.08); }
+      60% {
+        -webkit-animation-timing-function: cubic-bezier(0.42, 0, 0.58, 1);
+        animation-timing-function: cubic-bezier(0.42, 0, 0.58, 1);
+        -webkit-transform: translate3d(0, 0, 0) scale3d(1, 1, 1);
+        transform: translate3d(0, 0, 0) scale3d(1, 1, 1); }
+      80% {
+        -webkit-animation-timing-function: cubic-bezier(0.42, 0, 0.58, 1);
+        animation-timing-function: cubic-bezier(0.42, 0, 0.58, 1);
+        -webkit-transform: translate3d(0, 0, 0) scale3d(1.03, 1.03, 1.03);
+        transform: translate3d(0, 0, 0) scale3d(1.03, 1.03, 1.03); }
+      100% {
+        -webkit-animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        -webkit-transform: translate3d(0, 0, 0) scale3d(1, 1, 1);
+        transform: translate3d(0, 0, 0) scale3d(1, 1, 1);
+        opacity: 1; } }
+  animation: $name $ani_time $ani_repetitions;
   animation-delay: $delay !important;
   opacity: 0;
 }
 
 
-///fade in top + zoom in + 움직임이 더 많음
-///@group special Fade In Style
-///@param {time} $ani_time - 플레이 시간
-///@param {repeat} $ani_repetitions - 반복횟수
-///@param {value} $value - 이동 거리
-///@param {delay} $delay [null] - 딜레이 시간
-///@example scss - popInTop
-///   .popInTop{
-///       @include popInTop(1s, forwards, 100%, 1s(생략가능));
-///   }
-@mixin popInTop($ani_time, $ani_repetitions, $value, $delay: null) {
 
-    @keyframes popInTop {
-        0% {
-          -webkit-transform: translate3d(0, -$value, 0) scale3d(0.1, 0.1, 0.1);
-          transform: translate3d(0, -$value, 0) scale3d(0.1, 0.1, 0.1);
-          opacity: 0; }
-        40% {
-          opacity: 1;
-          -webkit-animation-timing-function: cubic-bezier(0.47, 0, 0.745, 0.715);
-          animation-timing-function: cubic-bezier(0.47, 0, 0.745, 0.715);
-          -webkit-transform: translate3d(0, 0, 0) scale3d(1.08, 1.08, 1.08);
-          transform: translate3d(0, 0, 0) scale3d(1.08, 1.08, 1.08); }
-        60% {
-          -webkit-animation-timing-function: cubic-bezier(0.42, 0, 0.58, 1);
-          animation-timing-function: cubic-bezier(0.42, 0, 0.58, 1);
-          -webkit-transform: translate3d(0, 0, 0) scale3d(1, 1, 1);
-          transform: translate3d(0, 0, 0) scale3d(1, 1, 1); }
-        80% {
-          -webkit-animation-timing-function: cubic-bezier(0.42, 0, 0.58, 1);
-          animation-timing-function: cubic-bezier(0.42, 0, 0.58, 1);
-          -webkit-transform: translate3d(0, 0, 0) scale3d(1.03, 1.03, 1.03);
-          transform: translate3d(0, 0, 0) scale3d(1.03, 1.03, 1.03); }
-        100% {
-          -webkit-animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
-          animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
-          -webkit-transform: translate3d(0, 0, 0) scale3d(1, 1, 1);
-          transform: translate3d(0, 0, 0) scale3d(1, 1, 1);
-          opacity: 1; } }
-  animation: popInTop $ani_time $ani_repetitions;
-  animation-delay: $delay !important;
-  opacity: 0;
-}
-
-
-///fade in Bottom + zoom in + 움직임이 더 많음
-///@group special Fade In Style
-///@param {time} $ani_time - 플레이 시간
-///@param {repeat} $ani_repetitions - 반복횟수
-///@param {value} $value - 이동 거리
-///@param {delay} $delay [null] - 딜레이 시간
-///@example scss - popInBottom
-///   .popInBottom{
-///       @include popInBottom(1s, forwards, 100%, 1s(생략가능));
-///   }
-@mixin popInBottom($ani_time, $ani_repetitions, $value, $delay: null) {
-
-    @keyframes popInBottom {
-        0% {
-          -webkit-transform: translate3d(0, $value, 0) scale3d(0.1, 0.1, 0.1);
-          transform: translate3d(0, $value, 0) scale3d(0.1, 0.1, 0.1);
-          opacity: 0; }
-        40% {
-          opacity: 1;
-          -webkit-animation-timing-function: cubic-bezier(0.47, 0, 0.745, 0.715);
-          animation-timing-function: cubic-bezier(0.47, 0, 0.745, 0.715);
-          -webkit-transform: translate3d(0, 0, 0) scale3d(1.08, 1.08, 1.08);
-          transform: translate3d(0, 0, 0) scale3d(1.08, 1.08, 1.08); }
-        60% {
-          -webkit-animation-timing-function: cubic-bezier(0.42, 0, 0.58, 1);
-          animation-timing-function: cubic-bezier(0.42, 0, 0.58, 1);
-          -webkit-transform: translate3d(0, 0, 0) scale3d(1, 1, 1);
-          transform: translate3d(0, 0, 0) scale3d(1, 1, 1); }
-        80% {
-          -webkit-animation-timing-function: cubic-bezier(0.42, 0, 0.58, 1);
-          animation-timing-function: cubic-bezier(0.42, 0, 0.58, 1);
-          -webkit-transform: translate3d(0, 0, 0) scale3d(1.03, 1.03, 1.03);
-          transform: translate3d(0, 0, 0) scale3d(1.03, 1.03, 1.03); }
-        100% {
-          -webkit-animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
-          animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
-          -webkit-transform: translate3d(0, 0, 0) scale3d(1, 1, 1);
-          transform: translate3d(0, 0, 0) scale3d(1, 1, 1);
-          opacity: 1; } }
-  animation: popInBottom $ani_time $ani_repetitions;
-  animation-delay: $delay !important;
-  opacity: 0;
-}
 
 
 ///가로로 회전 하면서 fade in
@@ -304,134 +219,29 @@ opacity: 0;
 
 ///fade in
 ///@group basic Fade In Style
+///@param {name} $name - keyframes 이름
+///@param {x_axis} $x_axis - x축
+///@param {y_axis} $y_axis - y축
 ///@param {time} $ani_time - 플레이 시간
 ///@param {repeat} $ani_repetitions - 반복횟수
 ///@param {delay} $delay [null] - 딜레이 시간
 ///@example scss - fadeIn
 ///   .fadeIn{
-///       @include fadeIn(1s, forwards, 1s(생략가능));
+///       @include fadeIn(fadeinR, 100px, 0, 1s, forwards, 1s(생략가능));
 ///   }
-@mixin fadeIn($ani_time, $ani_repetitions, $delay: null) {
+@mixin fadeIn($name, $x_axis, $y_axis, $ani_time, $ani_repetitions, $delay: null) {
 
-    @keyframes fadeIn {
+    @keyframes #{$name} {
         0% {
+          -webkit-transform: translate3d($x_axis,$y_axis, 0);
+          transform: translate3d($x_axis,$y_axis, 0);
           opacity: 0; }
         100% {
+          -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
           opacity: 1; } }      
       
-  animation: fadeIn $ani_time $ani_repetitions;
-  animation-delay: $delay !important;
-  opacity: 0;
-}
-
-
-///fade In Right
-///@group basic Fade In Style
-///@param {time} $ani_time - 플레이 시간
-///@param {repeat} $ani_repetitions - 반복횟수
-///@param {value} $value - 이동 거리
-///@param {delay} $delay [null] - 딜레이 시간
-///@example scss - fadeInRight
-///   .fadeInRight{
-///       @include fadeInRight(1s, forwards, 100%, 1s(생략가능));
-///   }
-@mixin fadeInRight($ani_time, $ani_repetitions, $value, $delay: null) {
-
-    @keyframes fadeInRight {
-        0% {
-          -webkit-transform: translate3d($value, 0, 0);
-          transform: translate3d($value, 0, 0);
-          opacity: 0; }
-        100% {
-          -webkit-transform: translate3d(0, 0, 0);
-          transform: translate3d(0, 0, 0);
-          opacity: 1; } }    
-      
-  animation: fadeInRight $ani_time $ani_repetitions;
-  animation-delay: $delay !important;
-  opacity: 0;
-}
-
-
-///fade In Left
-///@group basic Fade In Style
-///@param {time} $ani_time - 플레이 시간
-///@param {repeat} $ani_repetitions - 반복횟수
-///@param {value} $value - 이동 거리
-///@param {delay} $delay [null] - 딜레이 시간
-///@example scss - fadeInLeft
-///   .fadeInLeft{
-///       @include fadeInLeft(1s, forwards, 100%, 1s(생략가능));
-///   }
-@mixin fadeInLeft($ani_time, $ani_repetitions, $value, $delay: null) {
-
-    @keyframes fadeInLeft {
-        0% {
-          -webkit-transform: translate3d(-$value, 0, 0);
-          transform: translate3d(-$value, 0, 0);
-          opacity: 0; }
-        100% {
-          -webkit-transform: translate3d(0, 0, 0);
-          transform: translate3d(0, 0, 0);
-          opacity: 1; } }    
-      
-  animation: fadeInLeft $ani_time $ani_repetitions;
-  animation-delay: $delay !important;
-  opacity: 0;
-}
-
-
-///fade In Top
-///@group basic Fade In Style
-///@param {time} $ani_time - 플레이 시간
-///@param {repeat} $ani_repetitions - 반복횟수
-///@param {value} $value - 이동 거리
-///@param {delay} $delay [null] - 딜레이 시간
-///@example scss - fadeInTop
-///   .fadeInTop{
-///       @include fadeInTop(1s, forwards, 100%, 1s(생략가능));
-///   }
-@mixin fadeInTop($ani_time, $ani_repetitions, $value, $delay: null) {
-
-    @keyframes fadeInTop {
-        0% {
-          -webkit-transform: translate3d(0, -$value,0);
-          transform: translate3d(0, -$value, 0);
-          opacity: 0; }
-        100% {
-          -webkit-transform: translate3d(0, 0, 0);
-          transform: translate3d(0, 0, 0);
-          opacity: 1; } }    
-      
-  animation: fadeInTop $ani_time $ani_repetitions;
-  animation-delay: $delay !important;
-  opacity: 0;
-}
-
-
-///fade In Bottom
-///@group basic Fade In Style
-///@param {time} $ani_time - 플레이 시간
-///@param {repeat} $ani_repetitions - 반복횟수
-///@param {value} $value - 이동 거리
-///@param {delay} $delay [null] - 딜레이 시간
-///@example scss - fadeInBottom
-///   .fadeInBottom{
-///       @include fadeInBottom(1s, forwards, 100%, 1s(생략가능));
-///   }
-@mixin fadeInBottom($ani_time, $ani_repetitions, $value, $delay: null) {
-
-    @keyframes fadeInBottom {
-        0% {
-          -webkit-transform: translate3d(0, $value,0);
-          transform: translate3d(0, $value, 0);
-          opacity: 0; }
-        100% {
-          -webkit-transform: translate3d(0, 0, 0);
-          transform: translate3d(0, 0, 0);
-          opacity: 1; } }    
-      
-  animation: fadeInBottom $ani_time $ani_repetitions;
+  animation: $name $ani_time $ani_repetitions;
   animation-delay: $delay !important;
   opacity: 0;
 }
@@ -725,19 +535,21 @@ animation-delay: $delay !important;
 }
 
 
-///bounce + fade in down 
+///bounce in
 ///@group special fade in Style
+///@param {name} $name - keyframes 이름
+///@param {x_axis} $x_axis - x축
+///@param {y_axis} $y_axis - y축
 ///@param {time} $ani_time - 플레이 시간
 ///@param {repeat} $ani_repetitions - 반복횟수
-///@param {value} $value - 이동 거리
 ///@param {delay} $delay [null] - 딜레이 시간
-///@example scss - bounceInDown
-///   .bounceInDown{ 
-///      @include bounceInDown(1s, forwards, 1s(생략가능));
-///   }
-@mixin bounceInDown($ani_time, $ani_repetitions, $value, $delay: null) {
+///@example scss - bounceIn
+/// #bounce{
+///   @include bounceIn(bouncebounceIn,0,-1000px,1s,forwards);
+/// }
+@mixin bounceIn($name, $x_axis, $y_axis, $ani_time, $ani_repetitions, $delay: null) {
 
-  @keyframes bounceInDown {
+  @keyframes #{$name} {
     from,
     60%,
     75%,
@@ -749,24 +561,74 @@ animation-delay: $delay !important;
   
     0% {
       opacity: 0;
-      -webkit-transform: translate3d(0, -$value, 0);
-      transform: translate3d(0, -$value, 0);
+      -webkit-transform: translate3d($x_axis, $y_axis, 0);
+      transform: translate3d($x_axis, $y_axis, 0);
     }
   
     60% {
-      opacity: 1;
-      -webkit-transform: translate3d(0, 25px, 0);
-      transform: translate3d(0, 25px, 0);
+      @if $x_axis == 0 {
+        @if $y_axis < 0 {
+          opacity: 1;
+          -webkit-transform: translate3d(0, 25px, 0);
+          transform: translate3d(0, 25px, 0);
+        } @else if $y_axis > 0 {
+          opacity: 1;
+          -webkit-transform: translate3d(0, -25px, 0);
+          transform: translate3d(0, -25px, 0);
+        }
+      }@else if $y_axis == 0 {
+        @if $x_axis < 0 {
+          opacity: 1;
+          -webkit-transform: translate3d(25px, 0, 0);
+          transform: translate3d(25px, 0, 0);
+        } @else if $x_axis > 0 {
+          opacity: 1;
+          -webkit-transform: translate3d(-25px, 0, 0);
+          transform: translate3d(-25px, 0, 0);
+        }
+      }
     }
   
     75% {
-      -webkit-transform: translate3d(0, -10px, 0);
-      transform: translate3d(0, -10px, 0);
+      @if $x_axis == 0 {
+        @if $y_axis < 0 {
+          -webkit-transform: translate3d(0, -10px, 0);
+          transform: translate3d(0, -10px, 0);
+        } @else if $y_axis > 0 {
+          -webkit-transform: translate3d(0, 10px, 0);
+          transform: translate3d(0, 10px, 0);
+        }
+      }
+      @else if $y_axis == 0 {
+        @if $x_axis < 0 {
+          -webkit-transform: translate3d(-10px, 0, 0);
+          transform: translate3d(-10px, 0, 0);
+        } @else if $x_axis > 0 {
+          -webkit-transform: translate3d(10px, 0, 0);
+          transform: translate3d(10px, 0, 0);
+        }
+      }
     }
   
     90% {
-      -webkit-transform: translate3d(0, 5px, 0);
-      transform: translate3d(0, 5px, 0);
+      @if $x_axis == 0 {
+        @if $y_axis < 0 {
+          -webkit-transform: translate3d(0, 5px, 0);
+          transform: translate3d(0, 5px, 0);
+        } @else if $y_axis > 0 {
+          -webkit-transform: translate3d(0, -5px, 0);
+          transform: translate3d(0, -5px, 0);
+        }
+      }
+      @else if $y_axis == 0 {
+        @if $x_axis < 0 {
+          -webkit-transform: translate3d(5px, 0, 0);
+          transform: translate3d(5px, 0, 0);
+        } @else if $x_axis > 0 {
+          -webkit-transform: translate3d(-5px, 0, 0);
+          transform: translate3d(-5px, 0, 0);
+        }
+      }
     }
   
     to {
@@ -775,74 +637,62 @@ animation-delay: $delay !important;
       opacity: 1;
     }
   }
-animation: bounceInDown $ani_time $ani_repetitions;
-animation-delay: $delay !important;
-opacity: 0;
+  animation: $name $ani_time $ani_repetitions;
+  animation-delay: $delay !important;
+  opacity: 0;
 }
 
-
-///zoom in 
+///zoom In 
 ///@group special fade in Style
+///@param {name} $name - keyframes 이름
+///@param {x_axis} $x_axis - x축
+///@param {y_axis} $y_axis - y축
 ///@param {time} $ani_time - 플레이 시간
 ///@param {repeat} $ani_repetitions - 반복횟수
 ///@param {delay} $delay [null] - 딜레이 시간
 ///@example scss - zoomIn
-///   .zoomIn{ 
-///      @include zoomIn(1s, forwards, 1s(생략가능));
+///   img{
+///     @include zoomIn(zoom2,0,-1000px,1s,forwards,.5s);
 ///   }
-@mixin zoomIn($ani_time, $ani_repetitions, $delay: null) {
+@mixin zoomIn($name, $x_axis, $y_axis, $ani_time, $ani_repetitions, $delay: null) {
 
-  @keyframes zoomIn {
-    from {
-      opacity: 0;
-      -webkit-transform: scale3d(0.3, 0.3, 0.3);
-      transform: scale3d(0.3, 0.3, 0.3);
-    }
-  
-    100% {
-      opacity: 1;
-    }
+  $zoomIn : $x_axis + $y_axis;
+  @if $zoomIn == 0 {
+    @keyframes #{$name} {
+      from {
+        opacity: 0;
+        -webkit-transform: scale3d(0.3, 0.3, 0.3);
+        transform: scale3d(0.3, 0.3, 0.3);
+      }
     
-  }
-animation: zoomIn $ani_time $ani_repetitions;
-animation-delay: $delay !important;
-opacity: 0;
-}
-
-
-///zoom In Down
-///@group special fade in Style
-///@param {time} $ani_time - 플레이 시간
-///@param {repeat} $ani_repetitions - 반복횟수
-///@param {value} $value - 이동 거리
-///@param {delay} $delay [null] - 딜레이 시간
-///@example scss - zoomInDown
-///   .zoomInDown{ 
-///      @include zoomInDown(1s, forwards, 1s(생략가능));
-///   }
-@mixin zoomInDown($ani_time, $ani_repetitions, $value, $delay: null) {
-
-  @keyframes zoomInDown {
-    from {
-      opacity: 0;
-      -webkit-transform: scale3d(0.1, 0.1, 0.1) translate3d(0, -$value, 0);
-      transform: scale3d(0.1, 0.1, 0.1) translate3d(0, -$value, 0);
-      -webkit-animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
-      animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+      100% {
+        opacity: 1;
+      }
+      
     }
-  
-    60% {
-      opacity: 1;
-      -webkit-transform: scale3d(0.475, 0.475, 0.475) translate3d(0, $value/16.66, 0);
-      transform: scale3d(0.475, 0.475, 0.475) translate3d(0, $value/16.66, 0);
-      -webkit-animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1);
-      animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1);
-    }
-    100%{
-      opacity: 1;
+  }@else{
+    @keyframes #{$name} {
+      from {
+        opacity: 0;
+        -webkit-transform: scale3d(0.1, 0.1, 0.1) translate3d($x_axis, $y_axis, 0);
+        transform: scale3d(0.1, 0.1, 0.1) translate3d($x_axis, $y_axis, 0);
+        -webkit-animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+        animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+      }
+    
+      60% {
+        opacity: 1;
+        -webkit-transform: scale3d(0.475, 0.475, 0.475) translate3d($x_axis/16.66, $y_axis/16.66, 0);
+        transform: scale3d(0.475, 0.475, 0.475) translate3d($x_axis/16.66, $y_axis/16.66, 0);
+        -webkit-animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1);
+        animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1);
+      }
+      100%{
+        opacity: 1;
+      }
     }
   }
-animation: zoomInDown $ani_time $ani_repetitions;
-animation-delay: $delay !important;
-opacity: 0;
+  animation: $name $ani_time $ani_repetitions;
+  animation-delay: $delay !important;
+  opacity: 0;
 }
