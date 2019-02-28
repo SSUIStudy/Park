@@ -18,7 +18,7 @@ a{
 .bg{
     color: red;
 }
-.basic, .special, .effect{
+.basic, .special, .effect, .text{
     cursor: pointer;
     background:url(../images/bg_heritage_select.png) no-repeat 100% 50%;
 
@@ -55,8 +55,8 @@ a{
     padding-top: 21%;
     text-align: center;
     font-size: 80px;
-    color: #333333;
-    @include flash(1.5s,infinite,10%);
+    color: #666;
+    @include trackingIn(trackingIn, 0, 0, 1s, forwards, -.5em);
     font-weight: 800;
     display: none;
 }
@@ -128,7 +128,7 @@ a{
     h1{
         width: 200px;
         margin:0 auto 80px;
-        @include rubberBand(1s,infinite);
+        @include rubberBand(band,1s,infinite);
     }
     ul li{
         display: inline-block;
@@ -138,16 +138,16 @@ a{
 }
 
 #hover1:hover{
-    @include spin(1s,forwards);
+    @include spin(spin,1s,forwards);
 }
 #hover2:hover{
-    @include flash(1s,forwards);
+    @include flash(flash2,1s,forwards);
 }
 #hover3:hover{
-    @include bounce(1s,forwards,100%);
+    @include bounce(bounce,1s,forwards,-100%);
 }
 #hover4:hover{
-    @include rubberBand(1s,forwards);
+    @include rubberBand(band1,1s,forwards);
 }
 .effect_infinite{
     text-align: center;
@@ -164,16 +164,16 @@ a{
     }
 }
 #infinite1{
-    @include spin(1s,infinite);
+    @include spin(spin,1s,infinite);
 }
 #infinite2{
-    @include flash(1s,infinite);
+    @include flash(flash2,1s,infinite);
 }
 #infinite3{
-    @include bounce(1s,infinite,100%);
+    @include bounce(bounce,1s,infinite,-100%);
 }
 #infinite4{
-    @include rubberBand(1s,infinite);
+    @include rubberBand(band,1s,infinite);
 }
 
 .popIn{
@@ -220,13 +220,13 @@ a{
 }
 
 #flip1{
-    @include flipInX(1s,forwards,.3s);
+    @include flipInX(flipx,1s,forwards,.3s);
 }
 #flip2{
-    @include flipInX(1s,forwards,.6s);
+    @include flipInX(flipx,1s,forwards,.6s);
 }
 #flip3{
-    @include flipInX(1s,forwards,.9s);
+    @include flipInX(flipx,1s,forwards,.9s);
 }
 
 .flip-img{
@@ -247,23 +247,23 @@ a{
         }
 }
  .spinIn{
-     @include spinIn(1s,forwards);
+     @include spinIn(spinin,1s,forwards);
 }
 
 .flipInX{
-    @include flipInX(1s,forwards,.2s);
+    @include flipInX(flipx,1s,forwards,.2s);
 }
 .flipInX2{
-    @include flipInX2(1s,forwards,.4s);
+    @include flipInX2(flipx2,1s,forwards,.4s);
 }
 .flipInY{
-    @include flipInY(1s,forwards,.6s);
+    @include flipInY(flipy,1s,forwards,.6s);
 }
 .flipInY2{
-    @include flipInY2(1s,forwards,.8s);
+    @include flipInY2(flipy2,1s,forwards,.8s);
 }
 .pullUp{
-    @include pullUp(1s,forwards,1s);
+    @include pullUp(pull,1s,forwards,1s);
 }
 
 .unfold_bounce{
@@ -280,7 +280,7 @@ a{
 }
 
 #unfold{
-    @include unfold(1s,forwards);
+    @include unfold(un,1s,forwards);
 }
 #bounce{
     @include bounceIn(bouncebounceIn,0,-1000px,1s,forwards);
@@ -309,4 +309,21 @@ a{
 .detail a,
 .sample a{
     display: block;
+}
+
+.vanish{
+    display: none;
+    text-align: center;
+    margin-top: 300px;
+    @include vanishIn(vanish, 1s, forwards);
+}
+.trackingIn{
+    display: none;
+     h1{
+        margin-top:300px;
+        font-size: 150px; 
+        text-align: center;  
+        color: #666; 
+        @include trackingIn(trackingIn, 0, 0, 1s, forwards, -.5em);
+    }
 }

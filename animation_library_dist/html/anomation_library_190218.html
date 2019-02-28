@@ -24,13 +24,19 @@
                 <li class="flip-txt_li">flipIn(text)</li>
                 <li class="flip-img_li">flipIn(img)</li>
                 <li class="unfold_bounce_li">unfold_bounce</li>
-                <li class="zoom_li">zoomIn</li>              
-            </ul>            
+                <li class="zoom_li">zoomIn</li>    
+                <li class="vanish_li">vanishIn</li>           
+            </ul>        
+            <div class="text"><strong>Text fade in style</strong></div>
+            <ul class="text_wrap">
+                <li class="text_li">Tracking In</li>
+            </ul>    
             <div class="effect"><strong>Effect style</strong></div>
             <ul class="effect_li">
                 <li class="effect_hover_li">Effect Hover</li>
                 <li class="effect_infinite_li">Effect Infinite</li>
             </ul>
+            
         <!--
             <div class="detail"><strong><a href="anomation_library.html" target="_blank">Animation Library</br>모아보기</a></strong></div>
             <div class="sample"><strong><a href="sample.html" target="_blank">Sample Page</br>바로가기</a></strong></div>            
@@ -132,6 +138,13 @@
                         <img src="../images/outfitunderwear3_logo.png" alt="">
                     </div>
             </div> 
+            <div class="vanish">
+                <img src="../images/outfitunderwear3_08-02.jpg" alt="">
+            </div>
+            <div class="trackingIn">
+                <h1>STYLE SHIP UI</h1>
+            </div>
+            
         </div>
     </div>
     <script>
@@ -142,6 +155,7 @@
             var basic = $('.basic');
             var special = $('.special');
             var effect = $('.effect');
+            var text = $('.text');
             $('.select ul').slideUp();
             basic.click(function(){
                 $('.basic_li').stop().slideToggle();                
@@ -151,6 +165,9 @@
             });
             effect.click(function(){
                 $('.effect_li').stop().slideToggle();                
+            });
+            text.click(function(){
+                $('.text_wrap').stop().slideToggle();                
             });
             
             main_tit.addClass('on')    
@@ -175,6 +192,10 @@
                 var unfold_bounce =  $('.unfold_bounce');
                 var zoom_li =  $(this).hasClass('zoom_li');
                 var zoom =  $('.zoom');
+                var vanish_li =  $(this).hasClass('vanish_li');
+                var vanish =  $('.vanish');
+                var text_li =  $(this).hasClass('text_li');
+                var trackingIn =  $('.trackingIn');
 
                 function fade(a){
                     sample_box.children("div").removeClass('on');
@@ -203,6 +224,10 @@
                     fade(unfold_bounce);
                 }else if(zoom_li){
                     fade(zoom);
+                }else if(vanish_li){
+                    fade(vanish);
+                }else if(text_li){
+                    fade(trackingIn);
                 }
                                            
             });
