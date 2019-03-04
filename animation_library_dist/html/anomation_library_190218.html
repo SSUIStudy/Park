@@ -142,7 +142,7 @@
                 <img src="../images/outfitunderwear3_08-02.jpg" alt="">
             </div>
             <div class="trackingIn">
-                <h1>STYLE SHIP UI</h1>
+                <h1>STYLESHIP UI</h1>
             </div>
             
         </div>
@@ -151,84 +151,50 @@
         $(document).ready(function(){
             var sample_box = $(".sample-box"); 
             var main_tit = $(".main-tit");
+            var select = $('.select');
             var ani_list = $(".select ul li"); 
-            var basic = $('.basic');
-            var special = $('.special');
-            var effect = $('.effect');
-            var text = $('.text');
-            $('.select ul').slideUp();
-            basic.click(function(){
-                $('.basic_li').stop().slideToggle();                
-            });
-            special.click(function(){
-                $('.special_li').stop().slideToggle();                
-            });
-            effect.click(function(){
-                $('.effect_li').stop().slideToggle();                
-            });
-            text.click(function(){
-                $('.text_wrap').stop().slideToggle();                
-            });
-            
-            main_tit.addClass('on')    
-            ani_list.click(function(){
-                var fadeIn_li = $(this).hasClass('fadeIn_li');
-                var fadeIn = $(".fadeIn");
-                var fadeIn_li_4 =  $(this).hasClass('fadeIn_li_4');
-                var fadeIn4 =  $('.fadeIn4');
-                var fadeIn_li_2 =  $(this).hasClass('fadeIn_li_2');
-                var fadeIn2 =  $('.fadeIn2');
-                var effect_hover_li =  $(this).hasClass('effect_hover_li');
-                var effect_hover =  $('.effect_hover');
-                var effect_infinite_li =  $(this).hasClass('effect_infinite_li');
-                var effect_infinite =  $('.effect_infinite');
-                var popIn_li =  $(this).hasClass('popIn_li');
-                var popIn =  $('.popIn');
-                var flip_txt_li =  $(this).hasClass('flip-txt_li');
-                var flip_txt =  $('.flip-txt');
-                var flip_img_li =  $(this).hasClass('flip-img_li');
-                var flip_img =  $('.flip-img');
-                var unfold_bounce_li =  $(this).hasClass('unfold_bounce_li');
-                var unfold_bounce =  $('.unfold_bounce');
-                var zoom_li =  $(this).hasClass('zoom_li');
-                var zoom =  $('.zoom');
-                var vanish_li =  $(this).hasClass('vanish_li');
-                var vanish =  $('.vanish');
-                var text_li =  $(this).hasClass('text_li');
-                var trackingIn =  $('.trackingIn');
 
-                function fade(a){
-                    sample_box.children("div").removeClass('on');
-                    a.addClass("on")
-                };  
+            main_tit.addClass('on');  
+            select.children('ul').slideUp();
+            
+            select.children('div').click(function(){
+                var tit_list = $(this).index();
+                if(tit_list == 1){
+                    $('.basic_li').stop().slideToggle();
+                }else if(tit_list == 3){
+                    $('.special_li').stop().slideToggle();
+                }else if(tit_list == 5){
+                    $('.text_wrap').stop().slideToggle();
+                }else if(tit_list == 7){
+                    $('.effect_li').stop().slideToggle();
+                }
+            });
+
+            ani_list.click(function(){                
+                var hC = $(this).attr('class');
 
                 ani_list.removeClass('bg');
                 $(this).addClass('bg');
-                if(fadeIn_li){
-                    fade(fadeIn);
-                }else if(fadeIn_li_4){
-                    fade(fadeIn4);
-                }else if(fadeIn_li_2){
-                    fade(fadeIn2);
-                }else if(effect_hover_li){
-                    fade(effect_hover);
-                }else if(effect_infinite_li){
-                    fade(effect_infinite);
-                }else if(popIn_li){
-                    fade(popIn);
-                }else if(flip_txt_li){
-                    fade(flip_txt);
-                }else if(flip_img_li){
-                    fade(flip_img);
-                }else if(unfold_bounce_li){
-                    fade(unfold_bounce);
-                }else if(zoom_li){
-                    fade(zoom);
-                }else if(vanish_li){
-                    fade(vanish);
-                }else if(text_li){
-                    fade(trackingIn);
-                }
+
+                function fade(a,b){
+                    if(hC == a){
+                        sample_box.children("div").removeClass('on');
+                        $('.'+ b +'').addClass("on")
+                    }
+                };  
+
+                fade('fadeIn_li','fadeIn');
+                fade('fadeIn_li_2','fadeIn2');
+                fade('fadeIn_li_4','fadeIn4');
+                fade('effect_hover_li','effect_hover');
+                fade('effect_infinite_li','effect_infinite');
+                fade('popIn_li','popIn');
+                fade('flip-txt_li','flip-txt');
+                fade('flip-img_li','flip-img');
+                fade('unfold_bounce_li','unfold_bounce');
+                fade('zoom_li','zoom');
+                fade('vanish_li','vanish');
+                fade('text_li','trackingIn');
                                            
             });
              
