@@ -159,7 +159,9 @@
             
             select.children('div').click(function(){
                 var tit_list = $(this).index();
-                if(tit_list == 1){
+                if(tit_list == 0){
+                    select.children('ul').slideUp();
+                }else if(tit_list == 1){
                     $('.basic_li').stop().slideToggle();
                 }else if(tit_list == 3){
                     $('.special_li').stop().slideToggle();
@@ -176,10 +178,10 @@
                 ani_list.removeClass('bg');
                 $(this).addClass('bg');
 
-                function fade(a,b){
-                    if(hC == a){
+                function fade(list_class,sampleBox_class){
+                    if(hC == list_class){
                         sample_box.children("div").removeClass('on');
-                        $('.'+ b +'').addClass("on")
+                        $('.'+ sampleBox_class +'').addClass("on")
                     }
                 };  
 
