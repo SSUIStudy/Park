@@ -1,0 +1,27 @@
+@import "animation_library";
+
+h1{
+    width: 1000px;
+    margin:250px auto 0;
+    text-align: center;
+    p{
+        color: #666;
+        font-size: 120px;
+        display: inline-block;
+        &:nth-child(10){
+            margin-left: 50px;
+        }
+    }
+}
+
+p:nth-child(1){@include fadeIn(ani1, -500px, 0, 1.5s, forwards,0)}
+p:nth-child(2){@include fadeIn(ani2, -500px, -400px, 1.5s, forwards, 0)}
+p:nth-child(3){@include fadeIn(ani3, -300px, 600px, 1.5s, forwards, 0)}
+p:nth-child(4){@include fadeIn(ani4, 50px, -300px, 1.5s, forwards, 0)}
+p:nth-child(5){@include fadeIn(ani5, 200px, 0, 1.5s, forwards, 0)}
+p:nth-child(6){@include fadeIn(ani6, 500px, 500px, 1.5s, forwards, 0)}
+p:nth-child(7){@include fadeIn(ani7, 0px, 300px, 1.5s, forwards, 0)}
+p:nth-child(8){@include fadeIn(ani8, 100px, -500px, 1.5s, forwards, 0)}
+p:nth-child(9){@include fadeIn(ani9, -200px, 150px, 1.5s, forwards, 0)}
+p:nth-child(10){@include fadeIn(ani10, 300px, 300px, 1.5s, forwards, 0)}
+p:nth-child(11){@include fadeIn(ani11, 500px, 0, 1.5s, forwards, 0)}

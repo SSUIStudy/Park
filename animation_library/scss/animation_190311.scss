@@ -1,0 +1,348 @@
+@import "animation_library";
+
+*{
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+    font-weight: bold;
+}
+ol,ul,li{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+
+.wrap{
+    display: none;
+}
+.fadein{
+    display: block;
+    @include fadeIn(fadein_wrap,0,1000px,.7s,forwards,.1s);
+}
+.fadeout{
+    display: block;
+    animation: fadeout .7s forwards;
+}
+@keyframes fadeout{
+    0% {
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+        opacity: 1;
+    }
+    
+    100% {
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+        opacity: 0;
+    }
+}
+
+.intro{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    display: none;
+    
+    & .bgL{
+        float: left;
+        width: 50%;
+        height: 100%;
+        background-color: #3e3e3e;
+    }
+    & .bgR{
+        float: right;
+        width: 50%;
+        height: 100%;
+        background-color: #3e3e3e;
+    }
+    & .main_tit{
+        position: absolute;
+        top: 38%;
+        left: 0;
+        right: 0;
+        margin: auto;
+        text-align: center;
+        color: #fff;
+        font-size: 150px;
+        @include trackingIn(trackingIn, 0, 0, 1s, forwards, -.5em);
+    }
+}
+.bg_ani_open{
+    animation: bg .8s forwards;  
+}
+.bg_ani_close{
+    animation: bg2 .8s forwards;  
+}
+@keyframes bg{
+    0%{width: 50%;}
+    100%{width: 0%;}
+}
+@keyframes bg2{
+    0%{width: 0%;}
+    100%{width: 50%;}
+}
+
+header{
+    width: 100%;
+    height: 50px;
+    background-color: #3e3e3e;
+    nav{
+        width: 35%;
+        height: 100%;
+        margin-left: 30px;
+       ul li{
+           float: left;
+           padding-top: 10px;
+           a{
+               display: block;
+               height: 30px;
+               color: #fff;
+               padding: 0 15px;
+               line-height: 25px;
+               border-radius: 2px;
+           }
+        &.active a{
+            background-color: #ff6060;
+        }   
+
+       }
+    }    
+}
+.menu{ 
+    width: 100%;
+    height: 134px;
+    border-bottom: 1px solid #dbdbdb;   
+    overflow: hidden;
+    ul{
+        display: none; 
+        li{
+            float: left;
+            width: 110px;
+            height: 110px;
+            border-radius: 50%;
+            background-color: #3e3e3e;
+            text-align: center;
+            cursor: pointer;
+            margin: 13px 20px 0;
+            &.active{
+                background-color: #ff6060;
+            }
+            a{
+                color: #fff;
+                padding-top: 45px;
+                display: block;
+            }
+        }
+        &.active{
+            display: block !important;
+        }
+    }
+    
+}
+.unfold_bounce_li a{
+    padding-top: 37px !important;
+}
+
+.on{
+    display: block !important;
+}
+
+.sample_box__tit{
+    margin-top: 250px;
+    text-align: center;
+    font-size: 100px;
+    font-weight: bold;
+    color: #3e3e3e;
+    @include flash(flash, 1.5s, infinite);
+    display: none;
+}
+
+.basic{
+    margin-top: 50px;
+    position: relative;
+    text-align: center;
+    display: none;
+    &>img{
+        @include fadeIn(fadein,0,0,1.5s,forwards,.5s);
+    }
+    .basic__tit{
+        position: absolute;
+        top: 45%;
+        left: 0;
+        right: 0;
+        margin: auto;
+        @include fadeIn(fadein,0,0,1.5s,forwards,1s);
+    }
+}
+
+.fadeIn4,
+.fadeIn2{
+    margin-top: 50px;
+    display: none;
+    ul{        
+        width: 410px;
+        margin: auto;
+        li{
+            width: 200px;
+            display: inline-block;
+            img{
+                width: 100%;
+            }            
+        }
+    }
+}
+#img07-02{
+    @include fadeIn(fadeinL,-100%,0,1s,forwards);
+}
+#img07-03{
+    @include fadeIn(fadeinT, 0,-100%,1s,forwards);
+}
+#img07-04{
+    @include fadeIn(fadeinB, 0,100%,1s,forwards);
+}
+#img07-05{
+    @include fadeIn(fadeinR, 100%,0,1s,forwards);
+}
+#img07-06{
+    @include fadeIn(fadeinL,-100%,0,1s,forwards);
+}
+#img07-07{
+    @include fadeIn(fadeinR,100%,0,1s,forwards);
+}
+#img07-08{
+    @include fadeIn(fadeinR,100%,0,1s,forwards,.5s);
+}
+#img07-09{
+    @include fadeIn(fadeinL,-100%,0,1s,forwards,.5s);
+}
+
+.popIn{
+    width: 700px;
+    margin: 100px auto 0;   
+    display: none; 
+    ul:first-child{
+        margin-top: 35px;
+        margin-right: 3px;
+        text-align: right;
+        img{
+            width: 85%;
+        }
+    }
+    ul{
+        width: 49%;
+        float: left;
+        margin: auto;
+        img{
+            width: 100%;
+        }
+    }
+}
+
+#pop1{
+    @include popIn(popLT,-100%,-100%,1s,forwards);
+}
+#pop2{
+    @include popIn(popRB,100%,100%,1s,forwards);
+}
+#pop3{
+    @include popIn(pop,0,0,1s,forwards);
+}
+
+#flip1{
+    @include flipInX(flipx,1s,forwards,.3s);
+}
+#flip2{
+    @include flipInX(flipx,1s,forwards,.6s);
+}
+#flip3{
+    @include flipInX(flipx,1s,forwards,.9s);
+}
+
+.flip-img{
+    position: relative;
+    overflow: hidden;
+    width: 600px;
+    margin: auto;
+    display: none;
+    &>img{
+        width: 100%;
+    }
+    div{
+        position: absolute;
+        top: 35px;
+        left: 0;        
+    }
+        ul:nth-child(2) li+li{
+            float: right;
+        }
+        li{
+            display: inline-block;
+            width: 24.2%;
+            img{
+                width: 100%;
+            }
+        }
+}
+ .spinIn{
+     @include spinIn(spinin,1s,forwards);
+}
+
+.flipInX{
+    @include flipInX(flipx,1s,forwards,.2s);
+}
+.flipInX2{
+    @include flipInX2(flipx2,1s,forwards,.4s);
+}
+.flipInY{
+    @include flipInY(flipy,1s,forwards,.6s);
+}
+.flipInY2{
+    @include flipInY2(flipy2,1s,forwards,.8s);
+}
+.pullUp{
+    @include pullUp(pull,1s,forwards,1s);
+}
+
+.unfold_bounce{
+    width: 700px;
+    margin: 100px auto 0;
+    display: none;
+    ul li{
+        float: left;
+        width: 50%;
+        img{
+            width: 100%;
+        }
+    }
+}
+
+#unfold{
+    @include unfold(un,1s,forwards);
+}
+#bounce{
+    @include bounceIn(bouncebounceIn,0,-1000px,1s,forwards);
+}
+
+.zoom{
+    position: relative;
+    text-align: center;
+    margin-top: 50px;
+    display: none;
+    img{
+        @include zoomIn(zoom1,0,0,1s,forwards);
+    }
+    .zoom__tit{
+        position: absolute;
+        top: 40%;
+        left: 0;
+        right: 0;
+        margin: auto;
+        img{
+            @include zoomIn(zoom2,0,-1500px,1s,forwards,.5s);
+        }
+    }
+}
