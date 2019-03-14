@@ -220,6 +220,37 @@ animation-delay: $delay !important;
 opacity: 0;
 }
 
+///In
+///@group basic Fade In Style
+///@param {name} $name - keyframes 이름
+///@param {x_axis} $x_axis - x축
+///@param {y_axis} $y_axis - y축
+///@param {time} $ani_time - 플레이 시간
+///@param {repeat} $ani_repetitions - 반복횟수
+///@param {delay} $delay [null] - 딜레이 시간
+///@example scss - In
+///   .In{
+///       @include In(inR, 100px, 0, 1s, forwards, 1s(생략가능));
+///   }
+@mixin In($name, $x_axis, $y_axis, $ani_time, $ani_repetitions, $delay: null) {
+
+  @keyframes #{$name} {
+      0% {
+        -webkit-transform: translate3d($x_axis,$y_axis, 0);
+        transform: translate3d($x_axis,$y_axis, 0);
+
+       }
+      100% {
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);        
+      } 
+    }      
+    
+animation: $name $ani_time $ani_repetitions;
+animation-delay: $delay !important;
+transform: translate3d($x_axis,$y_axis, 0);
+}
+
 
 ///fade in
 ///@group basic Fade In Style
@@ -248,6 +279,33 @@ opacity: 0;
   animation: $name $ani_time $ani_repetitions;
   animation-delay: $delay !important;
   opacity: 0;
+}
+///fade out
+///@group basic Fade In Style
+///@param {name} $name - keyframes 이름
+///@param {x_axis} $x_axis - x축
+///@param {y_axis} $y_axis - y축
+///@param {time} $ani_time - 플레이 시간
+///@param {repeat} $ani_repetitions - 반복횟수
+///@param {delay} $delay [null] - 딜레이 시간
+///@example scss - fadeOut
+///   .fadeout{
+///       @include fadeOut(fadeinR, 100px, 0, 1s, forwards, 1s(생략가능));
+///   }
+
+@mixin fadeOut($name, $x_axis, $y_axis, $ani_time, $ani_repetitions, $delay: null) {
+  @keyframes #{$name} {
+      0% {
+          -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
+      }
+      100% {            
+          -webkit-transform: translate3d($x_axis,$y_axis, 0);
+          transform: translate3d($x_axis,$y_axis, 0);
+      }   
+  }
+  animation: $name $ani_time $ani_repetitions;
+  animation-delay: $delay !important;    
 }
 
 
@@ -792,3 +850,209 @@ animation-delay: $delay !important;
     opacity: 0;
 }
 
+///Background ken burns
+///@group Background Style
+///@param {name} $name - keyframes 이름
+///@param {x_axis} $x_axis - x축
+///@param {y_axis} $y_axis - y축
+///@param {time} $ani_time - 플레이 시간
+///@param {repeat} $ani_repetitions [number or infinite] - 반복횟수
+///@param {spacing} $way - 방향 
+///@param {delay} $delay [null] - 딜레이 시간
+///@example scss - ken burns
+/// .banner01{
+///   @include ken_burns(Top, 15px, -15px, 10s, 1, right top);
+/// }
+@mixin ken_burns($name,$x_axis, $y_axis, $ani_time, $ani_repetitions, $way , $delay: null) {
+ 
+  @keyframes #{$name}{
+    0% {
+      -webkit-transform: scale(1) translate(0,0);
+      transform: scale(1) translate(0,0);
+      -webkit-transform-origin: $way;
+      transform-origin: $way;
+    }
+    @if $ani_repetitions == infinite{
+      50% {
+        -webkit-transform: scale(1.25) translate($x_axis,$y_axis);
+        transform: scale(1.25) translate($x_axis,$y_axis);
+        -webkit-transform-origin: $way;
+        transform-origin: $way;
+      }
+      100% {
+        -webkit-transform: scale(1) translate(0,0);
+        transform: scale(1) translate(0,0);
+        -webkit-transform-origin: $way;
+        transform-origin: $way;
+      }
+    }@else{
+      100% {
+        -webkit-transform: scale(1.25) translate($x_axis,$y_axis);
+        transform: scale(1.25) translate($x_axis,$y_axis);
+        -webkit-transform-origin: $way;
+        transform-origin: $way;
+      }
+    }
+  }
+    animation: $name $ani_time $ani_repetitions ease-out;
+    animation-delay: $delay !important;
+    
+}
+
+///Background img change 2x
+///@group Background Style
+///@param {name} $name - keyframes 이름
+///@param {time} $ani_time - 플레이 시간
+///@param {repeat} $ani_repetitions [number or infinite] - 반복횟수
+///@param {repeat} $bg_position - 배경위치
+///@param {repeat} $bg_size - 배경사이즈
+///@param {repeat} $bg_route1 - 배경 경로
+///@param {repeat} $bg_route2 - 배경 경로
+///@param {delay} $delay [null] - 딜레이 시간
+///@example scss - img change 2x
+/// .banner01{
+///   @include img_change_2x(img_change, 5s, infinite, 50% 100%,100% 100%, url(../images/bg.jpg),url(../images/bg2.jpg));
+/// }
+@mixin img_change_2x($name,$ani_time, $ani_repetitions ,$bg_position,$bg_size, $bg_route1,$bg_route2, $delay: null) {
+  
+  @keyframes #{$name}{
+    0% {
+      background-image:$bg_route1;   
+      background-size: $bg_size;
+    }
+    100% {
+      background-image:$bg_route2;   
+      background-size: $bg_size;
+    }       
+  }
+    background-repeat: no-repeat;
+    background-position: $bg_position;
+    animation: $name $ani_time $ani_repetitions linear alternate both running;
+    animation-delay: $delay !important;    
+}
+
+///Background img change 3x
+///@group Background Style
+///@param {name} $name - keyframes 이름
+///@param {time} $ani_time - 플레이 시간
+///@param {repeat} $ani_repetitions [number or infinite] - 반복횟수
+///@param {repeat} $bg_position - 배경위치
+///@param {repeat} $bg_size - 배경사이즈
+///@param {repeat} $bg_route1 - 배경 경로
+///@param {repeat} $bg_route2 - 배경 경로
+///@param {repeat} $bg_route3 - 배경 경로
+///@param {delay} $delay [null] - 딜레이 시간
+///@example scss - img change 2x
+/// .banner01{
+///   @include img_change_2x(img_change, 5s, infinite, 50% 100%,100% 100%, url(../images/bg.jpg),url(../images/bg2.jpg),url(../images/bg3.jpg));
+/// }
+@mixin img_change_3x($name,$ani_time, $ani_repetitions , $bg_position, $bg_size, $bg_route1, $bg_route2, $bg_route3, $delay: null) {
+  
+  @keyframes #{$name}{
+    0% {
+      background-image:$bg_route1;   
+      background-size: $bg_size;
+    }
+    50% {
+      background-image:$bg_route2;   
+      background-size: $bg_size;
+    }       
+    100% {
+      background-image:$bg_route3;   
+      background-size: $bg_size;
+    } 
+  }
+    background-repeat: no-repeat;
+    background-position: $bg_position;
+    animation: $name $ani_time $ani_repetitions linear alternate both running;
+    animation-delay: $delay !important;    
+}
+
+///Background img change 4x
+///@group Background Style
+///@param {name} $name - keyframes 이름
+///@param {time} $ani_time - 플레이 시간
+///@param {repeat} $ani_repetitions [number or infinite] - 반복횟수
+///@param {repeat} $bg_position - 배경위치
+///@param {repeat} $bg_size - 배경사이즈
+///@param {repeat} $bg_route1 - 배경 경로
+///@param {repeat} $bg_route2 - 배경 경로
+///@param {repeat} $bg_route3 - 배경 경로
+///@param {repeat} $bg_route4 - 배경 경로
+///@param {delay} $delay [null] - 딜레이 시간
+///@example scss - img change 2x
+/// .banner01{
+///   @include img_change_2x(img_change, 5s, infinite, 50% 100%,100% 100%, url(../images/bg.jpg),url(../images/bg2.jpg),url(../images/bg3.jpg),url(../images/bg4.jpg));
+/// }
+@mixin img_change_4x($name,$ani_time, $ani_repetitions , $bg_position, $bg_size, $bg_route1, $bg_route2, $bg_route3,$bg_route4, $delay: null) {
+  
+  @keyframes #{$name}{
+    0% {
+      background-image:$bg_route1;   
+      background-size: $bg_size;
+    }
+    33.333% {
+      background-image:$bg_route2;   
+      background-size: $bg_size;
+    }       
+    66.666% {
+      background-image:$bg_route3;   
+      background-size: $bg_size;
+    } 
+    100% {
+      background-image:$bg_route4;   
+      background-size: $bg_size;
+    } 
+  }
+    background-repeat: no-repeat;
+    background-position: $bg_position;
+    animation: $name $ani_time $ani_repetitions linear alternate both running;
+    animation-delay: $delay !important;    
+}
+
+///Background img change 5x
+///@group Background Style
+///@param {name} $name - keyframes 이름
+///@param {time} $ani_time - 플레이 시간
+///@param {repeat} $ani_repetitions [number or infinite] - 반복횟수
+///@param {repeat} $bg_position - 배경위치
+///@param {repeat} $bg_size - 배경사이즈
+///@param {repeat} $bg_route1 - 배경 경로
+///@param {repeat} $bg_route2 - 배경 경로
+///@param {repeat} $bg_route3 - 배경 경로
+///@param {repeat} $bg_route4 - 배경 경로
+///@param {repeat} $bg_route5 - 배경 경로
+///@param {delay} $delay [null] - 딜레이 시간
+///@example scss - img change 2x
+/// .banner01{
+///   @include img_change_2x(img_change, 5s, infinite, 50% 100%,100% 100%, url(../images/bg.jpg),url(../images/bg2.jpg),url(../images/bg3.jpg),url(../images/bg4.jpg),url(../images/bg5.jpg));
+/// }
+@mixin img_change_5x($name,$ani_time, $ani_repetitions , $bg_position, $bg_size, $bg_route1, $bg_route2, $bg_route3,$bg_route4,$bg_route5, $delay: null) {
+  
+  @keyframes #{$name}{
+    0% {
+      background-image:$bg_route1;   
+      background-size: $bg_size;
+    }
+    25% {
+      background-image:$bg_route2;   
+      background-size: $bg_size;
+    }       
+    50% {
+      background-image:$bg_route3;   
+      background-size: $bg_size;
+    } 
+    75% {
+      background-image:$bg_route4;   
+      background-size: $bg_size;
+    }       
+    100% {
+      background-image:$bg_route5;   
+      background-size: $bg_size;
+    } 
+  }
+    background-repeat: no-repeat;
+    background-position: $bg_position;
+    animation: $name $ani_time $ani_repetitions linear alternate both running;
+    animation-delay: $delay !important;    
+}

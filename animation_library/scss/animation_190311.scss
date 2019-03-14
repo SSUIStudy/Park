@@ -70,6 +70,28 @@ a{
         font-size: 150px;
         @include trackingIn(trackingIn, 0, 0, 1s, forwards, -.5em);
     }
+    & .mouse{
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 80%;
+        margin: auto;
+        width: 30px;
+        height: 45px;
+        border-radius: 50px;
+        border: 1px solid rgb(255,255,255);
+        box-sizing: border-box;
+        @include fadeIn(mouse, 0,1000px,1s,forwards);
+        span{
+            display: block;
+            background-color: rgb(255,255,255);
+            width: 14px;
+            height: 16px;
+            border-top-left-radius: 10px;
+            border-bottom-right-radius: 3px;
+            @include flash(flash, 1.5s, infinite);
+        }
+    }
 }
 .bg_ani_open{
     animation: bg .8s forwards;  
@@ -119,6 +141,7 @@ header{
     overflow: hidden;
     ul{
         display: none; 
+        padding-left: 10px;
         li{
             float: left;
             width: 110px;
@@ -127,7 +150,7 @@ header{
             background-color: #3e3e3e;
             text-align: center;
             cursor: pointer;
-            margin: 13px 20px 0;
+            margin: 13px 5px 0;
             &.active{
                 background-color: #ff6060;
             }
@@ -143,10 +166,41 @@ header{
     }
     
 }
+
+.bg__depth{
+    width: 100%;
+    overflow: hidden;
+    border-bottom: 1px solid #ededed;
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    z-index: 999;
+    ul{
+        width: 100%;
+        li{
+            float: left;
+            width: 300px;
+            height: 30px;
+            margin: 10px 5px;
+            text-align: center;
+            line-height: 25px;
+            a{
+                height: 30px;
+                color: #3e3e3e;      
+                display: block;  
+                border-radius: 2px;          
+            } 
+            &.active a{
+                color: #fff;
+                background-color: #ff6060;
+            }   
+        }
+    }
+}
+
 .unfold_bounce_li a{
     padding-top: 37px !important;
 }
-
 .on{
     display: block !important;
 }
@@ -157,7 +211,6 @@ header{
     font-size: 100px;
     font-weight: bold;
     color: #3e3e3e;
-    @include flash(flash, 1.5s, infinite);
     display: none;
 }
 
@@ -252,16 +305,6 @@ header{
     @include popIn(pop,0,0,1s,forwards);
 }
 
-#flip1{
-    @include flipInX(flipx,1s,forwards,.3s);
-}
-#flip2{
-    @include flipInX(flipx,1s,forwards,.6s);
-}
-#flip3{
-    @include flipInX(flipx,1s,forwards,.9s);
-}
-
 .flip-img{
     position: relative;
     overflow: hidden;
@@ -346,3 +389,190 @@ header{
         }
     }
 }
+
+.vanish{
+    text-align: center;
+    display: none;
+    margin-top: 200px;   
+    @include vanishIn(vanish, .5s, forwards);
+}
+
+.text_fadeIn{
+    display: none;
+    div{
+        margin:200px auto 0;
+        text-align: center;        
+        p{
+            color: #666;
+            font-size: 140px;
+            display: inline-block;
+            font-weight: 600;
+            &:nth-child(10){
+                margin-left: 50px;
+            }
+        }
+    }
+}
+.text_fadeIn p:nth-child(1){@include fadeIn(ani1, -500px, 0, 1.5s, forwards,0)}
+.text_fadeIn p:nth-child(2){@include fadeIn(ani2, -500px, -400px, 1.5s, forwards, 0)}
+.text_fadeIn p:nth-child(3){@include fadeIn(ani3, -300px, 600px, 1.5s, forwards, 0)}
+.text_fadeIn p:nth-child(4){@include fadeIn(ani4, 50px, -300px, 1.5s, forwards, 0)}
+.text_fadeIn p:nth-child(5){@include fadeIn(ani5, 200px, 0, 1.5s, forwards, 0)}
+.text_fadeIn p:nth-child(6){@include fadeIn(ani6, 500px, 500px, 1.5s, forwards, 0)}
+.text_fadeIn p:nth-child(7){@include fadeIn(ani7, 0px, 300px, 1.5s, forwards, 0)}
+.text_fadeIn p:nth-child(8){@include fadeIn(ani8, 100px, -500px, 1.5s, forwards, 0)}
+.text_fadeIn p:nth-child(9){@include fadeIn(ani9, -200px, 150px, 1.5s, forwards, 0)}
+.text_fadeIn p:nth-child(10){@include fadeIn(ani10, 300px, 300px, 1.5s, forwards, 0)}
+.text_fadeIn p:nth-child(11){@include fadeIn(ani11, 500px, 0, 1.5s, forwards, 0)}
+
+.trackingIn{
+    display: none;
+     h1{
+        margin-top:200px;
+        font-size: 150px; 
+        text-align: center;  
+        color: #666; 
+        @include trackingIn(trackingIn, 0, 0, 1s, forwards, -.5em);
+    }
+}
+
+.flip-txt{
+    position: relative;
+    text-align: center;
+    padding-top: 5px;
+    display: none;
+    >img{
+        @include fadeIn(fadein, 0,0,1s,forwards);
+        width: 40%;
+    }
+    ul{
+        position: absolute;
+        top: 60px;
+        left: 530px;
+        li{
+            margin-bottom: 40px;
+            img{
+                width: 70%;
+            }
+        }
+    }
+}
+
+.effect_hover{
+    text-align: center;
+    margin-top: 200px;
+    display: none;
+    h1{
+        width: 200px;
+        margin:0 auto 80px;
+        @include rubberBand(band,1s,infinite);
+        font-size: 30px
+    }
+    ul li{
+        display: inline-block;
+        margin: 0 4%;
+        cursor: pointer;
+    }
+}
+
+#hover1:hover{
+    @include spin(spin,1s,forwards);
+}
+#hover2:hover{
+    @include flash(flash2,1s,forwards);
+}
+#hover3:hover{
+    @include bounce(bounce1,1s,forwards,-30%);
+}
+#hover4:hover{
+    @include rubberBand(band1,1s,forwards);
+}
+.effect_infinite{
+    text-align: center;
+    margin-top: 200px;
+    display: none;
+    h1{
+        width: 300px;
+        margin:0 auto 80px;
+        font-size: 30px;
+    }
+    ul li{
+        display: inline-block;
+        margin: 0 4%;
+        cursor: pointer;
+    }
+}
+#infinite1{
+    @include spin(spin,1s,infinite);
+}
+#infinite2{
+    @include flash(flash2,1s,infinite);
+}
+#infinite3{
+    @include bounce(bounce,1s,infinite,-100%);
+}
+#infinite4{
+    @include rubberBand(band,1s,infinite);
+}
+
+#flip1{
+    @include flipInX(flipx,1s,forwards,.3s);
+}
+#flip2{
+    @include flipInX(flipx,1s,forwards,.6s);
+}
+#flip3{
+    @include flipInX(flipx,1s,forwards,.9s);
+}
+.bg__box__wrap{
+    overflow: hidden;
+}
+.bg_box{
+    background: url(../images/bg.jpg) no-repeat;
+    background-position-y: 100%;
+    background-size: 100%;
+    width: 100%;
+    height: 770px;
+    display: none;
+}
+
+.Top{
+    @include ken_burns(ken_burns1, 0px, -15px, 8s, 1, top);
+}
+.Top-right{
+    @include ken_burns(ken_burns2, 15px, -15px, 10s, infinite, right top);
+}
+.Top-left{
+    @include ken_burns(ken_burns3, -15px, -15px, 8s, 1, left top);
+}
+.Bottom{
+    @include ken_burns(ken_burns4, 0px, 30px, 8s, 1, bottom);
+}
+.Bottom-right{
+    @include ken_burns(ken_burns5, 15px, 15px, 8s, 1, right bottom);
+}
+.Bottom-left{
+    @include ken_burns(ken_burns6, -15px, 15px, 10s, infinite, left bottom);
+}
+.Right{
+    @include ken_burns(ken_burns7, 15px, 0px, 10s, infinite, right);
+}
+.Left{
+    @include ken_burns(ken_burns8, -15px, 0px, 10s, infinite, left);
+}
+
+.Img-change-2x{
+    @include img_change_2x(img_change2, 3s, infinite, 50% 100%,100% 100%, url(../images/bg.jpg),url(../images/bg2.jpg));
+}
+.Img-change-3x{
+    @include img_change_3x(img_change3, 4.5s, infinite, 50% 100%,100% 100%, url(../images/bg.jpg),url(../images/bg2.jpg),url(../images/bg3.jpg));
+}
+.Img-change-4x{
+    @include img_change_4x(img_change4, 6s, infinite, 50% 100%,100% 100%, url(../images/bg.jpg),url(../images/bg2.jpg),url(../images/bg3.jpg),url(../images/bg4.jpg));
+}
+.Img-change-5x{
+    @include img_change_5x(img_change5, 7.5s, infinite, 50% 100%,100% 100%, url(../images/bg.jpg),url(../images/bg2.jpg),url(../images/bg3.jpg),url(../images/bg4.jpg),url(../images/bg5.jpg));
+}
+
+
+

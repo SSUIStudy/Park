@@ -13,6 +13,9 @@
         <div class="bgL"></div>
         <div class="bgR"></div>
         <div class="main_tit">Animation Library</br></div>
+        <div class="mouse">
+            <span></span>
+        </div>
     </div>
     <div class="wrap">
         <header>
@@ -33,7 +36,7 @@
                 <li class="fadeIn_li_2"><a href="#none">2방향(L,R)</a></li>
                 <li class="fadeIn_li_4"><a href="#none">4방향(L,T,B,R)</a></li>
                 <li class="popIn_li"><a href="#none">Pop In</a></li>     
-                <li class="flip-img_li"><a href="#none">FlipIn(img)</a></li>
+                <li class="flip-img_li"><a href="#none">Flip In(img)</a></li>
                 <li class="unfold_bounce_li"><a href="#none">Unfold<br>& Bounce</a></li>
                 <li class="zoom_li"><a href="#none">Zoom In</a></li>    
                 <li class="vanish_li"><a href="#none">Vanish In</a></li> 
@@ -48,9 +51,30 @@
                 <li class="effect_infinite_li"><a href="#none">Effect Infinite</a></li>
             </ul>
             <ul class="bg__li">
-                <li></li>
+                <li class="ken_burns"><a href="#none">Ken burns</a></li>
+                <li class="img_change"><a href="#none">Img change</a></li>
             </ul>
         </div>
+        <div class="bg__depth ken_burns__li">
+            <ul>
+                <li><a href="#none">Top</a></li>
+                <li><a href="#none">Top-right</a></li>
+                <li><a href="#none">Top-left</a></li>
+                <li><a href="#none">Bottom</a></li>
+                <li><a href="#none">Bottom-right</a></li>
+                <li><a href="#none">Bottom-left</a></li>
+                <li><a href="#none">Right</a></li>
+                <li><a href="#none">left</a></li>
+            </ul>   
+        </div>
+        <div class="bg__depth img_change__li">
+            <ul>
+                <li><a href="#none">Img change 2x</a></li>
+                <li><a href="#none">Img change 3x</a></li>
+                <li><a href="#none">Img change 4x</a></li>
+                <li><a href="#none">Img change 5x</a></li>
+            </ul>
+        </div>     
         <div class="sample_box">
             <div class="sample_box__tit on">
                 메뉴를 선택해 주세요!
@@ -122,42 +146,60 @@
                     <div class="zoom__tit">
                         <img src="../images/outfitunderwear3_logo.png" alt="">
                     </div>
+            </div>
+            <div class="vanish">
+                <img src="../images/outfitunderwear3_08-02.jpg" alt="">
+            </div>
+            <div class="text_fadeIn">
+                <div>
+                    <p>S</p>
+                    <p>T</p>
+                    <p>Y</p>
+                    <p>L</p>
+                    <p>E</p>
+                    <p>S</p>
+                    <p>H</p>
+                    <p>I</p>
+                    <p>P</p>
+                    <p>U</p>
+                    <p>I</p>
+                </div>
+            </div>
+            <div class="trackingIn">
+                <h1>STYLESHIP UI</h1>
             </div>    
+            <div class="flip-txt">
+                <img src="../images/outfitunderwear3_d_03.jpg" alt="">
+                <ul>
+                    <li><img src="../images/outfitunderwear3_d_03-01.png" alt="" id="flip1"></li>
+                    <li><img src="../images/outfitunderwear3_d_03-02.png" alt="" id="flip2"></li>
+                    <li><img src="../images/outfitunderwear3_d_03-03.png" alt="" id="flip3"></li>
+                </ul>
+            </div>
+            <div class="effect_hover">
+                <h1>Effect Hover</h1>
+                <ul>
+                    <li><img src="../images/styling_d_detail.jpg" alt="" id="hover1"></li>
+                    <li><img src="../images/styling_d_detail.jpg" alt="" id="hover2"></li>
+                    <li><img src="../images/styling_d_detail.jpg" alt="" id="hover3"></li>
+                    <li><img src="../images/styling_d_detail.jpg" alt="" id="hover4"></li>
+                </ul>
+            </div>
+            <div class="effect_infinite">
+                <h1>Effect Infinite</h1>
+                <ul>
+                    <li><img src="../images/styling_d_detail.jpg" alt="" id="infinite1"></li>
+                    <li><img src="../images/styling_d_detail.jpg" alt="" id="infinite2"></li>
+                    <li><img src="../images/styling_d_detail.jpg" alt="" id="infinite3"></li>
+                    <li><img src="../images/styling_d_detail.jpg" alt="" id="infinite4"></li>
+                </ul>
+            </div>            
         </div>
+        <div class="bg_box"></div>
     </div>
     <script>
          $(document).ready(function(){
-             function nav_click(e){
-                 var navList = $('nav ul li');
-                 navList.click(function(){
-                    var num = $(this).index() ;
-                    var num_1 = num - 1;
-                    var menuList_wrap =  $('.menu ul');
-                    var menuList_eq = $('.menu ul:eq('+ num_1 +')');
-
-                    if(num > 0){
-                        navList.removeClass(e);
-                        menuList_wrap.removeClass(e);
-                        $(this).addClass(e);
-                        menuList_eq.addClass(e);                        
-                    }
-                 });
-             };
-
-             function menuList_click(list_class,sampleBox_class){
-                var menuList =  $('.menu ul li');
-                menuList.click(function(){
-                    var menuList_class = $(this).attr('class');
-                    var sample = $('.sample_box div');
-                    if(menuList_class == list_class){
-                        sample.removeClass('on');                            
-                        menuList.removeClass('active');
-                        $('.'+ sampleBox_class +'').addClass('on');
-                        $(this).addClass('active');
-                    }
-                });
-
-             };
+             
              function intro(){
                 var bgLR = $('.bgL,.bgR');
                 var intro = $('.intro');
@@ -179,8 +221,80 @@
                     bgLR.removeClass('bg_ani_open');
                 });
              };
+
+             function nav_click(e){
+                 var navList = $('nav ul li');
+                 navList.click(function(){
+                    var bgDepth = $('.bg__depth')
+                    var num = $(this).index() ;
+                    var num_1 = num - 1;
+                    var menuList_wrap =  $('.menu ul');
+                    var menuList_eq = $('.menu ul:eq('+ num_1 +')');
+
+                    bgDepth.removeClass('on');
+                    if(num > 0 && num < 4){
+                        navList.removeClass(e);
+                        menuList_wrap.removeClass(e);
+                        $(this).addClass(e);
+                        menuList_eq.addClass(e);
+                        $('.bg_box').removeClass('on');  
+                        $('.sample_box div').removeClass('on');                                           
+                    }else if(num == 4){
+                        navList.removeClass(e);
+                        menuList_wrap.removeClass(e);
+                        $(this).addClass(e);
+                        menuList_eq.addClass(e);
+                        $('.sample_box div').removeClass('on');
+                        $('.bg_box').addClass('on');
+                    }
+                    
+                 });
+             };
+
+             function menuList_click(list_class,sampleBox_class){
+                var menuList =  $('.menu ul li');
+                menuList.click(function(){
+                    var menuList_class = $(this).attr('class');
+                    var sample = $('.sample_box div');
+                    var bgDepth = $('.bg__depth')
+                    if(menuList_class == list_class){
+                        sample.removeClass('on'); 
+                        bgDepth.removeClass('on');                           
+                        menuList.removeClass('active');
+                        $('.'+ sampleBox_class +'').addClass('on');
+                        $(this).addClass('active');
+                    }
+                });
+
+             };
+
+             function bg_depth_click(a,b){
+                 var bgDepthList = $('.bg__depth ul li');
+                 var bgBox = $('.bg_box');                
+
+                 bgDepthList.click(function(){
+                     var num = $(this).index() + 1;
+                     var ken_burns = $(this).parents('div').hasClass(a);
+                     var img_change = $(this).parents('div').hasClass(b);
+
+                     bgDepthList.removeClass('active');
+                     $(this).addClass('active');
+
+                     if(ken_burns){
+                        bgBox.removeClass();
+                        bgBox.addClass('bg_box');
+                        bgBox.addClass('on');
+                        bgBox.addClass('ken_burns_ani'+ num +'');
+                     }else if(img_change){
+                        bgBox.removeClass();
+                        bgBox.addClass('bg_box');
+                        bgBox.addClass('on');
+                        bgBox.addClass('img_change_ani'+ num +'');
+                     }
+                 });
+             };
              
-             intro();
+             intro('ken_burns','img_change');
              nav_click('active');
              menuList_click('fadeIn_li','basic');
              menuList_click('fadeIn_li_2','fadeIn2');
@@ -189,6 +303,15 @@
              menuList_click('flip-img_li','flip-img');
              menuList_click('unfold_bounce_li','unfold_bounce');
              menuList_click('zoom_li','zoom');
+             menuList_click('vanish_li','vanish');
+             menuList_click('textfade_li','text_fadeIn');
+             menuList_click('text_li','trackingIn');
+             menuList_click('flip-txt_li','flip-txt');
+             menuList_click('effect_hover_li','effect_hover');
+             menuList_click('effect_infinite_li','effect_infinite');
+             menuList_click('ken_burns','ken_burns__li');
+             menuList_click('img_change','img_change__li');
+             bg_depth_click('ken_burns__li','img_change__li');
          });
     </script>
     

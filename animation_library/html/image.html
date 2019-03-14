@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../css/animation_190311.css" type="text/css">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="../js/animation_library.js"></script>
+    <title>animation_library</title>
+</head>
+<body>
+    
+    <div class="wrap on">
+        <header>
+            <nav>
+                <ul>
+                    <li class="home"><a href="index.html">HOME</a></li>
+                    <li class="active"><a href="image.html">IMAGE</a></li>
+                    <li><a href="text.html">TEXT</a></li>
+                    <li><a href="button.html">BUTTON</a></li>
+                    <li><a href="background.html">BACKGROUND</a></li>
+                </ul>
+            </nav>
+        </header>
+        
+        <div class="menu">
+            <ul class="image__li active">
+                <li class="fadeIn_li"><a href="#none">Basic</a></li>
+                <li class="fadeIn_li_2"><a href="#none">2방향(L,R)</a></li>
+                <li class="fadeIn_li_4"><a href="#none">4방향(L,T,B,R)</a></li>
+                <li class="popIn_li"><a href="#none">Pop In</a></li>     
+                <li class="flip-img_li"><a href="#none">Flip In(img)</a></li>
+                <li class="unfold_bounce_li"><a href="#none">Unfold<br>& Bounce</a></li>
+                <li class="zoom_li"><a href="#none">Zoom In</a></li>    
+                <li class="vanish_li"><a href="#none">Vanish In</a></li> 
+            </ul>            
+        </div>
+        
+        <div class="sample_box">
+            <div class="sample_box__tit on">
+                메뉴를 선택해 주세요!
+            </div>
+            <div class="basic">
+                <img src="../images/outfitunderwear3_01.jpg" alt="">
+                <div class="basic__tit">
+                    <img src="../images/outfitunderwear3_logo.png" alt="">
+                </div>
+            </div>
+            <div class="fadeIn2">
+                <ul>
+                    <li><img src="../images/outfitunderwear3_07-02.jpg" alt="" id="img07-06" class="img"></li>
+                    <li><img src="../images/outfitunderwear3_07-03.jpg" alt="" id="img07-07" class="img"></li>
+                </ul>
+                <ul>
+                    <li><img src="../images/outfitunderwear3_07-04.jpg" alt="" id="img07-08" class="img"></li>
+                    <li><img src="../images/outfitunderwear3_07-05.jpg" alt="" id="img07-09" class="img"></li>
+                </ul>
+            </div>
+            <div class="fadeIn4">
+                <ul>
+                    <li><img src="../images/outfitunderwear3_07-02.jpg" alt="" id="img07-02" class="img"></li>
+                    <li><img src="../images/outfitunderwear3_07-03.jpg" alt="" id="img07-03" class="img"></li>
+                </ul>
+                <ul>
+                    <li><img src="../images/outfitunderwear3_07-04.jpg" alt="" id="img07-04" class="img"></li>
+                    <li><img src="../images/outfitunderwear3_07-05.jpg" alt="" id="img07-05" class="img"></li>
+                </ul>
+            </div>
+            <div class="popIn">
+                <ul>
+                    <li><img src="../images/outfitunderwear3_08-01.jpg" alt="" id="pop1"></li>
+                    <li><img src="../images/outfitunderwear3_08-02.jpg" alt="" id="pop2"></li>
+                </ul>
+                <ul>
+                    <li><img src="../images/outfitunderwear3_08-03.jpg" alt="" id="pop3"></li>
+                </ul>
+            </div>
+            <div class="flip-img">
+                <img src="../images/outfitunderwear3_02.jpg" alt="" class="spinIn">
+                <div>
+                    <ul>
+                        <li><img src="../images/outfitunderwear3_02-01.jpg" alt="" class="flipInX"></li>
+                        <li><img src="../images/outfitunderwear3_02-02.jpg" alt="" class="flipInY2"></li>
+                        <li><img src="../images/outfitunderwear3_02-03.jpg" alt="" class="flipInX2"></li>
+                        <li><img src="../images/outfitunderwear3_02-04.jpg" alt="" class="flipInY"></li>
+                    </ul>
+                    <ul>
+                        <li><img src="../images/outfitunderwear3_02-05.jpg" alt="" class="pullUp"></li>
+                        <li><img src="../images/outfitunderwear3_02-06.jpg" alt="" class="flipInX2"></li>
+                    </ul>
+                    <ul>
+                        <li><img src="../images/outfitunderwear3_02-07.jpg" alt="" class="flipInY"></li>
+                        <li><img src="../images/outfitunderwear3_02-08.jpg" alt="" class="flipInY2"></li>
+                        <li><img src="../images/outfitunderwear3_02-09.jpg" alt="" class="flipInX"></li>
+                        <li><img src="../images/outfitunderwear3_02-10.jpg" alt="" class="pullUp"></li>
+                    </ul>
+                </div>
+            </div> 
+            <div class="unfold_bounce">
+                <ul>
+                    <li><img src="../images/outfitunderwear3_07-02.jpg" alt="" id="unfold" class="img"></li>
+                    <li><img src="../images/outfitunderwear3_07-03.jpg" alt="" id="bounce" class="img"></li>
+                </ul>
+            </div>
+            <div class="zoom">
+                <img src="../images/outfitunderwear3_01.jpg" alt="">
+                    <div class="zoom__tit">
+                        <img src="../images/outfitunderwear3_logo.png" alt="">
+                    </div>
+            </div>
+            <div class="vanish">
+                <img src="../images/outfitunderwear3_08-02.jpg" alt="">
+            </div>
+            <div class="text_fadeIn">
+                <div>
+                    <p>S</p>
+                    <p>T</p>
+                    <p>Y</p>
+                    <p>L</p>
+                    <p>E</p>
+                    <p>S</p>
+                    <p>H</p>
+                    <p>I</p>
+                    <p>P</p>
+                    <p>U</p>
+                    <p>I</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
