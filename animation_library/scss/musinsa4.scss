@@ -1,0 +1,86 @@
+@import "animation_library";
+
+*{
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+    font-weight: bold;
+}
+ol,ul,li{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+.container{
+    position: relative;
+    overflow: hidden;
+    nav{
+        position: absolute;
+        top: 0px;
+        left: 120px;
+        z-index: 1;
+        @include fadeIn(fadein,0,0,1s,forwards,1s);        
+        ul li{
+            float: left;
+            width: 100px;
+            a{
+                display: block;
+                color: #fff;
+                font-size: 40px;   
+                text-decoration: underline;
+            }
+        }
+    }
+}
+
+.main__banner{
+    .main__bg{
+        width: 65%;
+        overflow: hidden;
+        float: left;
+    }
+    .main__bg1{
+        height: 900px;
+        background: url(../images/bg7.jpg) 50% 0 no-repeat;        
+        background-size: cover;
+        @include ken_burns(Top, 1.05, 1, 20s, forwards, top);
+    }
+    .main__bg2{
+        width: 35%;
+        height: 900px;
+        float: right;
+        background-color: #ffa4b4;
+    }
+    
+    .main__tit{
+        position: absolute;
+        overflow: hidden;
+        width: 1000px;
+        top: 70px;
+        right: 50px;
+        color: #fff;
+        h1{
+            font-size: 80px;
+            color: #a41515;
+            @include fadeIn(fadein_left,50px,0,1s,forwards,.3s);
+        }
+        .main__tit__txt{
+            width: 300px;
+            margin-top: 120px;
+            margin-left: 450px;
+            .txt1{
+                font-size: 20px;
+                font-weight: lighter;
+            }
+            .in__top1{@include fadeIn(fadein_top,0,15px,1s,forwards, .7s);}
+            .in__top2{@include fadeIn(fadein_top,0,15px,1s,forwards, .9s);}
+        }        
+    }
+    .sub__img{
+        position: absolute;
+        bottom: 140px;
+        right: 430px;
+        @include fadeIn(fadein_top,0,50px,1s,forwards, 1.1s);
+    }
+}

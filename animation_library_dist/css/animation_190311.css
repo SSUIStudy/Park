@@ -2812,14 +2812,14 @@ header nav ul li.active a {
 
 @-webkit-keyframes ken_burns1 {
   0% {
-    -webkit-transform: scale(1) translate(0, 0);
-    transform: scale(1) translate(0, 0);
+    -webkit-transform: scale(1);
+    transform: scale(1);
     -webkit-transform-origin: top;
     transform-origin: top;
   }
   100% {
-    -webkit-transform: scale(1.25) translate(0px, -15px);
-    transform: scale(1.25) translate(0px, -15px);
+    -webkit-transform: scale(1.12);
+    transform: scale(1.12);
     -webkit-transform-origin: top;
     transform-origin: top;
   }
@@ -2827,14 +2827,14 @@ header nav ul li.active a {
 
 @keyframes ken_burns1 {
   0% {
-    -webkit-transform: scale(1) translate(0, 0);
-    transform: scale(1) translate(0, 0);
+    -webkit-transform: scale(1);
+    transform: scale(1);
     -webkit-transform-origin: top;
     transform-origin: top;
   }
   100% {
-    -webkit-transform: scale(1.25) translate(0px, -15px);
-    transform: scale(1.25) translate(0px, -15px);
+    -webkit-transform: scale(1.12);
+    transform: scale(1.12);
     -webkit-transform-origin: top;
     transform-origin: top;
   }
@@ -2849,20 +2849,20 @@ header nav ul li.active a {
 
 @-webkit-keyframes ken_burns2 {
   0% {
-    -webkit-transform: scale(1) translate(0, 0);
-    transform: scale(1) translate(0, 0);
+    -webkit-transform: scale(1);
+    transform: scale(1);
     -webkit-transform-origin: right top;
     transform-origin: right top;
   }
   50% {
-    -webkit-transform: scale(1.25) translate(15px, -15px);
-    transform: scale(1.25) translate(15px, -15px);
+    -webkit-transform: scale(1.12);
+    transform: scale(1.12);
     -webkit-transform-origin: right top;
     transform-origin: right top;
   }
   100% {
-    -webkit-transform: scale(1) translate(0, 0);
-    transform: scale(1) translate(0, 0);
+    -webkit-transform: scale(1);
+    transform: scale(1);
     -webkit-transform-origin: right top;
     transform-origin: right top;
   }
@@ -2870,20 +2870,20 @@ header nav ul li.active a {
 
 @keyframes ken_burns2 {
   0% {
-    -webkit-transform: scale(1) translate(0, 0);
-    transform: scale(1) translate(0, 0);
+    -webkit-transform: scale(1);
+    transform: scale(1);
     -webkit-transform-origin: right top;
     transform-origin: right top;
   }
   50% {
-    -webkit-transform: scale(1.25) translate(15px, -15px);
-    transform: scale(1.25) translate(15px, -15px);
+    -webkit-transform: scale(1.12);
+    transform: scale(1.12);
     -webkit-transform-origin: right top;
     transform-origin: right top;
   }
   100% {
-    -webkit-transform: scale(1) translate(0, 0);
-    transform: scale(1) translate(0, 0);
+    -webkit-transform: scale(1);
+    transform: scale(1);
     -webkit-transform-origin: right top;
     transform-origin: right top;
   }
@@ -2898,14 +2898,14 @@ header nav ul li.active a {
 
 @-webkit-keyframes ken_burns3 {
   0% {
-    -webkit-transform: scale(1) translate(0, 0);
-    transform: scale(1) translate(0, 0);
+    -webkit-transform: scale(1.12);
+    transform: scale(1.12);
     -webkit-transform-origin: left top;
     transform-origin: left top;
   }
   100% {
-    -webkit-transform: scale(1.25) translate(-15px, -15px);
-    transform: scale(1.25) translate(-15px, -15px);
+    -webkit-transform: scale(1);
+    transform: scale(1);
     -webkit-transform-origin: left top;
     transform-origin: left top;
   }
@@ -2913,14 +2913,14 @@ header nav ul li.active a {
 
 @keyframes ken_burns3 {
   0% {
-    -webkit-transform: scale(1) translate(0, 0);
-    transform: scale(1) translate(0, 0);
+    -webkit-transform: scale(1.12);
+    transform: scale(1.12);
     -webkit-transform-origin: left top;
     transform-origin: left top;
   }
   100% {
-    -webkit-transform: scale(1.25) translate(-15px, -15px);
-    transform: scale(1.25) translate(-15px, -15px);
+    -webkit-transform: scale(1);
+    transform: scale(1);
     -webkit-transform-origin: left top;
     transform-origin: left top;
   }
@@ -2935,14 +2935,14 @@ header nav ul li.active a {
 
 @-webkit-keyframes ken_burns4 {
   0% {
-    -webkit-transform: scale(1) translate(0, 0);
-    transform: scale(1) translate(0, 0);
+    -webkit-transform: scale(1);
+    transform: scale(1);
     -webkit-transform-origin: bottom;
     transform-origin: bottom;
   }
   100% {
-    -webkit-transform: scale(1.25) translate(0px, 30px);
-    transform: scale(1.25) translate(0px, 30px);
+    -webkit-transform: scale(1.12);
+    transform: scale(1.12);
     -webkit-transform-origin: bottom;
     transform-origin: bottom;
   }
@@ -2950,14 +2950,14 @@ header nav ul li.active a {
 
 @keyframes ken_burns4 {
   0% {
-    -webkit-transform: scale(1) translate(0, 0);
-    transform: scale(1) translate(0, 0);
+    -webkit-transform: scale(1);
+    transform: scale(1);
     -webkit-transform-origin: bottom;
     transform-origin: bottom;
   }
   100% {
-    -webkit-transform: scale(1.25) translate(0px, 30px);
-    transform: scale(1.25) translate(0px, 30px);
+    -webkit-transform: scale(1.12);
+    transform: scale(1.12);
     -webkit-transform-origin: bottom;
     transform-origin: bottom;
   }
@@ -2972,14 +2972,14 @@ header nav ul li.active a {
 
 @-webkit-keyframes ken_burns5 {
   0% {
-    -webkit-transform: scale(1) translate(0, 0);
-    transform: scale(1) translate(0, 0);
+    -webkit-transform: scale(1.12);
+    transform: scale(1.12);
     -webkit-transform-origin: right bottom;
     transform-origin: right bottom;
   }
   100% {
-    -webkit-transform: scale(1.25) translate(15px, 15px);
-    transform: scale(1.25) translate(15px, 15px);
+    -webkit-transform: scale(1);
+    transform: scale(1);
     -webkit-transform-origin: right bottom;
     transform-origin: right bottom;
   }
@@ -2987,14 +2987,14 @@ header nav ul li.active a {
 
 @keyframes ken_burns5 {
   0% {
-    -webkit-transform: scale(1) translate(0, 0);
-    transform: scale(1) translate(0, 0);
+    -webkit-transform: scale(1.12);
+    transform: scale(1.12);
     -webkit-transform-origin: right bottom;
     transform-origin: right bottom;
   }
   100% {
-    -webkit-transform: scale(1.25) translate(15px, 15px);
-    transform: scale(1.25) translate(15px, 15px);
+    -webkit-transform: scale(1);
+    transform: scale(1);
     -webkit-transform-origin: right bottom;
     transform-origin: right bottom;
   }
@@ -3009,20 +3009,20 @@ header nav ul li.active a {
 
 @-webkit-keyframes ken_burns6 {
   0% {
-    -webkit-transform: scale(1) translate(0, 0);
-    transform: scale(1) translate(0, 0);
+    -webkit-transform: scale(1);
+    transform: scale(1);
     -webkit-transform-origin: left bottom;
     transform-origin: left bottom;
   }
   50% {
-    -webkit-transform: scale(1.25) translate(-15px, 15px);
-    transform: scale(1.25) translate(-15px, 15px);
+    -webkit-transform: scale(1.12);
+    transform: scale(1.12);
     -webkit-transform-origin: left bottom;
     transform-origin: left bottom;
   }
   100% {
-    -webkit-transform: scale(1) translate(0, 0);
-    transform: scale(1) translate(0, 0);
+    -webkit-transform: scale(1);
+    transform: scale(1);
     -webkit-transform-origin: left bottom;
     transform-origin: left bottom;
   }
@@ -3030,20 +3030,20 @@ header nav ul li.active a {
 
 @keyframes ken_burns6 {
   0% {
-    -webkit-transform: scale(1) translate(0, 0);
-    transform: scale(1) translate(0, 0);
+    -webkit-transform: scale(1);
+    transform: scale(1);
     -webkit-transform-origin: left bottom;
     transform-origin: left bottom;
   }
   50% {
-    -webkit-transform: scale(1.25) translate(-15px, 15px);
-    transform: scale(1.25) translate(-15px, 15px);
+    -webkit-transform: scale(1.12);
+    transform: scale(1.12);
     -webkit-transform-origin: left bottom;
     transform-origin: left bottom;
   }
   100% {
-    -webkit-transform: scale(1) translate(0, 0);
-    transform: scale(1) translate(0, 0);
+    -webkit-transform: scale(1);
+    transform: scale(1);
     -webkit-transform-origin: left bottom;
     transform-origin: left bottom;
   }
@@ -3058,20 +3058,20 @@ header nav ul li.active a {
 
 @-webkit-keyframes ken_burns7 {
   0% {
-    -webkit-transform: scale(1) translate(0, 0);
-    transform: scale(1) translate(0, 0);
+    -webkit-transform: scale(1.12);
+    transform: scale(1.12);
     -webkit-transform-origin: right;
     transform-origin: right;
   }
   50% {
-    -webkit-transform: scale(1.25) translate(15px, 0px);
-    transform: scale(1.25) translate(15px, 0px);
+    -webkit-transform: scale(1);
+    transform: scale(1);
     -webkit-transform-origin: right;
     transform-origin: right;
   }
   100% {
-    -webkit-transform: scale(1) translate(0, 0);
-    transform: scale(1) translate(0, 0);
+    -webkit-transform: scale(1.12);
+    transform: scale(1.12);
     -webkit-transform-origin: right;
     transform-origin: right;
   }
@@ -3079,20 +3079,20 @@ header nav ul li.active a {
 
 @keyframes ken_burns7 {
   0% {
-    -webkit-transform: scale(1) translate(0, 0);
-    transform: scale(1) translate(0, 0);
+    -webkit-transform: scale(1.12);
+    transform: scale(1.12);
     -webkit-transform-origin: right;
     transform-origin: right;
   }
   50% {
-    -webkit-transform: scale(1.25) translate(15px, 0px);
-    transform: scale(1.25) translate(15px, 0px);
+    -webkit-transform: scale(1);
+    transform: scale(1);
     -webkit-transform-origin: right;
     transform-origin: right;
   }
   100% {
-    -webkit-transform: scale(1) translate(0, 0);
-    transform: scale(1) translate(0, 0);
+    -webkit-transform: scale(1.12);
+    transform: scale(1.12);
     -webkit-transform-origin: right;
     transform-origin: right;
   }
@@ -3107,20 +3107,20 @@ header nav ul li.active a {
 
 @-webkit-keyframes ken_burns8 {
   0% {
-    -webkit-transform: scale(1) translate(0, 0);
-    transform: scale(1) translate(0, 0);
+    -webkit-transform: scale(1.12);
+    transform: scale(1.12);
     -webkit-transform-origin: left;
     transform-origin: left;
   }
   50% {
-    -webkit-transform: scale(1.25) translate(-15px, 0px);
-    transform: scale(1.25) translate(-15px, 0px);
+    -webkit-transform: scale(1);
+    transform: scale(1);
     -webkit-transform-origin: left;
     transform-origin: left;
   }
   100% {
-    -webkit-transform: scale(1) translate(0, 0);
-    transform: scale(1) translate(0, 0);
+    -webkit-transform: scale(1.12);
+    transform: scale(1.12);
     -webkit-transform-origin: left;
     transform-origin: left;
   }
@@ -3128,20 +3128,20 @@ header nav ul li.active a {
 
 @keyframes ken_burns8 {
   0% {
-    -webkit-transform: scale(1) translate(0, 0);
-    transform: scale(1) translate(0, 0);
+    -webkit-transform: scale(1.12);
+    transform: scale(1.12);
     -webkit-transform-origin: left;
     transform-origin: left;
   }
   50% {
-    -webkit-transform: scale(1.25) translate(-15px, 0px);
-    transform: scale(1.25) translate(-15px, 0px);
+    -webkit-transform: scale(1);
+    transform: scale(1);
     -webkit-transform-origin: left;
     transform-origin: left;
   }
   100% {
-    -webkit-transform: scale(1) translate(0, 0);
-    transform: scale(1) translate(0, 0);
+    -webkit-transform: scale(1.12);
+    transform: scale(1.12);
     -webkit-transform-origin: left;
     transform-origin: left;
   }

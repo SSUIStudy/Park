@@ -35,18 +35,21 @@ a{
 }
 
 .main__banner{
-    height: 900px;
-    background: url(../images/bg4.jpg) 50% 0 no-repeat;
-    background-size: 100%;
+    .main__bg{
+        height: 900px;
+        background: url(../images/bg4.jpg) 50% 0 no-repeat;
+        background-size: 100%;
+        @include ken_burns(Top, 1, 1.15, 20s, forwards,top);
+    }
     .color__bar{
         position: absolute;
         bottom: 0;
         left: 0;
         background-color: #ffbbd0;
         width: 175px;
-        height: 500px;
+        height: 600px;
         z-index: 1;
-        @include In(in_top,0,500px,.5s,forwards,.3s);
+        @include In(in_top,0,500px,.8s,forwards,.3s);
     }
     .main__tit{
         position: absolute;

@@ -69,9 +69,15 @@ a {
 }
 
 .main__banner .main__bg {
+  width: 65%;
+  overflow: hidden;
+  float: left;
+}
+
+.main__banner .main__bg1 {
   height: 900px;
-  background: url(../images/bg4.jpg) 50% 0 no-repeat;
-  background-size: 100%;
+  background: url(../images/bg7.jpg) 50% 0 no-repeat;
+  background-size: cover;
   -webkit-animation: Top 20s forwards ease-out;
           animation: Top 20s forwards ease-out;
   -webkit-animation-delay: !important;
@@ -80,14 +86,14 @@ a {
 
 @-webkit-keyframes Top {
   0% {
-    -webkit-transform: scale(1);
-    transform: scale(1);
+    -webkit-transform: scale(1.05);
+    transform: scale(1.05);
     -webkit-transform-origin: top;
     transform-origin: top;
   }
   100% {
-    -webkit-transform: scale(1.15);
-    transform: scale(1.15);
+    -webkit-transform: scale(1);
+    transform: scale(1);
     -webkit-transform-origin: top;
     transform-origin: top;
   }
@@ -95,74 +101,87 @@ a {
 
 @keyframes Top {
   0% {
+    -webkit-transform: scale(1.05);
+    transform: scale(1.05);
+    -webkit-transform-origin: top;
+    transform-origin: top;
+  }
+  100% {
     -webkit-transform: scale(1);
     transform: scale(1);
     -webkit-transform-origin: top;
     transform-origin: top;
   }
-  100% {
-    -webkit-transform: scale(1.15);
-    transform: scale(1.15);
-    -webkit-transform-origin: top;
-    transform-origin: top;
-  }
 }
 
-.main__banner .color__bar {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  background-color: #ffbbd0;
-  width: 175px;
-  height: 600px;
-  z-index: 1;
-  -webkit-animation: in_top 0.8s forwards;
-          animation: in_top 0.8s forwards;
-  -webkit-animation-delay: 0.3s !important;
-          animation-delay: 0.3s !important;
-  -webkit-transform: translate3d(0, 500px, 0);
-          transform: translate3d(0, 500px, 0);
-}
-
-@-webkit-keyframes in_top {
-  0% {
-    -webkit-transform: translate3d(0, 500px, 0);
-    transform: translate3d(0, 500px, 0);
-  }
-  100% {
-    -webkit-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);
-  }
-}
-
-@keyframes in_top {
-  0% {
-    -webkit-transform: translate3d(0, 500px, 0);
-    transform: translate3d(0, 500px, 0);
-  }
-  100% {
-    -webkit-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);
-  }
+.main__banner .main__bg2 {
+  width: 35%;
+  height: 900px;
+  float: right;
+  background-color: #ffa4b4;
 }
 
 .main__banner .main__tit {
   position: absolute;
-  top: 380px;
-  left: 0;
-  right: 0;
-  margin: auto;
-  text-align: center;
+  overflow: hidden;
+  width: 1000px;
+  top: 70px;
+  right: 50px;
   color: #fff;
 }
 
-.main__banner .main__tit .in__top1 {
-  font-size: 40px;
-  margin-bottom: 20px;
+.main__banner .main__tit h1 {
+  font-size: 80px;
+  color: #a41515;
+  -webkit-animation: fadein_left 1s forwards;
+          animation: fadein_left 1s forwards;
+  -webkit-animation-delay: 0.3s !important;
+          animation-delay: 0.3s !important;
+  opacity: 0;
+}
+
+@-webkit-keyframes fadein_left {
+  0% {
+    -webkit-transform: translate3d(50px, 0, 0);
+    transform: translate3d(50px, 0, 0);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadein_left {
+  0% {
+    -webkit-transform: translate3d(50px, 0, 0);
+    transform: translate3d(50px, 0, 0);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+}
+
+.main__banner .main__tit .main__tit__txt {
+  width: 300px;
+  margin-top: 120px;
+  margin-left: 450px;
+}
+
+.main__banner .main__tit .main__tit__txt .txt1 {
+  font-size: 20px;
+  font-weight: lighter;
+}
+
+.main__banner .main__tit .main__tit__txt .in__top1 {
   -webkit-animation: fadein_top 1s forwards;
           animation: fadein_top 1s forwards;
-  -webkit-animation-delay: 0.8s !important;
-          animation-delay: 0.8s !important;
+  -webkit-animation-delay: 0.7s !important;
+          animation-delay: 0.7s !important;
   opacity: 0;
 }
 
@@ -192,13 +211,11 @@ a {
   }
 }
 
-.main__banner .main__tit .in__top2 {
-  font-size: 20px;
-  font-weight: lighter;
+.main__banner .main__tit .main__tit__txt .in__top2 {
   -webkit-animation: fadein_top 1s forwards;
           animation: fadein_top 1s forwards;
-  -webkit-animation-delay: 1s !important;
-          animation-delay: 1s !important;
+  -webkit-animation-delay: 0.9s !important;
+          animation-delay: 0.9s !important;
   opacity: 0;
 }
 
@@ -215,4 +232,28 @@ a {
   }
 }
 
-/*# sourceMappingURL=musinsa2.css.map */
+.main__banner .sub__img {
+  position: absolute;
+  bottom: 140px;
+  right: 430px;
+  -webkit-animation: fadein_top 1s forwards;
+          animation: fadein_top 1s forwards;
+  -webkit-animation-delay: 1.1s !important;
+          animation-delay: 1.1s !important;
+  opacity: 0;
+}
+
+@keyframes fadein_top {
+  0% {
+    -webkit-transform: translate3d(0, 50px, 0);
+    transform: translate3d(0, 50px, 0);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+}
+
+/*# sourceMappingURL=musinsa4.css.map */

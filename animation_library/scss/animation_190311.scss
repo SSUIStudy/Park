@@ -537,28 +537,28 @@ header{
 }
 
 .Top{
-    @include ken_burns(ken_burns1, 0px, -15px, 8s, 1, top);
+    @include ken_burns(ken_burns1, 1, 1.12, 8s, 1, top);
 }
 .Top-right{
-    @include ken_burns(ken_burns2, 15px, -15px, 10s, infinite, right top);
+    @include ken_burns(ken_burns2,1, 1.12, 10s, infinite, right top);
 }
 .Top-left{
-    @include ken_burns(ken_burns3, -15px, -15px, 8s, 1, left top);
+    @include ken_burns(ken_burns3, 1.12, 1, 8s, 1, left top);
 }
 .Bottom{
-    @include ken_burns(ken_burns4, 0px, 30px, 8s, 1, bottom);
+    @include ken_burns(ken_burns4, 1, 1.12, 8s, 1, bottom);
 }
 .Bottom-right{
-    @include ken_burns(ken_burns5, 15px, 15px, 8s, 1, right bottom);
+    @include ken_burns(ken_burns5, 1.12, 1, 8s,  1, right bottom);
 }
 .Bottom-left{
-    @include ken_burns(ken_burns6, -15px, 15px, 10s, infinite, left bottom);
+    @include ken_burns(ken_burns6, 1, 1.12, 10s, infinite, left bottom);
 }
 .Right{
-    @include ken_burns(ken_burns7, 15px, 0px, 10s, infinite, right);
+    @include ken_burns(ken_burns7, 1.12, 1, 10s, infinite, right);
 }
 .Left{
-    @include ken_burns(ken_burns8, -15px, 0px, 10s, infinite, left);
+    @include ken_burns(ken_burns8, 1.12, 1, 10s, infinite, left);
 }
 
 .Img-change-2x{
