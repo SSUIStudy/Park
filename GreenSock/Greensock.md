@@ -86,6 +86,49 @@ TweenMax.fromTo( 대상오브젝트, 지속시간, {시작지점 속성}, {종�
 * [TweenLite.fromTo(box, 3, {scaleX:0.5,scaleY:0.5,backgroundColor:"#000"},{scaleX:1scaleY:1,backgroundColor:"#00ff00"});](//jsfiddle.net/recoveryman/uwadu6ek/embedded/result,js,html,css/)<br><br>
 <br>
 
+---
+
+
+### 변 수
+<br>
+
+>Tween을 변수로 만들어 사용할 수 있습니다.
+
+<br>
+
+```
+var myTween = new TweenLite.to( 대상오브젝트, 지속시간, {속성});
+```
+
+* [var myTween = new TweenLite.to('.box', 2, {width:100, height:100});](//jsfiddle.net/recoveryman/1z0d15gc/embedded/result,js,html,css/)<br><br>
+<br>
+
+---
+
+
+### 제 어
+<br>
+
+>paused:true 추가로 애니메이션의 제어가 가능
+
+<br>
+
+```
+var myTween = new TweenLite.to( 대상오브젝트, 지속시간, {속성,paused:true});
+```
+
+>변수명.resume();    : 시작
+
+>변수명.pause();    : 멈춤
+
+>변수명.reverse();    : 되돌리기
+
+>변수명.restart();    : 재시작
+
+<br>
+
+* [var myTween = new TweenLite.to('.box', 7, {width:100, height:100, paused:true});](//jsfiddle.net/recoveryman/5v87qjod/embedded/result,js,html,css/)<br><br>
+<br>
 
 
 
