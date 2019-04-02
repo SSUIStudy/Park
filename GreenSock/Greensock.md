@@ -11,7 +11,9 @@
 
 <br>
 
-```TimelineMax는 애니메이션이 마치 <b>플래시</b> 처럼 부드럽게 동작하게 하는걸 알 수 있습니다.```
+```
+TimelineMax는 애니메이션이 마치 플래시 처럼 부드럽게 동작하게 하는걸 알 수 있습니다.
+```
 
 * [jQuery 의 animate 와 다른점(1)](//jsfiddle.net/recoveryman/kh3pnzhz/2/embedded/result,js,html,css/ ) <br>
 
@@ -34,7 +36,6 @@
 ```
 TweenMax.to( 대상오브젝트, 지속시간, 속성 )
 ```
-<br>
 <br>
 
 >대상 오브젝트 : 애니메이션을 적용할 대상입니다. DOM 객체가 아닌 JS 객체도 가능합니다.<br>
