@@ -4,4 +4,4 @@
 
 <iframe width="100%" height="300" src="//jsfiddle.net/recoveryman/kh3pnzhz/2/embedded/result,js,html,css/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
 
-[GitHub](http://github.com "깃허브") 
+[GitHub](//jsfiddle.net/recoveryman/kh3pnzhz/2/embedded/result,js,html,css/ "깃허브") 
