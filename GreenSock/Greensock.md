@@ -3,7 +3,7 @@
 
 >TweenLite 는 애니메이션을 처리하는 내용을 담고 있습니다. 꼭 필요한 부분만을 담고 있다고 합니다.
 
->TweenMax 는 TweenLite 보다 더 많은 기능을 수행하는 일종의 확장판 인거 같습니다.
+>TweenMax 는 TweenLite 보다 더 많은 기능을 수행하는 일종의 확장판 인거 같습니다.<br>  easing 기능도 기본 탑재되어 있습니다.
 
 >TimelineLite 는 애니메이션의 시간순차적으로 진행되게 조작합니다.
 
@@ -12,7 +12,7 @@
 <br>
 
 ```
-TimelineMax는 애니메이션이 마치 플래시 처럼 부드럽게 동작하게 하는걸 알 수 있습니다.
+TimelineMax는 애니메이션이 마치 플래시 처럼 부드럽게 동작하게 해줍니다.
 ```
 <br>
 
@@ -38,7 +38,7 @@ TimelineMax는 애니메이션이 마치 플래시 처럼 부드럽게 동작하
 <br>
 
 ```
-TweenMax.to( 대상오브젝트, 지속시간, 속성 )
+TweenMax.to( 대상오브젝트, 지속시간, {속성} );
 ```
 <br>
 
@@ -63,12 +63,28 @@ TweenMax.to( 대상오브젝트, 지속시간, 속성 )
 <br>
 
 ```
-TweenMax.from( 대상오브젝트, 지속시간, 속성 )
+TweenMax.from( 대상오브젝트, 지속시간, {속성} );
 ```
 
 * [TweenLite.from(box, 3, {scaleX:0.5, scaleY:0.5, backgroundColor:"#00ff00"});](//jsfiddle.net/recoveryman/az7mbmct/embedded/result,js,html,css/)<br><br>
 <br>
 
+---
+
+
+### .fromTo( )
+<br>
+
+>.fromTo는 애니메이션의 시작지점과 종료지점을 지정할 수 있습니다.
+
+<br>
+
+```
+TweenMax.fromTo( 대상오브젝트, 지속시간, {시작지점 속성}, {종료지점 속성});
+```
+
+* [TweenLite.fromTo(box, 3, {scaleX:0.5,scaleY:0.5,backgroundColor:"#000"},{scaleX:1scaleY:1,backgroundColor:"#00ff00"});](//jsfiddle.net/recoveryman/az7mbmct/embedded/result,js,html,css/)<br><br>
+<br>
 
 
 
