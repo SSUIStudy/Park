@@ -31,7 +31,9 @@ TimelineMax는 애니메이션이 마치 플래시 처럼 부드럽게 동작하
 
 ### .to( )
 
->트윈맥스에서 가장 많이 쓰이는 메소드는 to() 입니다.
+>TweenMax에서 가장 많이 쓰이는 메소드는 .to() 입니다.<br>
+.to() 는 제이쿼리의 .animate() 라고 생각해도 무방
+
 <br>
 
 ```
@@ -44,7 +46,27 @@ TweenMax.to( 대상오브젝트, 지속시간, 속성 )
 속성 : 애니메이션이 적용될 속성입니다. 주로 CSS 속성을 입력합니다.
 
 
-* [TweenLite.to($("div"), 3, {backgroundColor:"#00ff00"});](//jsfiddle.net/recoveryman/dzocnc2o/4/embedded/result,js,html,css/)
+* [TweenLite.to($("div"), 3, {backgroundColor:"#00ff00"});](//jsfiddle.net/recoveryman/dzocnc2o/4/embedded/result,js,html,css/)<br><br>
+<br>
+
+---
+<br>
+
+
+### .from( )
+
+>.to()와 반대되는 개념의 메소드 입니다.<br>
+.to()는 **" 현재 -> 미래 "** 의 진행 방식이며, "**미래**" 에 대한 속성을 지정  <br>
+.from()은 **" 과거 -> 현재 "** 의 진행 방식이며, "**과거**" 에 대한 속성을 지정 
+
+<br>
+
+```
+TweenMax.from( 대상오브젝트, 지속시간, 속성 )
+```
+
+* [TweenLite.from(box, 3, {scaleX:0.5, scaleY:0.5, backgroundColor:"#00ff00"});](//jsfiddle.net/recoveryman/az7mbmct/embedded/result,js,html,css/)<br><br>
+<br>
 
 
 
