@@ -4,4 +4,4 @@
 
 `<iframe width="100%" height="300" src="//jsfiddle.net/recoveryman/kh3pnzhz/2/embedded/result,js,html,css/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>`
 
-<img src="./scss/img/mixin1.PNG">
+<img src="/scss/img/mixin1.PNG">
