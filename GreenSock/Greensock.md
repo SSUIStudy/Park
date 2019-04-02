@@ -12,5 +12,6 @@
 
 * [jQuery 의 animate 와 다른점(1)](//jsfiddle.net/recoveryman/kh3pnzhz/2/embedded/result,js,html,css/ ) <br>
 * [jQuery 의 animate 와 다른점(2)](//jsfiddle.net/recoveryman/wjnspybg/embedded/result,js,html,css/ ) 
+* [TimelineMax 사용](//jsfiddle.net/recoveryman/dzocnc2o/1/embedded/result,js,html,css/ ) 
 
 출처: https://recoveryman.tistory.com/377?category=704086 [회복맨 블로그]
