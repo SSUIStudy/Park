@@ -83,7 +83,7 @@ TweenMax.from( 대상오브젝트, 지속시간, {속성} );
 TweenMax.fromTo( 대상오브젝트, 지속시간, {시작지점 속성}, {종료지점 속성});
 ```
 
-* [TweenLite.fromTo(box, 3, {scaleX:0.5,scaleY:0.5,backgroundColor:"#000"},{scaleX:1scaleY:1,backgroundColor:"#00ff00"});](//jsfiddle.net/recoveryman/az7mbmct/embedded/result,js,html,css/)<br><br>
+* [TweenLite.fromTo(box, 3, {scaleX:0.5,scaleY:0.5,backgroundColor:"#000"},{scaleX:1scaleY:1,backgroundColor:"#00ff00"});](//jsfiddle.net/recoveryman/uwadu6ek/embedded/result,js,html,css/)<br><br>
 <br>
 
 
