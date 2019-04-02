@@ -47,7 +47,7 @@ TweenMax.to( 대상오브젝트, 지속시간, {속성} );
 속성 : 애니메이션이 적용될 속성입니다. 주로 CSS 속성을 입력합니다.
 
 
-* [TweenLite.to($("div"), 3, {backgroundColor:"#00ff00"});](//jsfiddle.net/recoveryman/dzocnc2o/4/embedded/result,js,html,css/)<br><br>
+* [TweenMax.to($("div"), 3, {backgroundColor:"#00ff00"});](//jsfiddle.net/recoveryman/dzocnc2o/4/embedded/result,js,html,css/)<br><br>
 <br>
 
 ---
@@ -66,7 +66,7 @@ TweenMax.to( 대상오브젝트, 지속시간, {속성} );
 TweenMax.from( 대상오브젝트, 지속시간, {속성} );
 ```
 
-* [TweenLite.from(box, 3, {scaleX:0.5, scaleY:0.5, backgroundColor:"#00ff00"});](//jsfiddle.net/recoveryman/az7mbmct/embedded/result,js,html,css/)<br><br>
+* [TweenMax.from(box, 3, {scaleX:0.5, scaleY:0.5, backgroundColor:"#00ff00"});](//jsfiddle.net/recoveryman/az7mbmct/embedded/result,js,html,css/)<br><br>
 <br>
 
 ---
@@ -83,7 +83,7 @@ TweenMax.from( 대상오브젝트, 지속시간, {속성} );
 TweenMax.fromTo( 대상오브젝트, 지속시간, {시작지점 속성}, {종료지점 속성});
 ```
 
-* [TweenLite.fromTo(box, 3, {scaleX:0.5,scaleY:0.5,backgroundColor:"#000"},{scaleX:1scaleY:1,backgroundColor:"#00ff00"});](//jsfiddle.net/recoveryman/uwadu6ek/embedded/result,js,html,css/)<br><br>
+* [TweenMax.fromTo(box, 3, {scaleX:0.5,scaleY:0.5,backgroundColor:"#000"},{scaleX:1scaleY:1,backgroundColor:"#00ff00"});](//jsfiddle.net/recoveryman/uwadu6ek/embedded/result,js,html,css/)<br><br>
 <br>
 
 ---
@@ -97,10 +97,10 @@ TweenMax.fromTo( 대상오브젝트, 지속시간, {시작지점 속성}, {종�
 <br>
 
 ```
-var myTween = new TweenLite.to( 대상오브젝트, 지속시간, {속성});
+var myTween = new TweenMax.to( 대상오브젝트, 지속시간, {속성});
 ```
 
-* [var myTween = new TweenLite.to('.box', 2, {width:100, height:100});](//jsfiddle.net/recoveryman/1z0d15gc/embedded/result,js,html,css/)<br><br>
+* [var myTween = new TweenMax.to('.box', 2, {width:100, height:100});](//jsfiddle.net/recoveryman/1z0d15gc/embedded/result,js,html,css/)<br><br>
 <br>
 
 ---
@@ -114,7 +114,7 @@ var myTween = new TweenLite.to( 대상오브젝트, 지속시간, {속성});
 <br>
 
 ```
-var myTween = new TweenLite.to( 대상오브젝트, 지속시간, {속성,paused:true});
+var myTween = new TweenMax.to( 대상오브젝트, 지속시간, {속성,paused:true});
 ```
 
 >변수명.resume();    : 시작
@@ -127,7 +127,7 @@ var myTween = new TweenLite.to( 대상오브젝트, 지속시간, {속성,paused
 
 <br>
 
-* [var myTween = new TweenLite.to('.box', 7, {width:100, height:100, paused:true});](//jsfiddle.net/recoveryman/5v87qjod/embedded/result,js,html,css/)<br><br>
+* [var myTween = new TweenMax.to('.box', 7, {width:100, height:100, paused:true});](//jsfiddle.net/recoveryman/5v87qjod/embedded/result,js,html,css/)<br><br>
 <br>
 
 
