@@ -14,6 +14,7 @@
 ```
 TimelineMax는 애니메이션이 마치 플래시 처럼 부드럽게 동작하게 하는걸 알 수 있습니다.
 ```
+<br>
 
 * [jQuery 의 animate 와 다른점(1)](//jsfiddle.net/recoveryman/kh3pnzhz/2/embedded/result,js,html,css/ ) <br>
 
