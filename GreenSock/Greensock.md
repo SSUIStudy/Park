@@ -131,6 +131,69 @@ var myTween = new TweenMax.to( 대상오브젝트, 지속시간, {속성,paused:
 <br>
 
 
+---
+### Special properties (특별한 속성)
+---
+
+
+### Delay
+<br>
+
+>delay(지연) 기능
+
+<br>
+
+```
+var myTween = new TweenMax.to( 대상오브젝트, 지속시간, {속성, delay:"지연할 시간"});
+```
+
+<br>
+
+* [var myTween = new TweenMax.to('.box', 7, {width:100, height:100, delay:2});](//jsfiddle.net/recoveryman/7ybm15pk/embedded/result,js,html,css/)<br><br>
+<br>
+
+---
+
+
+### onComplete
+<br>
+
+>애니메이션이 완료 될 때 함수를 호출 (일명 "콜백")
+
+<br>
+
+```
+var myTween = new TweenMax.to( 대상오브젝트, 지속시간, {속성, onComplete:"콜백함수"});
+```
+
+
+
+<br>
+
+* [var myTween = new TweenMax.('.box', 2, {width:100, height:100, paused:true, onComplete:textcc});](//jsfiddle.net/recoveryman/gefvuwL1/embedded/result,js,html,css/)<br><br>
+<br>
+
+---
+
+
+### Easing
+<br>
+
+>Easing는 애니메이션에 변화율을 줘서 유동적인 동작을 수행합니다.
+
+<br>
+
+```
+var myTween = new TweenMax.to( 대상오브젝트, 지속시간, {속성, ease:"내용"});
+```
+
+
+
+<br>
+
+* [var myTween = new TweenMax.to( 대상오브젝트, 지속시간, {속성, ease:"내용"});](//jsfiddle.net/recoveryman/f9kauh7r/embedded/result,js,html,css/)<br><br>
+* [https://greensock.com/get-started-js](https://greensock.com/get-started-js)
+<br>
 
 
 
