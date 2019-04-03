@@ -46,6 +46,7 @@ TweenMax.to( 대상오브젝트, 지속시간, {속성} );
 지속시간 : 애니메이션이 진행될 총 시간입니다. 초단위로 입력합니다.<br>
 속성 : 애니메이션이 적용될 속성입니다. 주로 CSS 속성을 입력합니다.
 
+<br>
 
 * [TweenMax.to($("div"), 3, {backgroundColor:"#00ff00"});](//jsfiddle.net/recoveryman/dzocnc2o/4/embedded/result,js,html,css/)<br><br>
 <br>
@@ -65,6 +66,7 @@ TweenMax.to( 대상오브젝트, 지속시간, {속성} );
 ```
 TweenMax.from( 대상오브젝트, 지속시간, {속성} );
 ```
+<br>
 
 * [TweenMax.from(box, 3, {scaleX:0.5, scaleY:0.5, backgroundColor:"#00ff00"});](//jsfiddle.net/recoveryman/az7mbmct/embedded/result,js,html,css/)<br><br>
 <br>
@@ -82,6 +84,7 @@ TweenMax.from( 대상오브젝트, 지속시간, {속성} );
 ```
 TweenMax.fromTo( 대상오브젝트, 지속시간, {시작지점 속성}, {종료지점 속성});
 ```
+<br>
 
 * [TweenMax.fromTo(box, 3, {scaleX:0.5,scaleY:0.5,backgroundColor:"#000"},{scaleX:1scaleY:1,backgroundColor:"#00ff00"});](//jsfiddle.net/recoveryman/uwadu6ek/embedded/result,js,html,css/)<br><br>
 <br>
@@ -99,6 +102,7 @@ TweenMax.fromTo( 대상오브젝트, 지속시간, {시작지점 속성}, {종�
 ```
 var myTween = new TweenMax.to( 대상오브젝트, 지속시간, {속성});
 ```
+<br>
 
 * [var myTween = new TweenMax.to('.box', 2, {width:100, height:100});](//jsfiddle.net/recoveryman/1z0d15gc/embedded/result,js,html,css/)<br><br>
 <br>
