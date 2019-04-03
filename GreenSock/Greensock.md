@@ -199,8 +199,123 @@ var myTween = new TweenMax.to( 대상오브젝트, 지속시간, {속성, ease:"
 * [https://greensock.com/get-started-js](https://greensock.com/get-started-js)
 <br>
 
+---
 
 
+### Repeat(반복)
+<br>
+
+>애니메이션 실행을 반복
+
+<br>
+
+```
+var myTween = new TweenMax.to( 대상오브젝트, 지속시간, {속성, repeat:"반복횟수"});
+```
+<br>
+
+> **무한 반복시 repeat : "-1"**
+
+
+<br>
+
+* [var myTween = new TweenMax.to( 대상오브젝트, 지속시간, {속성, repeat:"반복횟수"});](//jsfiddle.net/recoveryman/vdqjzew5/1/embedded/result,js,html,css/)<br><br>
+<br>
+
+---
+
+
+### Repeat Delay(반복 지연)
+<br>
+
+>애니메이션 반복이 실행 될 시간을 지연<br>
+
+>**repeat 속성 필히 기재**
+
+<br>
+
+```
+var myTween = new TweenMax.to( 대상오브젝트, 지속시간, {속성, repeat:"반복횟수", repeatDelay:"지연 할 시간"});
+```
+<br>
+
+> **무한 반복시 repeat : "-1"**
+
+
+<br>
+
+* [var myTween = new TweenMax.to( 대상오브젝트, 지속시간, {속성, repeat:"반복횟수", repeatDelay:"지연 할 시간"});](//jsfiddle.net/recoveryman/yh3vx4u6/embedded/result,js,html,css/)<br><br>
+<br>
+
+---
+
+
+### yoyo
+<br>
+
+>애니메이션 왕복 실행 <br>
+
+>**repeat 속성 필히 기재** ( 'repeat : 1' **or** 'repeat : -1' )
+
+<br>
+
+```
+var myTween = new TweenMax.to( 대상오브젝트, 지속시간, {속성, repeat:"반복횟수", yoyo:"Boolean"});
+```
+
+
+<br>
+
+* [var myTween = new TweenMax.to( 대상오브젝트, 지속시간, {속성, repeat:"반복횟수", yoyo:"Boolean"});](//jsfiddle.net/recoveryman/3h2wxfL6/embedded/result,js,html,css/)<br><br>
+<br>
+
+---
+
+
+### yoyoEase
+<br>
+
+>애니메이션 왕복 실행중 easing 추가
+
+> **repeat 속성 필히 기재** ( 'repeat : 1' **or** 'repeat : -1' )
+
+>**ease 속성 필히 기재**
+
+
+<br>
+
+```
+var myTween = new TweenMax.to( 대상오브젝트, 지속시간, {속성, repeat:"반복횟수", ease:"내용",yoyo:"Boolean",yoyoEase:"Boolean"});
+```
+
+
+<br>
+
+* [var myTween = new TweenMax.to( 대상오브젝트, 지속시간, {속성, repeat:"반복횟수", ease:"내용",yoyo:"Boolean",yoyoEase:"Boolean"});](//jsfiddle.net/recoveryman/ytLe3r3z/embedded/result,js,html,css/)<br><br>
+<br>
+
+---
+
+
+### onCompleteParams
+<br>
+
+>애니메이션 중 호출하고자 하는 함수에 파라미터를 붙혀줄 수 있습니다.
+
+> **onComplete 속성 필히 기재** 
+
+
+<br>
+
+```
+var myTween = new TweenMax.to( 대상오브젝트, 지속시간, {속성, onComplete:"콜백함수", onCompleteParams:"params"});
+```
+
+
+<br>
+
+* [var myTween = new TweenMax.to( 대상오브젝트, 지속시간, {속성, onComplete:"콜백함수", onCompleteParams:"params"});](https://codepen.io/GreenSock/pen/LRYLrg)<br><br>
+<br>
 
 
 
