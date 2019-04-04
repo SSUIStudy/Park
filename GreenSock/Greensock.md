@@ -381,6 +381,15 @@ TweenMax.to(document.getElementById("box"), 3, {
 * [bezier3](//jsfiddle.net/recoveryman/wr3t9gfv/embedded/result,js,html,css/)<br><br>
 <br>
 
+---
+### Example
+---
 
+* (https://codepen.io/PointC/pen/RaVEpP)
+* (https://codepen.io/Apetit/pen/xbMxXP)
+* (https://codepen.io/nicolund/pen/KCwhx)
+* (https://codepen.io/filipdanisko/pen/VadXXq)
+* (https://codepen.io/natewiley/pen/xGyZXp)
+* (https://codepen.io/MAW/pen/EjWPOq)
 
 출처: https://recoveryman.tistory.com/377?category=704086 [회복맨 블로그]
