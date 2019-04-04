@@ -384,6 +384,7 @@ TweenMax.to(document.getElementById("box"), 3, {
 ---
 ### Example
 ---
+<br>
 
 * [기본동작](https://codepen.io/PointC/pen/RaVEpP)
 * [타이틀](https://codepen.io/Apetit/pen/xbMxXP)
@@ -391,5 +392,10 @@ TweenMax.to(document.getElementById("box"), 3, {
 * [장바구니](https://codepen.io/filipdanisko/pen/VadXXq)
 * [텍스트](https://codepen.io/natewiley/pen/xGyZXp)
 * [슬라이드](https://codepen.io/MAW/pen/EjWPOq)
+
+<br>
+
+---
+<br>
 
 출처: https://recoveryman.tistory.com/377?category=704086 [회복맨 블로그]
