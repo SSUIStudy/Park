@@ -317,6 +317,69 @@ var myTween = new TweenMax.to( 대상오브젝트, 지속시간, {속성, onComp
 * [var myTween = new TweenMax.to( 대상오브젝트, 지속시간, {속성, onComplete:"콜백함수", onCompleteParams:"params"});](https://codepen.io/GreenSock/pen/LRYLrg)<br><br>
 <br>
 
+---
+
+
+### bezier
+<br>
+
+>애니메이션 동작을 곡선으로 하게 해줍니다.
+
+> **CSS에서 position 설정** 
+
+>**x,y 로 지정 할 경우  CSS에서 position 설정 생략가능**
+
+
+<br>
+
+bezier1
+```
+TweenMax.to(document.getElementById("box"), 3, {
+    bezier:[
+        {left:100, top:250}, //첫번째 이동지점
+        {left:200, top:0}, //두번째 이동지점
+        {left:300, top:100} //세번째 이동지점
+    ], ease:Power1.easeInOut, repeat: -1, yoyo: true
+});
+```
+<br>
+
+bezier2
+```
+TweenMax.to(document.getElementById("box"), 3, {
+    bezier:{
+        curviness:1.25,
+        values:[
+            {x:100, y:250},
+            {x:200, y:0},
+            {x:300, y:100}
+        ], autoRotate: true
+    }, ease:Power1.easeInOut, repeat: -1, yoyo: true
+});
+```
+<br>
+
+bezier3
+```
+TweenMax.to(document.getElementById("box"), 3, {
+    bezier:{
+        type:"soft",
+        values:[
+            {x:100, y:250},
+            {x:200, y:0},
+            {x:300, y:100}
+        ], autoRotate:true
+    }, ease:Power1.easeInOut, repeat: -1, yoyo: true
+});
+```
+
+
+<br>
+
+* [bezier1](//jsfiddle.net/recoveryman/rn4wkqp3/6/embedded/result,js,html,css/)
+* [bezier2](//jsfiddle.net/recoveryman/buewfn93/3/embedded/result,js,html,css/)
+* [bezier3](//jsfiddle.net/recoveryman/wr3t9gfv/embedded/result,js,html,css/)<br><br>
+<br>
 
 
 
