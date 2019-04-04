@@ -350,10 +350,10 @@ TweenMax.to(document.getElementById("box"), 3, {
     bezier:{
         curviness:1.25, //커브 강도
         values:[
-            {x:100, y:250},//첫번째 이동지점
-            {x:200, y:0},//두번째 이동지점
-            {x:300, y:100}//세번째 이동지점
-        ], autoRotate: true
+            {x:100, y:250}, //첫번째 이동지점
+            {x:200, y:0}, //두번째 이동지점
+            {x:300, y:100} //세번째 이동지점
+        ], autoRotate: true //자동 회전
     }, ease:Power1.easeInOut, repeat: -1, yoyo: true
 });
 ```
@@ -365,9 +365,9 @@ TweenMax.to(document.getElementById("box"), 3, {
     bezier:{
         type:"soft", //커브 타입 (기본값 : thru)
         values:[
-            {x:100, y:250},//첫번째 이동지점
-            {x:200, y:0},//두번째 이동지점
-            {x:300, y:100}//세번째 이동지점
+            {x:100, y:250}, //첫번째 이동지점
+            {x:200, y:0}, //두번째 이동지점
+            {x:300, y:100} //세번째 이동지점
         ], autoRotate:true
     }, ease:Power1.easeInOut, repeat: -1, yoyo: true
 });
