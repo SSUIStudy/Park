@@ -1,0 +1,39 @@
+@mixin media {
+  @media screen and(max-width: 767px){
+    @content;
+   }
+}
+
+
+div{
+    @include media{width: 100px;}
+}
+
+
+section{
+    @include media{width: 500px; background-color: #fff;} 
+}
+
+@mixin media2($width) {
+   @if $width == pc{ 
+       @media screen and(max-width: 1199px){
+            @content;
+        }
+    }
+    @else if $width == mo {
+        @media screen and(max-width: 767px){
+            @content;
+        }
+    }
+}
+
+div{
+    @include media2(pc){
+        width: 300px;
+    }
+}
+span{
+    @include media2(mo){
+        width: 1000px;
+    }
+}

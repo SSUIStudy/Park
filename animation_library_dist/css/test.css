@@ -1,0 +1,26 @@
+@media screen and (max-width: 767px) {
+  div {
+    width: 100px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  section {
+    width: 500px;
+    background-color: #fff;
+  }
+}
+
+@media screen and (max-width: 1199px) {
+  div {
+    width: 300px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  span {
+    width: 1000px;
+  }
+}
+
+/*# sourceMappingURL=test.css.map */

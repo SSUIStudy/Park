@@ -751,12 +751,10 @@ animation-delay: $delay !important;
         opacity: 0;
         -webkit-transform: scale3d(0.3, 0.3, 0.3);
         transform: scale3d(0.3, 0.3, 0.3);
-      }
-    
+      }    
       100% {
         opacity: 1;
-      }
-      
+      }      
     }
   }@else{
     @keyframes #{$name} {
@@ -766,8 +764,7 @@ animation-delay: $delay !important;
         transform: scale3d(0.1, 0.1, 0.1) translate3d($x_axis, $y_axis, 0);
         -webkit-animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
         animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
-      }
-    
+      }    
       60% {
         opacity: 1;
         -webkit-transform: scale3d(0.475, 0.475, 0.475) translate3d($x_axis/16.66, $y_axis/16.66, 0);
@@ -1054,3 +1051,4 @@ animation-delay: $delay !important;
     animation: $name $ani_time $ani_repetitions linear alternate both running;
     animation-delay: $delay !important;    
 }
+

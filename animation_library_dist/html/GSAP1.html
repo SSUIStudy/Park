@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="kr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>GSAP 예제</title>
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <script src="../js/TweenMax.min.js"></script>
+    <script src="../js/TimelineMax.min.js"></script>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    .test {
+        position: absolute;
+        width: 300px;
+        height: 300px;
+        background-color: transparent;
+        top: 400px;
+        left: 0;
+        right: 0;
+        margin: auto;
+        border-radius: 10% 90%;
+    }
+
+    .btn {
+        position: absolute;
+        top: 450px;
+        left: 0;
+        right: 0;
+        text-align: center;
+        z-index: 999;
+    }
+
+    .btn button {
+        width: 150px;
+        height: 30px;
+    }
+
+</style>
+<script>
+    $(function() {
+        var timeline = new TimelineMax;
+        var tag = "";
+        for (num = 1; num < 51; num++) {
+            tag += "<div class='test test" + num + "'></div>"
+        }
+        document.getElementById('wrap').innerHTML = tag;
+
+        function test(n) {
+            timeline.to($('.test' + n + ''), .7, {
+                width: 50,
+                height: 50,
+                y: -150,
+                x: 0,
+                backgroundColor: "pink",
+            }).to($('.test' + n + ''), 6, {
+                bezier: {
+                    type: "thru", //커브 타입 (기본값 : thru)
+                    values: [{
+                            x: 0,
+                            y: -200
+                        },
+                        {
+                            x: 500,
+                            y: -300
+                        }, //두번째 이동지점
+                        {
+                            x: 0,
+                            y: 500
+                        }, //세번째 이동지점
+                        {
+                            x: -500,
+                            y: -300
+                        },
+                        {
+                            x: 0,
+                            y: -200
+                        },
+                        {
+                            x: 0,
+                            y: 0
+                        }
+                    ],
+                },
+                repeat: -1,
+                rotationX: 7200,
+                opacity: 0
+            });
+        }
+            $(".btn button").on('click', function() {
+            $(this).css("display", "none");
+            for (num = 1; num < 21; num++) {
+                test(num);
+            }
+        });
+
+    });
+
+</script>
+
+<body>
+    <div class="wrap" id="wrap"></div>
+    <div class="btn"><button>start</button></div>
+</body>
+
+</html>
