@@ -82,4 +82,26 @@ var scene = new ScrollMagic.Scene({
 
 <br>
 
+Optional        | Description                 |Type
+----------------|-----------------------------|---------------------------------
+`pushFollowers`| `"true"일 경우 요소를 고정하고 다음 모든 요소를 ​​핀 지속 기간만큼 밀어 넣습니다 "fasle"일 경우 요소를 고정하고 다음 요소를 모두 그대로 유지합니다. 고정 된 요소가 이동합니다. ` | `boolean`
+`spacerClass`      | `요소를 대체하는 데 사용되는 핀 간격 요소 요소의 클래스 이름입니다.`| `string`
 
+<br>
+
+#### 5. .setTween
+
+```javascript
+var scene = new ScrollMagic.Scene({
+    triggerElement:".banner01",
+    duration: 100,
+    triggerHook: "onEnter",
+    reverse: false,
+    offset: 200,
+})
+.setClassToggle(".banner01", "fadeIn")
+.setPin(".banner01")
+.setTween("선택자",지속시간,{속성});
+```
+
+>Scroll magic에 GSAP를 추가 합니다.
