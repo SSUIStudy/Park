@@ -1,5 +1,4 @@
-## Scroll Magic
----
+# Scroll Magic
 <br>
 
 #### 1. 초기설정
