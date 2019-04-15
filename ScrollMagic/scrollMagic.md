@@ -8,6 +8,7 @@ var controller = new ScrollMagic.Controller();
 
 >Scroll magic을 사용하기 위해 초기에 변수로 만들어 놓는다.
 
+<br>
 
 ---
 
@@ -52,6 +53,8 @@ var scene = new ScrollMagic.Scene({
 .setClassToggle("선택자", "추가 할 class");
 ```
 >Scroll magic이 적용되는 범위에선 addClass, 적용되지 않는 범위에선 removeClass를 해줍니다.
+
+<br>
 
 ---
 
