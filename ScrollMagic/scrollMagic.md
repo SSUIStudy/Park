@@ -1,5 +1,7 @@
 ## Scroll Magic
 ---
+<br>
+
 #### 1. 초기설정
 
 ```javascript
@@ -11,6 +13,7 @@ var controller = new ScrollMagic.Controller();
 <br>
 
 ---
+<br>
 
 #### 2. .Scene
 
@@ -39,6 +42,7 @@ Optional        | Description                 |Type
 <br>
 
 ---
+<br>
 
 #### 3. .setClassToggle
 
@@ -57,6 +61,8 @@ var scene = new ScrollMagic.Scene({
 <br>
 
 ---
+
+<br>
 
 #### 4. .setPin
 
