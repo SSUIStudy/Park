@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>GSAP Slider</title>
+    <script
+    src="https://code.jquery.com/jquery-2.2.4.min.js"
+    integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+    crossorigin="anonymous"></script>
+    <script src="../js/TweenMax.min.js"></script>
+    <script src="../js/TimelineMax.min.js"></script>
+</head>
+<style>
+body,html{  width: 100%;  height: 100%;}
+body {
+  background-color: #222;
+  padding: 0px;
+  margin: 0px;
+  overflow: hidden;
+}
+
+#nav{ position: relative; z-index:5000; text-align: center; }
+
+#Dots{ 
+  position: absolute; 
+  z-index:5000;
+  bottom:40px; left:50%;
+  transform:translate(-50%,0%);    
+}
+
+.Dot{
+ width:8px; 
+ height: 8px; 
+ border-radius: 50%;
+ position: relative;
+ float: left; 
+ background-color: #fff;
+ opacity:1;
+ margin:5px; margin-bottom:0px;
+ cursor: pointer;
+ border:2px solid rgba(255,255,255,0.7);
+}
+
+#prevtBtn,#nextBtn{
+  color: white;
+  font-size: 45px;
+  margin: 15px 15px 0px 15px;
+  position: relative;
+  cursor: pointer;
+}
+
+.box {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  text-align: center;
+  font-size: 40px;
+  color: white;
+  font-family:'Oswald', arial; 
+  top:0px;
+  left:0px;
+  overflow: hidden;
+}
+.slide span{
+  display:block;
+  position:absolute;
+  transform:translate(-50%,-50%);
+  left:50%; top:50%;
+}
+
+.box:nth-child(1) {
+  background: url(../images/bg4.jpg) no-repeat 50% 50%;
+  background-size: cover;
+  z-index: 5;
+}
+.box:nth-child(2) {
+  background-color: #00718b;
+  z-index: 4;
+}
+.box:nth-child(3) {
+  background-color: #4a5619;
+  z-index: 3;
+}
+.box:nth-child(4) {
+  background-color: #ff002f;
+  z-index: 2;
+}
+.box:nth-child(5) {
+  background-color: #444;
+  z-index: 1;
+}
+
+#logo {
+  border-radius: 50%; 
+  position:absolute;
+  z-index:5000;
+  top:20px; left:20px;
+}
+
+
+
+#DiacoDesignLink,#pens{
+  color: #fff;
+}
+
+</style>
+<script>
+$(function(){
+    /* a Pen by Diaco m.lotfollahi  : https://diacodesign.com */
+
+var slides=document.querySelectorAll('.slide'),
+    tl=new TimelineLite({paused:true});
+
+for(var i=0;i<slides.length;i++){
+    
+
+    if(i!=0){tl.addPause()};
+    if(i!=slides.length-1){
+      tl.to(slides[i],0.5,{yPercent:-10,zIndex:0,immediateRender:false},'L'+i) 
+        .from(slides[i+1],0.5,{yPercent:10,zIndex:5,immediateRender:false},'L'+i)
+    };
+};
+function GO(e){
+  var SD=isNaN(e)?e.wheelDelta||-e.detail:e;
+  if(SD<0){tl.play()}else if(SD==120){tl.reverse()};
+};
+
+document.addEventListener("mousewheel",GO);
+document.addEventListener("DOMMouseScroll",GO);
+
+/* a Pen by Diaco m.lotfollahi  : https://diacodesign.com */
+});
+</script>
+<body>
+    <div class="wrap">  
+        <div class="box slide"><span>1</span></div>
+        <div class="box slide"><span>2</span></div>
+        <div class="box slide"><span>3</span></div>
+        <div class="box slide"><span>4</span></div>
+        <div class="box slide"><span>5</span></div>
+    </div>  
+        <div id="Dots"></div>
+        
+        
+        
+        
+        
+</body>
+</html>

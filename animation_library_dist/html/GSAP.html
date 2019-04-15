@@ -60,36 +60,7 @@
 </style>
 <script>
     $(function(){
-        /*
-            var timeline = new TimelineMax;
-                    
-            function test(n){                
-                timeline.to($('.test'+n+''), .7,{
-                    width:50,
-                    height:50,
-                    y:-150,
-                    x:0,
-                    backgroundColor:"pink",
-                }).to($('.test'+n+''), 6,{                 
-                    bezier:{
-                        type:"thru", //커브 타입 (기본값 : thru)
-                        values:[                    
-                            {x:0, y:-200}, 
-                            {x:500, y:-300}, //두번째 이동지점
-                            {x:0, y:500}, //세번째 이동지점
-                            {x:-500, y:-300},                       
-                            {x:0, y:-200},
-                            {x:0, y:0}
-                        ],
-                    },  repeat: -1, rotationX:7200,opacity:0
-                });  
-            }       */ 
-        /* $(".btn button").on('click', function(){
-            $(this).css("display","none");
-           for(num = 1; num < 21; num++){
-               test(num);
-           }
-        });*/
+        
         var tag = "";
         for(num = 1; num < 51; num++){
             tag +="<div class='test test" + num + "'></div>"
