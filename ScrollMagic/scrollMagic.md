@@ -88,6 +88,10 @@ Optional        | Description                 |Type
 
 <br>
 
+---
+
+<br>
+
 #### 5. .setTween
 
 ```javascript
@@ -104,3 +108,44 @@ var scene = new ScrollMagic.Scene({
 ```
 
 >Scroll magic에 GSAP를 추가 합니다.
+
+<br>
+
+---
+
+<br>
+
+#### 6. .addIndicators
+
+```javascript
+var scene = new ScrollMagic.Scene({
+    triggerElement:".banner01",
+    duration: 100,
+    triggerHook: "onEnter",
+    reverse: false,
+    offset: 200,
+})
+.setClassToggle(".banner01", "fadeIn")
+.setPin(".banner01")
+.setTween(".banner01",1,{y:100})
+.addIndicators({
+    name:"fade",
+    indent:200,
+    colorStart:"#000"
+    colorEnd:"#4d0893"
+    colorTrigger:"red"
+});
+```
+
+>Scroll magic의 기준점 및 적용 범위를 보여주는 플러그인 (플러그인 필요)
+
+<br>
+
+Optional        | Description                 |Type
+----------------|-----------------------------|---------------------------------
+`name`| `식별하기 위해 Scroll magic이 적용되는 시작지점과 종료지점에 이름을 표시` | `string,number`
+`indent`      | `시작지점,종료지점에 대한 추가 위치 오프셋`| `number`
+`colorStart`   | `시작지점에 대한 색상을 설정`|`string`
+`colorEnd`   | `종료지점에 대한 색상을 설정`|`string`
+`colorTrigger`   | `기준점에 대한 색상을 설정`|`string`
+
