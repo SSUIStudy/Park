@@ -23,7 +23,8 @@ var scene = new ScrollMagic.Scene({
     triggerHook: "onEnter",
     reverse: false,
     offset: 200,
-});
+})
+.addTo(controller);
 ```
 
 >Scroll magic을 적용할 대상의 옵션
@@ -53,7 +54,8 @@ var scene = new ScrollMagic.Scene({
     reverse: false,
     offset: 200,
 })
-.setClassToggle("선택자", "추가 할 class");
+.setClassToggle("선택자", "추가 할 class")
+.addTo(controller);
 ```
 >Scroll magic이 적용되는 범위에선 addClass, 적용되지 않는 범위에선 removeClass를 해줍니다.
 
@@ -74,7 +76,8 @@ var scene = new ScrollMagic.Scene({
     offset: 200,
 })
 .setClassToggle(".banner01", "fadeIn")
-.setPin("선택자","옵션(생략가능)");
+.setPin("선택자","옵션(생략가능)")
+.addTo(controller);
 ```
 
 >Scroll magic이 적용 된 요소를 고정합니다.
@@ -104,7 +107,8 @@ var scene = new ScrollMagic.Scene({
 })
 .setClassToggle(".banner01", "fadeIn")
 .setPin(".banner01")
-.setTween("선택자",지속시간,{속성});
+.setTween("선택자",지속시간,{속성})
+.addTo(controller);
 ```
 
 >Scroll magic에 GSAP를 추가 합니다.
@@ -134,7 +138,8 @@ var scene = new ScrollMagic.Scene({
     colorStart:"#000"
     colorEnd:"#4d0893"
     colorTrigger:"red"
-});
+})
+.addTo(controller);
 ```
 
 >Scroll magic의 기준점 및 적용 범위를 보여주는 플러그인 (플러그인 필요)

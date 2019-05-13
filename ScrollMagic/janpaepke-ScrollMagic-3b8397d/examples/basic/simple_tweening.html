@@ -24,12 +24,30 @@
 	<script type="text/javascript" src="../../scrollmagic/uncompressed/plugins/animation.gsap.js"></script>
 	<script type="text/javascript" src="../../scrollmagic/uncompressed/plugins/debug.addIndicators.js"></script>
 </head>
-<body>
+<body style="background-color:#fff;">
 	<ul id="menu"></ul>
 	<div id="content-wrapper">
 		<div id="example-wrapper">
 			<div class="scrollContent">
-				<section id="titlechart">
+				<section id="titlechart" style="overflow: hidden; z-index:-1;" class="titlechart">
+					<script>
+						var controller = new ScrollMagic.Controller();
+							var scene = new ScrollMagic.Scene({
+												triggerElement: "#titlechart" , duration: "100%",//지속되는 거리
+												triggerHook:0.1,	
+																					
+											})
+											.setPin(".titlechart",{pushFollowers:false}) // trigger a TweenMax.to tween
+											.addIndicators({
+												name: "2",
+												indent:100,
+												colorStart:"red",
+												colorEnd:"red"
+											
+											}) // add indicators (requires plugin)
+											.addTo(controller);
+					
+					</script>	
 					<div id="description">
 						<h1 class="badge gsap">Simple Tweening</h1>
 						<h2>Two examples of basic animation.</h2>
@@ -48,45 +66,75 @@
 						var controller = new ScrollMagic.Controller();
 					</script>
 				</section>
-				<section class="demo">
-					<div class="spacer s2"></div>
-					<div id="trigger1" class="spacer s0"></div>
-					<div id="animate1" class="box2 skin">
-						<p>You wouldn't like me, when I'm angry!</p>
-						<a href="#" class="viewsource">view source</a>
+				<section class="demo animate111" style="overflow: hidden; z-index:1;position: relative;background-color: #fff;background-image:none;">
+					<div id="animate1" class="box2 skin" style="min-width:0; padding: 0; width: 0%; height: 51vw; border-radius: 0px; background-color: #000;margin:0px;" >						
 					</div>
-					<div class="spacer s2"></div>
+					<p style="color: #fff;font-size: 100px;line-height: 40vw;position: absolute;top: 0;left: 0;right: 0;">
+							STYLESHIP UI
+						</p>
+					<script>
+						console.log('.animate111')
+						var scene2 = new ScrollMagic.Scene({
+							triggerElement: ".animate111" , duration: "100%",//지속되는 거리
+							triggerHook:.5,	
+							offset:480							
+							//reverse:false							
+						})
+						.setTween("#animate1", .5, {width: "100%"}) // trigger a TweenMax.to tween
+						.setPin(".animate111")
+						.addIndicators({
+							name: "4",
+							colorStart:"yellow",
+							colorEnd:"yellow",
+							indent:400									
+						}) // add indicators (requires plugin)
+						.addTo(controller);
+					
+					</script>
 					<script>
 							// build scene
-							
-							var scene = new ScrollMagic.Scene({
-												triggerElement: "#trigger1" , duration: 100//지속되는 거리
-												
-											})
-											.setTween("#animate1", .5, {backgroundColor: "green", scale: 2.5}) // trigger a TweenMax.to tween
-											.addIndicators({name: "1 (duration: 0)"}) // add indicators (requires plugin)
-											.addTo(controller);
+						/*	
+						var scene = new ScrollMagic.Scene({
+							triggerElement: "#animate1" , duration: "60%",//지속되는 거리
+							triggerHook:.8,								
+							//reverse:false							
+						})
+						.setTween("#animate1", .5, {width: "100%"}) // trigger a TweenMax.to tween
+						//.setPin(".animate111",{pushFollowers:false})
+						.addIndicators({
+							name: "1",
+							colorStart:"blue",
+							colorEnd:"blue"									
+						}) // add indicators (requires plugin)
+						.addTo(controller);
+*/
 					</script>
 				</section>
-				<section class="demo">
-					<div class="spacer s1"></div>
-					<div id="trigger2" class="spacer s1"></div>
-					<div class="spacer s0"></div>
+				<section class="demo" style="background-image:none; background-color: yellowgreen;">
+					<div class="spacer s1" style="background-image:none;"></div>
+					<div id="trigger2" class="spacer s1" style="background-image:none;"></div>
+					<div class="spacer s0" style="background-image:none;"></div>
 					<div id="animate2" class="box1 black">
 						<p>Smurf me!</p>
 						<a href="#" class="viewsource">view source</a>
 					</div>
-					<div class="spacer s2"></div>
+					<div class="spacer s2" style="background-image:none;"></div>
 					<script>
 						// build scene
+						
 						var scene = new ScrollMagic.Scene({triggerElement: "#trigger2", duration: 300})
 										// animate color and top border in relation to scroll position
 										.setTween("#animate2", {borderTop: "30px solid white", backgroundColor: "blue", scale: 0.7}) // the tween durtion can be omitted and defaults to 1
-										.addIndicators({name: "2 (duration: 100)"}) // add indicators (requires plugin)
+										.addIndicators({
+											name: "3",
+											indent:300,
+											colorStart:"green",
+											colorEnd:"green"
+										}) // add indicators (requires plugin)
 										.addTo(controller);
 					</script>
 				</section>
-				<div class="spacer s_viewport"></div>
+				<div class="spacer s_viewport" style="background-image:none; background-color: lightcoral;"></div>
 			</div>
 		</div>
 	</div>

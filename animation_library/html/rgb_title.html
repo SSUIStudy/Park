@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>RGB PROJECT</title>
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"
+    integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+    crossorigin="anonymous"></script>
+    <script src="../js/TweenMax.min.js"></script>
+    <script src="../js/TimelineMax.min.js"></script>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+   
+    
+</style>
+<style>
+     .wrap{
+        position: relative;
+        background: url(../images/rgbProject_d_01.jpg)no-repeat 50% 0;
+        width: 100%;  
+        height: 1282px;
+    }
+    .top{
+        position: absolute;
+        top: 45px;
+        left: 0;
+        right: 0;
+        width: 770px;
+        height: 400px;
+        margin: auto;
+    }
+    .firecracker{
+        background-color: red;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        position: absolute;
+    }
+    .firecracker:nth-child(2n){
+        width: 7px;
+        height: 7px;
+    }
+    .firecracker:nth-child(even){
+        background-color: red !important;
+    }
+    .firecracker:nth-child(4n+2){
+        background-color: skyblue !important;
+    }
+    .firecracker:nth-child(2n+1){
+        width: 10px;
+        height: 10px;
+        background-color: yellow ;
+    }
+    .firecracker:nth-child(3n+1){
+        width: 5px;
+        height: 5px;
+        background-color: #fff;
+    }
+    .side_ani{
+        overflow: hidden;     
+        height: 100%;     
+    }
+    .side_ani div div{
+        position: absolute;
+    }
+    .left_ani,
+    .right_ani{
+        position: relative;
+        width: 50%;
+        height: 100%;
+        float: left;
+    }
+    .circle{
+        width: 7px;
+        height: 7px;
+        background-color: #fff;
+        border-radius: 50%;
+    }
+    .circle:nth-child(2n+1){
+        width: 10px;
+        height: 10px;
+        background-color: yellow;
+    }
+    .circle:nth-child(3n+1){
+        width: 5px;
+        height: 5px;
+        background-color: skyblue;
+    }
+    .oval{
+        width: 30px;
+        height: 30px;
+        background-color: yellowgreen;
+        border-radius: 15px;
+    }
+    .oval:nth-child(2n+1){
+        width: 100px;
+        height: 15px;
+        background-color: yellow;
+    }
+    .oval:nth-child(3n+1){
+        width: 30px;
+        height: 30px;
+        background-color: skyblue;
+    }
+    
+    /*왼쪽 동그라미*/
+
+    /*왼쪽 bar*/
+    .left_ani .oval.bar1{top: 80px;left: -100%;right: 0;margin: auto;transform: translate(100%,0%);}
+    .left_ani .oval.bar2{
+        top: 470px;left: -100%; right: 0;margin: auto;transform: translate(100%,0%);   
+        /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#a0c413+0,ebbe01+100 */
+        background: #a0c413; /* Old browsers */
+        background: -moz-linear-gradient(left, #a0c413 0%, #ebbe01 100%); /* FF3.6-15 */
+        background: -webkit-linear-gradient(left, #a0c413 0%,#ebbe01 100%); /* Chrome10-25,Safari5.1-6 */
+        background: linear-gradient(to right, #a0c413 0%,#ebbe01 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a0c413', endColorstr='#ebbe01',GradientType=1 ); /* IE6-9 */
+    }
+    .left_ani .oval.bar3{top: 350px;left: -50%;right: 0;margin: auto;width: 15px;}
+    .left_ani .oval.bar4{top: 250px;left: 40%;background-color: pink;}
+    .left_ani .oval.bar5{
+        top: 670px;left: -100%;right: 0;transform: translate(100%,0%);margin: auto;
+        /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ea391c+0,e83063+100 */
+        background: #ea391c; /* Old browsers */
+        background: -moz-linear-gradient(left, #ea391c 0%, #e83063 100%); /* FF3.6-15 */
+        background: -webkit-linear-gradient(left, #ea391c 0%,#e83063 100%); /* Chrome10-25,Safari5.1-6 */
+        background: linear-gradient(to right, #ea391c 0%,#e83063 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ea391c', endColorstr='#e83063',GradientType=1 ); /* IE6-9 */
+    }
+    .left_ani .oval.bar6{
+        top: 300px;left: -100%;right: 0;margin: auto;transform: translate(100%,0%);
+            /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#910878+0,c9016e+100 */
+        background: #910878; /* Old browsers */
+        background: -moz-linear-gradient(left, #910878 0%, #c9016e 100%); /* FF3.6-15 */
+        background: -webkit-linear-gradient(left, #910878 0%,#c9016e 100%); /* Chrome10-25,Safari5.1-6 */
+        background: linear-gradient(to right, #910878 0%,#c9016e 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#910878', endColorstr='#c9016e',GradientType=1 ); /* IE6-9 */
+
+    }
+    .left_ani .oval.bar7{
+        top: 400px;left: -100%;right: 0;margin: auto;transform: translate(100%,0%);
+        /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#e20746+0,e97509+100 */
+        background: #e20746; /* Old browsers */
+        background: -moz-linear-gradient(left, #e20746 0%, #e97509 100%); /* FF3.6-15 */
+        background: -webkit-linear-gradient(left, #e20746 0%,#e97509 100%); /* Chrome10-25,Safari5.1-6 */
+        background: linear-gradient(to right, #e20746 0%,#e97509 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e20746', endColorstr='#e97509',GradientType=1 ); /* IE6-9 */
+    }
+    .left_ani .oval.bar8{top: 120px;left: -100%;right: 0;margin: auto;transform: translate(100%,0%); background-color: purple;}
+    .left_ani .oval.bar9{top: 570px;left: -80%;right: 0;margin: auto;background-color: rgb(255,255,255);}
+    .left_ani .oval.bar10{top: 750px;left: 20px;} 
+
+     /*오른쪽 bar*/
+     .right_ani .oval.bar1{top: 80px;right: -100%;left: 0;margin: auto;transform: translate(-100%,0%);}
+    .right_ani .oval.bar2{
+        top: 470px;right: -100%; left: 0;margin: auto;transform: translate(-100%,0%);   
+        /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#a0c413+0,ebbe01+100 */
+        background: #a0c413; /* Old browsers */
+        background: -moz-linear-gradient(left, #a0c413 0%, #ebbe01 100%); /* FF3.6-15 */
+        background: -webkit-linear-gradient(left, #a0c413 0%,#ebbe01 100%); /* Chrome10-25,Safari5.1-6 */
+        background: linear-gradient(to right, #a0c413 0%,#ebbe01 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a0c413', endColorstr='#ebbe01',GradientType=1 ); /* IE6-9 */
+    }
+    .right_ani .oval.bar3{top: 350px;right: -50%;left: 0;margin: auto;width: 15px;}
+    .right_ani .oval.bar4{
+        top: 250px;right: 40%;background-color: pink;
+        /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#e97509+2,e20c43+100 */
+        background: #e97509; /* Old browsers */
+        background: -moz-linear-gradient(left, #e97509 2%, #e20c43 100%); /* FF3.6-15 */
+        background: -webkit-linear-gradient(left, #e97509 2%,#e20c43 100%); /* Chrome10-25,Safari5.1-6 */
+        background: linear-gradient(to right, #e97509 2%,#e20c43 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e97509', endColorstr='#e20c43',GradientType=1 ); /* IE6-9 */
+    
+    }
+    .right_ani .oval.bar5{
+        top: 670px;right: -100%;left: 0;transform: translate(-100%,0%);margin: auto;
+        /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ea391c+0,e83063+100 */
+        background: #ea391c; /* Old browsers */
+        background: -moz-linear-gradient(left, #ea391c 0%, #e83063 100%); /* FF3.6-15 */
+        background: -webkit-linear-gradient(left, #ea391c 0%,#e83063 100%); /* Chrome10-25,Safari5.1-6 */
+        background: linear-gradient(to right, #ea391c 0%,#e83063 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ea391c', endColorstr='#e83063',GradientType=1 ); /* IE6-9 */
+
+    }
+    .right_ani .oval.bar6{
+        top: 300px;right: -100%;left: 0;margin: auto;transform: translate(-100%,0%);
+            /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#edbd01+1,a0c413+100 */
+        background: #edbd01; /* Old browsers */
+        background: -moz-linear-gradient(left, #edbd01 1%, #a0c413 100%); /* FF3.6-15 */
+        background: -webkit-linear-gradient(left, #edbd01 1%,#a0c413 100%); /* Chrome10-25,Safari5.1-6 */
+        background: linear-gradient(to right, #edbd01 1%,#a0c413 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#edbd01', endColorstr='#a0c413',GradientType=1 ); /* IE6-9 */
+    
+    }
+    .right_ani .oval.bar7{
+        top: 400px;right: -100%;left: 0;margin: auto;transform: translate(-100%,0%);
+        /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#e20746+0,e97509+100 */
+        background: #e20746; /* Old browsers */
+        background: -moz-linear-gradient(left, #e20746 0%, #e97509 100%); /* FF3.6-15 */
+        background: -webkit-linear-gradient(left, #e20746 0%,#e97509 100%); /* Chrome10-25,Safari5.1-6 */
+        background: linear-gradient(to right, #e20746 0%,#e97509 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e20746', endColorstr='#e97509',GradientType=1 ); /* IE6-9 */
+    }
+    .right_ani .oval.bar8{top: 120px;right: -100%;left: 0;margin: auto;transform: translate(-100%,0%); background-color: purple;}
+    .right_ani .oval.bar9{
+        top: 570px;right: -80%;left: 0;margin: auto;
+            /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#910878+0,c9016e+100 */
+        background: #910878; /* Old browsers */
+        background: -moz-linear-gradient(left, #910878 0%, #c9016e 100%); /* FF3.6-15 */
+        background: -webkit-linear-gradient(left, #910878 0%,#c9016e 100%); /* Chrome10-25,Safari5.1-6 */
+        background: linear-gradient(to right, #910878 0%,#c9016e 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#910878', endColorstr='#c9016e',GradientType=1 ); /* IE6-9 */
+
+    }
+    .right_ani .oval.bar10{top: 750px;right: 20px;} 
+</style>
+<script>
+$(function(){
+    //html div 생성
+    var circle = "";
+    var oval ="";
+    for(num = 1; num < 41; num++){
+        circle +="<div class='circle bar" + num + "'></div>"
+    }
+    for(num = 1; num < 11; num++){
+        oval +="<div class='oval bar" + num + "'></div>"
+    }
+    var firecracker = "";
+        for(num = 1; num < 121; num++){
+            firecracker +="<div class='firecracker bar" + num + "'></div>"
+           
+        }
+    document.getElementById('left').innerHTML= [circle,oval]; 
+    document.getElementById('right').innerHTML= [circle,oval]; 
+    document.getElementById('top').innerHTML= firecracker;   
+     
+        
+    
+
+    //좌우 배경 동그라미 위치 랜던 배정
+    function random(min, max){
+        return (Math.random() * (max - min)) + min+'%';
+    }
+    $(".left_ani .circle").each(function(){
+        var tm = TweenMax.set($(this),{left: random(30, 0),top: random(70, 0),opacity:.8,scale:1})
+        tm.resume();
+    });
+    $(".right_ani .circle").each(function(){
+        var tm = TweenMax.set($(this),{right: random(25, 0),top: random(70, 0),opacity:.8,scale:1})
+        tm.resume();
+    });
+    //title 폭주 효과
+    function random2(min, max){
+        return (Math.random() * (max - min)) + min;
+    }
+    $(".firecracker").each(function(i){
+        var tl = new TimelineMax({repeatDelay:1,repeat:-1,delay:i * .0015});
+        var tit_set = TweenMax.set($(this),{x:385,y: 200,z: 250,opacity:0,scale:0});
+        var tit_ani = tl.to($(this),.5,{x: random2(770, 0),y: random2(400, 0),z: random2(500, 0),opacity:.8,scale:1})
+                        .to($(this),1,{scale:0,opacity:0,ease:Power3.easeIn}) 
+        tit_ani.resume();
+    });
+    
+    //animation 효과
+    function run_scale(n,e,i){
+        $(''+ n +'').each(function(){
+            var tl = new TimelineMax({repeat:-1,yoyo:true,delay:i * .3});
+            var aa = TweenMax.set($(this),{width:30,scale:0,ease:Power0.easeNone})
+            var run = tl.to($(this),.4,{scale:1,ease:Power0.easeNone})
+                        .to($(this),.4,{width:100,ease:Power0.easeNone})
+                        .to($(this),.5,{left:-e+"%",ease:Power0.easeNone})
+                        .to($(this),.4,{width:30,ease:Power0.easeNone})
+                        .to($(this),.4,{scale:0,ease:Power0.easeNone});
+            run.resume();
+        });
+    }
+    function run_scale2(n,e,i){
+        $(''+ n +'').each(function(){
+            var tl = new TimelineMax({repeat:-1,yoyo:true,delay:i * .3});
+            var aa = TweenMax.set($(this),{width:30,scale:0,ease:Power0.easeNone})
+            var run = tl.to($(this),.4,{scale:1,ease:Power0.easeNone})
+                        .to($(this),.4,{width:100,ease:Power0.easeNone})
+                        .to($(this),.5,{right:-e+"%",ease:Power0.easeNone})
+                        .to($(this),.4,{width:30,ease:Power0.easeNone})
+                        .to($(this),.4,{scale:0,ease:Power0.easeNone});
+            run.resume();
+        });
+    }
+    function run(n,e,i){
+        $(''+ n +'').each(function(){
+            var tl = new TimelineMax({repeat:-1,repeatDelay:.5,delay:i});
+            var aa = TweenMax.set($(this),{width:30,scale:0,ease:Power0.easeNone})
+            var run = tl.to($(this),.3,{scale:1,ease:Power0.easeNone})
+                        .to($(this),.3,{width:100,ease:Power0.easeNone})
+                        .to($(this),.5,{left:-e+"%",ease:Power0.easeNone})
+                        .to($(this),.3,{width:30,ease:Power0.easeNone})
+                        .to($(this),.3,{scale:0,ease:Power0.easeNone});
+            run.resume();
+        });
+    }
+    function run2(n,e,i){
+        $(''+ n +'').each(function(){
+            var tl = new TimelineMax({repeat:-1,repeatDelay:.5,delay:i});
+            var aa = TweenMax.set($(this),{width:30,scale:0,ease:Power0.easeNone})
+            var run = tl.to($(this),.3,{scale:1,ease:Power0.easeNone})
+                        .to($(this),.3,{width:100,ease:Power0.easeNone})
+                        .to($(this),.5,{right:-e+"%",ease:Power0.easeNone})
+                        .to($(this),.3,{width:30,ease:Power0.easeNone})
+                        .to($(this),.3,{scale:0,ease:Power0.easeNone});
+            run.resume();
+        });
+    }
+    
+    function flsh(n,i){
+        $(''+ n +'').each(function(){
+            var tl = new TimelineMax({repeat:-1,yoyo:true});
+            var run = tl.to($(this),.5,{opacity:0,ease:Power0.easeNone})
+                        .to($(this),.5,{opacity:1,ease:Power0.easeNone,delay: i * .3});
+            run.resume();
+        });
+    }
+    function width(n,e){
+        $(''+ n +'').each(function(){
+            var tl = new TimelineMax({repeat:-1,yoyo:true,ease:Power3.easeInOut});
+            var run = tl.to($(this),1,{width:e*2});
+            run.resume();
+        });
+    }
+    function scale(n,i){
+        $(''+ n +'').each(function(){
+            var tl = new TimelineMax({repeat:-1,yoyo:true});
+            var run = tl.to($(this),.5,{scale:1,ease:Power0.easeNone})
+                        .to($(this),.5,{scale:2,delay: i * .3});
+            run.resume();
+        });
+    }
+    function scale_move(n,e,i){
+        $(''+ n +'').each(function(){
+            var tl = new TimelineMax({repeat:-1,yoyo:true,delay: i * .3});
+            var run = tl.to($(this),.7,{scale:2,ease:Power0.easeNone})
+                        .to($(this),.7,{scale:2,left:e+'%'})
+                        .to($(this),.7,{scale:1});
+            run.resume();
+        });
+    }
+    function scale_move2(n,e,i){
+        $(''+ n +'').each(function(){
+            var tl = new TimelineMax({repeat:-1,yoyo:true,delay: i * .3});
+            var run = tl.to($(this),.7,{scale:2,ease:Power0.easeNone})
+                        .to($(this),.7,{scale:2,right:e+'%'})
+                        .to($(this),.7,{scale:1});
+            run.resume();
+        });
+    }
+
+
+    for(num = 1; num < 20; num++){
+        flsh(".circle.bar"+(2*num)+"",num/2);
+        scale(".circle.bar"+(2*num-1)+"",num/2);
+    }
+    //왼쪽 ani 실행
+    run_scale(".left_ani .oval.bar7","50");
+    run_scale(".left_ani .oval.bar8","50",1);
+    run_scale(".left_ani .oval.bar5","80",3);
+    run_scale(".left_ani .oval.bar2","20",7);    
+    run(".left_ani .oval.bar6","20",3);
+    run(".left_ani .oval.bar4","0",0);
+    run(".left_ani .oval.bar1","50",1);
+    flsh(".left_ani .circle.bar2",3);
+    width(".left_ani .oval.bar9",60);
+    width(".left_ani .oval.bar10",50);
+    width(".left_ani .oval.bar3",30);
+    scale_move(".left_ani .circle.bar29","10",3);
+    scale_move(".left_ani .circle.bar7","10",1);
+    scale_move(".left_ani .circle.bar15","10",2);
+    scale_move(".left_ani .circle.bar21","10",4);
+
+    //오른쪽 ani 실행
+    run_scale2(".right_ani .oval.bar7","50");
+    run_scale2(".right_ani .oval.bar8","50");
+    run_scale2(".right_ani .oval.bar5","80",2);
+    run_scale2(".right_ani .oval.bar2","20",4);    
+    run2(".right_ani .oval.bar6","20",1);
+    run2(".right_ani .oval.bar4","0",1);
+    run2(".right_ani .oval.bar1","50",3);
+    flsh(".right_ani .circle.bar2",1);
+    width(".right_ani .oval.bar9",50);
+    width(".right_ani .oval.bar10",50);
+    width(".right_ani .oval.bar3",30);
+    scale_move2(".right_ani .circle.bar29","10",2);
+    scale_move2(".right_ani .circle.bar7","10",4);
+    scale_move2(".right_ani .circle.bar15","10",1);
+    scale_move2(".right_ani .circle.bar21","10",3);
+    scale_move2(".right_ani .circle.bar2","10",2);
+    scale_move2(".right_ani .circle.bar12","10",4);
+    scale_move2(".right_ani .circle.bar28","10",1);
+    scale_move2(".right_ani .circle.bar5","10",3);
+    
+});
+</script>
+
+<body>
+    <div class="wrap" id="wrap">     
+        <div class="top" id="top"></div>
+        <div class="side_ani">
+            <div class="left_ani" id="left"></div>
+            <div class="right_ani" id="right"></div>
+        </div>
+
+    </div>
+</body>
+</html>

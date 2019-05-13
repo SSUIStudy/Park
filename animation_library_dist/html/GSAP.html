@@ -62,18 +62,17 @@
     $(function(){
         
         var tag = "";
-        for(num = 1; num < 51; num++){
+        for(num = 1; num < 71; num++){
             tag +="<div class='test test" + num + "'></div>"
         }
-        document.getElementById('wrap').innerHTML= tag;
-        
+        document.getElementById('wrap').innerHTML= tag;        
 
         function random(min, max){
             return (Math.random() * (max - min)) + min;
         }
 
         $(".test").each(function(i){
-            TweenMax.fromTo($(this), 7, {
+            TweenMax.fromTo($(this), 10, {
                 opacity: .8,
                 x: random(-1000, 1000),
                 y: random(-500, -2000),

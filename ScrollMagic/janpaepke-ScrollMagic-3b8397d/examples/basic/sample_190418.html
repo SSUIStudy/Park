@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html class="no-js" lang="kr">
+<head>
+	<meta charset="utf-8"> 
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=500" />
+	<meta name="keywords" content="ScrollMagic, example, scrolling, attaching, scrollbar, tween, tweenmax" />
+	<meta name="author"	content="Jan Paepke (www.janpaepke.de)" />
+	<title>Scroll Page</title>
+
+	<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,400italic|Josefin+Slab:400,700italic' rel='stylesheet' type='text/css'>
+	<link rel="shortcut icon" href="../../assets/img/favicon.ico" type="image/x-icon">
+
+	<script type="text/javascript" src="../../assets/js/lib/jquery.min.js"></script>
+	<script type="text/javascript" src="../../assets/js/lib/highlight.pack.js"></script>
+	<script type="text/javascript" src="../../assets/js/lib/modernizr.custom.min.js"></script>
+	<script type="text/javascript" src="../../assets/js/examples.js"></script>
+	
+	<script type="text/javascript" src="../../assets/js/lib/greensock/TweenMax.min.js"></script>
+	<script type="text/javascript" src="../../scrollmagic/uncompressed/ScrollMagic.js"></script>
+	<script type="text/javascript" src="../../scrollmagic/uncompressed/plugins/animation.gsap.js"></script>
+	<script type="text/javascript" src="../../scrollmagic/uncompressed/plugins/debug.addIndicators.js"></script>
+</head>
+<style>
+    *{
+        padding: 0;
+        margin: 0;
+    }
+    .container{
+        height: 100vh;
+    }
+    .contents,
+    .contents>div{
+        height: 100%;  
+    }
+    .scroll-bg{
+        background-size: cover !important;
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        opacity: 0;   
+    }
+    .bg-initial{background: url(img/bg1-fade.jpg) no-repeat top center scroll;opacity: 1;}
+    .bg1{background: url(img/bg1.jpg) no-repeat top center scroll;}
+    .bg2{background: url(img/bg1-fade.jpg) no-repeat top center scroll;}
+    .bg3{background: url(img/bg2.jpg) no-repeat top center scroll;}
+    .bg4{background: url(img/bg2-fade.jpg) no-repeat top center scroll;}
+    .bg5{background: url(img/bg3.jpg) no-repeat top center scroll;}
+    .bg6{background: url(img/bg3-fade.jpg) no-repeat top center scroll;}
+
+    .banner01{
+        padding-top: 350px;
+        position: relative;
+        z-index: 10;
+        color: #fff;
+        font-size: 50px;
+        text-align: center;
+        box-sizing: border-box;
+    }
+    .banner01 .welcome{
+        padding: 0 10px;
+        width: 350px;
+        border:15px solid #fff;
+        margin: auto;
+        opacity: 0;
+        animation: fadeIn 3s forwards;
+		animation-delay: 0.5s !important;	
+    }
+    .banner01 .welcome__txt{
+        width: 240px;
+        color: #616a7a;
+        font-weight: 600;
+        font-size: 20px;
+        background-color: #fff;
+        margin: auto;
+        padding-bottom: 10px;
+        opacity: 0;
+        animation: fadeIn 3s forwards;
+		animation-delay: 1.2s !important;	
+    }
+
+    .banner02{
+        padding-top: 445px;
+        position: relative;
+        z-index: 10;
+        color: #fff;
+        font-size: 50px;
+        text-align: center;
+        box-sizing: border-box;
+    }
+    .banner02 .styleship{
+        padding: 0 10px;
+        width: 550px;
+        border:15px solid #fff;
+        margin: auto;
+    }
+    .banner02 .styleship__txt{
+        width: 250px;
+        color: #616a7a;
+        font-weight: 600;
+        font-size: 20px;
+        background-color: #fff;
+        margin: auto;
+        padding-bottom: 10px;
+    }
+    .banner03{
+        padding-top: 445px;
+        position: relative;
+        z-index: 10;
+        color: #fff;
+        font-size: 50px;
+        text-align: center;
+        box-sizing: border-box;
+        overflow: hidden;
+    }
+    .title3{
+        width: 600px;
+        margin: auto;
+    }
+    .banner03 .right{
+        padding: 0 10px;
+        width: 550px;
+        border:15px solid #fff;
+        margin: auto;
+    }
+    .banner03 .right__txt{
+        width: 250px;
+        color: #616a7a;
+        font-weight: 600;
+        font-size: 20px;
+        background-color: #fff;
+        margin: auto;
+        padding-bottom: 10px;
+    }
+    .title4{
+        width: 600px;
+        margin: auto;
+    }
+    .banner04 .top{
+        padding: 0 10px;
+        width: 550px;
+        border:15px solid #fff;
+        margin: auto;
+    }
+    .banner04 .top__txt{
+        width: 250px;
+        color: #616a7a;
+        font-weight: 600;
+        font-size: 20px;
+        background-color: #fff;
+        margin: auto;
+        padding-bottom: 10px;
+    }
+    .line1{
+        position: absolute;
+        top: 475px;
+        left: 0;
+        right: 0;
+        margin: auto;
+        width: 0px;
+        height: 0px;
+        border-left: 5px dashed #fff; 
+        z-index: 0; 
+    }
+    .line2{
+        position: absolute;
+        top: 490px;
+        left:1220px;
+        width: 0px;
+        height: 0px;
+        border-top: 5px dashed #fff; 
+        z-index: 0; 
+    }
+
+    @keyframes fadeIn{
+        0%{
+            opacity: 0;
+        }
+        100%{
+            opacity: 1;
+        }
+    }
+</style>
+
+<body>
+    <div class="container">
+        <div class="contents">
+            <div class="banner01">
+                <div class="title">
+                    <div class="welcome">STYLESHIP UI</div>
+                    <div class="welcome__txt">PLEASE SCROLL DOWN</div>
+                </div>
+                <div class="line1"></div>
+            </div>            
+            <div class="banner02">
+                <div class="title2">
+                    <div class="styleship">오른쪽으로 화면이동</div>
+                    <div class="styleship__txt">ScrollMagic Test Page</div>
+                </div>
+            </div>
+            <div class="banner03">
+                <div class="title3">
+                    <div class="right">STYLESHIP UI</div>
+                    <div class="right__txt">ScrollMagic Test Page</div>
+                </div>
+                <div class="line2"></div>
+            </div> 
+        
+        <div class="scroll-bg bg-initial"></div>    
+        <div class="scroll-bg bg1"></div>
+        <div class="scroll-bg bg2"></div>
+        <div class="scroll-bg bg3"></div>
+        <div class="scroll-bg bg4"></div>
+        <div class="scroll-bg bg5"></div>
+        <div class="scroll-bg bg6"></div>
+    </div>
+    <script>
+        //banner01
+              
+                    var controller = new ScrollMagic.Controller();
+                    var tl = new TimelineMax();
+                    var tm1 = TweenMax.to(".title",10,{y:-100}); //'welcome box' 위로 올라가게 하는 tweenmax
+                    var tm2 = TweenMax.to(".line1", 10, {height:1000,zIndex:1,y:-100});//점선 길어지게 하는  tweenmax
+                    var tm3 = TweenMax.to(".bg1",10,{opacity:1});// 백그라운드 교체
+                    
+                    //'welcome box' 위로 올라가게 하는 tweenmax
+                    var banner01 = new ScrollMagic.Scene({
+                    triggerElement: ".banner01" ,
+                    duration: "100%",
+                    triggerHook:0						
+                    })
+                    .setTween(tm1) 
+                    /*.addIndicators({
+                        name: "1",
+                        colorStart:"yellow",
+                        colorEnd:"yellow"								
+                    })*/ 
+                    .addTo(controller);
+
+                    //점선 길어지게 하는  tweenmax
+                    var banner01 = new ScrollMagic.Scene({
+                    triggerElement: ".banner01" ,
+                    duration: "100%",
+                    triggerHook:0						
+                    })
+                    .setTween(tm2) 
+                    .addTo(controller);
+                    
+                    // 백그라운드 교체
+                    var banner01 = new ScrollMagic.Scene({
+                    triggerElement: ".banner01" ,
+                    duration: "100%",
+                    triggerHook:0						
+                    })
+                    .setTween(tm3) 
+                    .addTo(controller);
+  
+        </script>
+         <script>
+                //banner02
+                      
+                            var controller = new ScrollMagic.Controller();
+                            var tl = new TimelineMax();
+                            var tm1 = TweenMax.from(".styleship",10,{x:-50,opacity:0}); //'styleship' 왼쪽에서 나타나게 하는 tweenmax
+                            var tm2 = TweenMax.to(".line1", 10, {height:"+=600",zIndex:1,y:-100});//점선 길어지게 하는  tweenmax
+                            var tm3 = TweenMax.to(".bg2",10,{opacity:1});// 백그라운드 교체
+                            var tm4 = TweenMax.from(".styleship__txt",10,{x:-50,opacity:0}); //'styleship text' 왼쪽에서 나타나게 하는 tweenmax
+                            tl.add(tm1).add(tm4);
+                            //'styleship' 왼쪽에서 나타나게 하는 tweenmax
+                            var banner02 = new ScrollMagic.Scene({
+                            triggerElement: ".banner02" ,
+                            duration: "70%",
+                            triggerHook:0						
+                            })
+                            .setTween(tl) 
+                            .addTo(controller);
+        
+                            //점선 길어지게 하는  tweenmax
+                            var banner01 = new ScrollMagic.Scene({
+                            triggerElement: ".banner02" ,
+                            duration: "200%",
+                            triggerHook:0						
+                            })
+                            .setTween(tm2) 
+                            .addTo(controller);
+                            
+                            // 백그라운드 교체
+                            var banner02 = new ScrollMagic.Scene({
+                            triggerElement: ".banner02" ,
+                            duration: "200%",
+                            triggerHook:0						
+                            })
+                            .setTween(tm3)
+                            .setPin(".banner02",{pushFollowers:false})
+                            .addTo(controller);
+
+                           
+          
+                </script>
+    <script>
+            //banner03
+                  
+                        var controller = new ScrollMagic.Controller();
+                        var tl = new TimelineMax();
+                        var tm1 = TweenMax.from(".title3",10,{x:2950}); // 왼쪽에서 나타나게 하는 tweenmax
+                        var tm2 = TweenMax.to(".line2", 10, {width:1415,zIndex:1,x:"-=2000"});//점선 길어지게 하는  tweenmax
+                        var tm3 = TweenMax.to(".bg3",10,{opacity:1});// 백그라운드 교체
+                        var tm4 = TweenMax.to(".title2",10,{x:-2000}); // 왼쪽에서 사라지게 하는 tweenmax
+                        
+                        // 왼쪽에서 나타나게 하는 tweenmax
+                        var banner03 = new ScrollMagic.Scene({
+                        triggerElement: ".banner03" ,
+                        duration: "200%",
+                        triggerHook:0                     						
+                        })
+                        .setTween(tm1) 
+                        .setPin(".banner03")
+                        .addTo(controller);
+
+                        var banner03 = new ScrollMagic.Scene({
+                        triggerElement: ".banner03" ,
+                        duration: "200%",
+                        triggerHook:0,					
+                        })
+                        .setTween(tm2) 
+                        .addTo(controller);
+
+                        var banner03 = new ScrollMagic.Scene({
+                        triggerElement: ".banner03" ,
+                        duration: "200%",
+                        triggerHook:0,					
+                        })
+                        .setTween(tm3) 
+                        .addTo(controller);
+
+                        var banner03 = new ScrollMagic.Scene({
+                        triggerElement: ".banner03" ,
+                        duration: "200%",
+                        triggerHook:0,					
+                        })
+                        .setTween(tm4) 
+                        .addTo(controller);
+      
+            </script>
+    
+</body>
+</html>
