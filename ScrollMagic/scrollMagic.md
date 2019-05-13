@@ -130,7 +130,7 @@ var scene = new ScrollMagic.Scene({
     offset: 200,
 })
 .setClassToggle(".banner01", "fadeIn")
-.setPin(".banner01")
+.setPin(".banner01",{pushFollowers:false})
 .setTween(".banner01",1,{y:100})
 .addIndicators({
     name:"fade",
