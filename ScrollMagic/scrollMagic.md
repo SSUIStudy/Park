@@ -106,7 +106,7 @@ var scene = new ScrollMagic.Scene({
     offset: 200,
 })
 .setClassToggle(".banner01", "fadeIn")
-.setPin(".banner01")
+.setPin(".banner01",{pushFollowers:false})
 .setTween("선택자",지속시간,{속성})
 .addTo(controller);
 ```
