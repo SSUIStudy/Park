@@ -76,7 +76,7 @@ var scene = new ScrollMagic.Scene({
     offset: 200,
 })
 .setClassToggle(".banner01", "fadeIn")
-.setPin("선택자","옵션(생략가능)")
+.setPin("선택자",{옵션(생략가능)})
 .addTo(controller);
 ```
 
